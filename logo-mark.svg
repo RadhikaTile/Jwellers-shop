@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" fill="none">
+  <!-- Outer Octagonal Facet Contour -->
+  <polygon points="22,1 36,8 43,22 36,36 22,43 8,36 1,22 8,8" 
+           stroke="#c5a880" stroke-width="1.4" fill="rgba(197, 168, 128, 0.08)" />
+  
+  <!-- Inner Radiant Diamond Facets -->
+  <polygon points="22,5 38,15 32,37 22,41 12,37 6,15" 
+           stroke="#9a7647" stroke-width="0.9" fill="none" opacity="0.85" />
+           
+  <!-- Brilliant Cut Table Facet -->
+  <polygon points="15,15 29,15 33,24 22,37 11,24" 
+           stroke="#c5a880" stroke-width="0.8" fill="none" />
+           
+  <line x1="22" y1="5" x2="22" y2="15" stroke="#c5a880" stroke-width="0.8" />
+  <line x1="15" y1="15" x2="6" y2="15" stroke="#c5a880" stroke-width="0.8" />
+  <line x1="29" y1="15" x2="38" y2="15" stroke="#c5a880" stroke-width="0.8" />
+  <line x1="22" y1="37" x2="22" y2="41" stroke="#c5a880" stroke-width="0.8" />
+  
+  <!-- Imperial 5-Point Coronet Arch -->
+  <path d="M14 23 L18 18 L22 22 L26 18 L30 23 Z" fill="#c5a880" />
+  <circle cx="18" cy="17" r="1.2" fill="#eed8b7" />
+  <circle cx="22" cy="16" r="1.5" fill="#ffffff" stroke="#c5a880" stroke-width="0.6" />
+  <circle cx="26" cy="17" r="1.2" fill="#eed8b7" />
+  
+  <!-- Starburst Sparkle -->
+  <path d="M22 9 Q22 13 18 13 Q22 13 22 17 Q22 13 26 13 Q22 13 22 9 Z" fill="#c5a880" />
+</svg>

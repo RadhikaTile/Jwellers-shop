@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Collections & Heirlooms | AURA & ARTISAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4.0">
+  <style id="critical-tablet-nav">
+    @media (max-width: 1400px) {
+      .header-main {
+        height: 74px !important;
+        padding: 0 16px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .mobile-nav-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: transparent !important;
+        border: none !important;
+        color: #1a1614 !important;
+        font-size: 1.65rem !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        z-index: 10 !important;
+      }
+      .mobile-nav-toggle i {
+        font-size: 1.65rem !important;
+        color: #1a1614 !important;
+      }
+      .mobile-nav-toggle span {
+        display: none !important;
+      }
+      .brand-logo {
+        margin: 0 !important;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        height: 44px !important;
+        max-width: calc(100% - 170px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .brand-logo-img,
+      .brand-logo-svg,
+      .brand-logo svg {
+        max-width: 220px !important;
+        height: 40px !important;
+      }
+      .header-actions {
+        margin-left: auto !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+        z-index: 10 !important;
+      }
+      .desktop-nav:not(.mobile-open) {
+        display: none !important;
+      }
+      .mobile-bottom-nav {
+        display: flex !important;
+      }
+      body {
+        padding-bottom: 60px !important;
+      }
+      .announcement-item:first-child,
+      .announcement-right {
+        display: none !important;
+      }
+      .announcement-content {
+        justify-content: center !important;
+        text-align: center !important;
+      }
+    }
+  </style>
+</head>
+<body class="mode-hifi">
+
+  <!-- TOP WIREFRAME / UX TOOLBAR -->
+  <aside class="ux-control-bar">
+    <div class="ux-control-inner">
+      <div class="ux-status-tag"><span class="pulse-dot"></span><span>Catalog Architecture</span></div>
+      <div class="reference-badge"><i class="ri-compass-3-line"></i> Filterable Multi-Category Architecture (Swashaa & Arika style)</div>
+      <div class="ux-toggle-wrapper">
+        <a href="index.html" class="ux-notes-btn"><i class="ri-home-line"></i> Back to Home</a>
+      </div>
+    </div>
+  </aside>
+
+    <!-- 1. ANNOUNCEMENT BAR (Smooth Horizontal Marquee Ticker) -->
+  <div class="announcement-bar">
+    <div class="announcement-inner">
+      <div class="announcement-ticker-track">
+        <div class="ticker-content">
+          <span class="ticker-item"><i class="ri-sparkling-2-line"></i> Lifetime Anti-Tarnish Guarantee on 18K PVD Gold</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-truck-line"></i> Complimentary Insured Shipping Across India on Orders Above ₹1,499</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><span class="code-pill">Use Code: <strong>ROYAL10</strong> for 10% Off</span></span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-vip-crown-2-line"></i> Authentic Hand-Fired Jaipur Meenakari &amp; Kundan Karigari</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-shield-check-line"></i> 100% Hypoallergenic &bull; Zero Skin Discoloration</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-arrow-left-right-line"></i> 7-Day Sizing Exchanges on All Kadas &amp; Bangles</span>
+          <span class="ticker-divider">&bull;</span>
+        </div>
+        <div class="ticker-content" aria-hidden="true">
+          <span class="ticker-item"><i class="ri-sparkling-2-line"></i> Lifetime Anti-Tarnish Guarantee on 18K PVD Gold</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-truck-line"></i> Complimentary Insured Shipping Across India on Orders Above ₹1,499</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><span class="code-pill">Use Code: <strong>ROYAL10</strong> for 10% Off</span></span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-vip-crown-2-line"></i> Authentic Hand-Fired Jaipur Meenakari &amp; Kundan Karigari</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-shield-check-line"></i> 100% Hypoallergenic &bull; Zero Skin Discoloration</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-arrow-left-right-line"></i> 7-Day Sizing Exchanges on All Kadas &amp; Bangles</span>
+          <span class="ticker-divider">&bull;</span>
+        </div>
+      </div>
+
+      <div class="announcement-right">
+        <div class="currency-picker">
+          <i class="ri-global-line"></i>
+          <select id="currencySelect" aria-label="Currency Selector">
+            <option value="INR" selected>INR (₹)</option>
+            <option value="USD">USD ($)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="EUR">EUR (€)</option>
+          </select>
+        </div>
+        <a href="contact.html#track-order" class="top-link"><i class="ri-truck-line"></i> Track Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-main">
+      <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+        <i class="ri-menu-2-line"></i>
+        <span>Menu</span>
+      </button>
+
+      <a href="index.html" class="brand-logo" aria-label="Aura and Artisan Haute Joaillerie">
+        <svg class="brand-logo-svg" viewBox="0 0 310 56" width="280" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(3, 3)">
+            <polygon points="25,1 42,8 50,25 42,42 25,49 8,42 1,25 8,8" stroke="#b8935e" stroke-width="1.6" fill="rgba(197, 168, 128, 0.10)" />
+            <polygon points="25,6 44,17 36,41 25,46 14,41 6,17" stroke="#9a7647" stroke-width="1.1" fill="none" opacity="0.90" />
+            <polygon points="17,17 33,17 38,28 25,42 12,28" stroke="#c5a880" stroke-width="1.0" fill="none" />
+            <line x1="25" y1="6" x2="25" y2="17" stroke="#c5a880" stroke-width="1.0" />
+            <line x1="17" y1="17" x2="6" y2="17" stroke="#c5a880" stroke-width="1.0" />
+            <line x1="33" y1="17" x2="44" y2="17" stroke="#c5a880" stroke-width="1.0" />
+            <line x1="25" y1="42" x2="25" y2="46" stroke="#c5a880" stroke-width="1.0" />
+            <path d="M15 26 L19 21 L25 25 L31 21 L35 26 Z" fill="#b8935e" />
+            <circle cx="19" cy="20" r="1.3" fill="#eed8b7" />
+            <circle cx="25" cy="18.5" r="1.8" fill="#ffffff" stroke="#b8935e" stroke-width="0.8" />
+            <circle cx="31" cy="20" r="1.3" fill="#eed8b7" />
+            <path d="M25 10 Q25 14 21 14 Q25 14 25 18 Q25 14 29 14 Q25 14 25 10 Z" fill="#c5a880" />
+          </g>
+          <text x="63" y="30" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="23.5" font-weight="700" letter-spacing="3.8px" fill="#141210">AURA &amp; ARTISAN</text>
+          <line x1="64" y1="36" x2="300" y2="36" stroke="#c5a880" stroke-width="1.0" opacity="0.70" />
+          <text x="64" y="47" font-family="'Montserrat', -apple-system, sans-serif" font-size="7.4" font-weight="600" letter-spacing="2.8px" fill="#9a7647">HAUTE JOAILLERIE &bull; JAIPUR &bull; MUMBAI</text>
+        </svg>
+      </a>
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collections.html" class="nav-link active">Collections</a></li>
+          <li><a href="anti-tarnish.html" class="nav-link">Anti-Tarnish Daily</a></li>
+          <li><a href="bangles-guide.html" class="nav-link">Meenakari Bangles</a></li>
+          <li><a href="about.html" class="nav-link">The Craft</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="action-btn" id="searchTriggerBtn" onclick="openSearch()" aria-label="Search Catalog" title="Search"><i class="ri-search-line"></i></button>
+        <a href="contact.html" class="action-btn" id="userAccountBtn" aria-label="User Account" title="Account"><i class="ri-user-3-line"></i></a>
+        <button class="action-btn wishlist-btn" id="wishlistBtn" onclick="openWishlist()" aria-label="Wishlist" title="Wishlist"><i class="ri-heart-line"></i><span class="badge-count wishlist-count">3</span></button>
+        <button class="action-btn cart-btn" id="cartTriggerBtn" onclick="openCart()" aria-label="Shopping Bag" title="Cart"><i class="ri-shopping-bag-2-line"></i><span class="badge-count cart-count" id="cartCountBadge">2</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATALOG HERO BANNER WITH MODEL PHOTOGRAPHY -->
+  <section class="catalog-hero-banner" style="background-image: linear-gradient(to right, rgba(15,21,19,0.92), rgba(15,21,19,0.4)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=85');">
+    <div class="container">
+      <div class="catalog-hero-text">
+        <span class="hero-subhead"><i class="ri-vip-diamond-line"></i> Complete Curated Portfolio</span>
+        <h1 class="hero-title">Timeless Heirlooms & Modern Essentials</h1>
+        <p class="hero-desc">Explore hand-enamelled Jaipuri Meenakari bangles, uncut Pachi Kundan bridal sets, and sweatproof 18K gold daily jewellery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG BREADCRUMB & CONTROLS -->
+  <div class="catalog-filter-bar">
+    <div class="container filter-bar-inner">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &rsaquo; <span>All Collections</span>
+      </div>
+      <div class="filter-controls">
+        <span class="item-count-text">Showing <strong>10 Signature Collections & Designs</strong></span>
+        <div class="sort-selector">
+          <label for="catalogSort">Sort by:</label>
+          <select id="catalogSort" onchange="sortCatalog(this.value)">
+            <option value="featured">Featured & Best Selling</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Customer Rated</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATALOG MAIN LAYOUT: SIDEBAR + PRODUCT GRID -->
+  <main class="section-padding" style="padding-top: 30px;">
+    <div class="container catalog-layout-grid">
+      <!-- SIDEBAR FILTERS (Arika & Swashaa inspired) -->
+      <aside class="catalog-sidebar">
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label class="filter-checkbox"><input type="checkbox" checked onchange="filterCategory('all')"> All Categories</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('meenakari')"> Vijay Meenakari Bangles</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('kundan')"> Sawwaisa Pachi Kundan</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('anti-tarnish')"> 18K Waterproof Gold</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('oxidized')"> Chhail Oxidized Silver</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('men')"> Swashaa Men's Luxe</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('pearls')"> Nazaakat Basra Pearls</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('temple')"> South Indian Temple & Kemp</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('diamonds')"> Solitaire Lab Diamonds</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('talismans')"> Noor Evil Eye & Talismans</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('bangles')"> Imperial Bridal Chuda</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Metal & Plating</h4>
+          <label class="filter-checkbox"><input type="checkbox"> 18K Vacuum PVD Gold</label>
+          <label class="filter-checkbox"><input type="checkbox"> 24K Micro Gold Brass Core</label>
+          <label class="filter-checkbox"><input type="checkbox"> 925 Hallmarked German Silver</label>
+          <label class="filter-checkbox"><input type="checkbox"> 316L Surgical Stainless Steel</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Occasion</h4>
+          <label class="filter-checkbox"><input type="checkbox"> Bridal & Wedding</label>
+          <label class="filter-checkbox"><input type="checkbox"> Daily & Office Wear</label>
+          <label class="filter-checkbox"><input type="checkbox"> Festive & Sangeet</label>
+          <label class="filter-checkbox"><input type="checkbox"> Luxury Gifting</label>
+        </div>
+
+        <div class="sidebar-help-card">
+          <i class="ri-customer-service-2-line"></i>
+          <h5>Need Styling Advice?</h5>
+          <p>Book a complimentary 1-on-1 virtual styling session with our Jaipur jewellery consultants.</p>
+          <a href="contact.html" class="link-arrow">Book Appointment &rarr;</a>
+        </div>
+      </aside>
+
+      <!-- CATALOG PRODUCT GRID -->
+      <section class="catalog-products-col">
+        <div class="product-grid" id="catalogGrid">
+          <!-- Product cards rendered dynamically or populated -->
+          <!-- Card 1 -->
+          <div class="product-card" data-category="meenakari">
+            <div class="product-badge badge-bestseller">Best Seller</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=80" alt="Meera Meenakari Bangles">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=700&q=80" alt="Meenakari Kada Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 1)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Jaipur Artisanal &bull; Vijay Bangles</div>
+              <h3 class="product-name"><a href="product-detail.html">The Meera Royal Meenakari Kadas (Pair)</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹2,850</span>
+                <span class="price-original">₹3,999</span>
+                <span class="discount-pill">29% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="product-card" data-category="anti-tarnish">
+            <div class="product-badge badge-waterproof">100% Waterproof</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=700&q=80" alt="Clover Bracelet">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 2)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Chahana & Raviva Style</div>
+              <h3 class="product-name"><a href="product-detail.html">Aura 18K Anti-Tarnish Clover Bracelet</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹1,299</span>
+                <span class="price-original">₹1,899</span>
+                <span class="discount-pill">31% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="product-card" data-category="kundan">
+            <div class="product-badge badge-trending">Bridal Choice</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Sawwaisa Choker">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1620656798579-1984d9e87dfa?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 3)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Sawwaisa & Jewellery Khazana</div>
+              <h3 class="product-name"><a href="product-detail.html">Padmavati Pachi Kundan & Emerald Choker Set</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹4,950</span>
+                <span class="price-original">₹7,200</span>
+                <span class="discount-pill">31% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="product-card" data-category="oxidized">
+            <div class="product-badge badge-artisan">Handcrafted</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?auto=format&fit=crop&w=700&q=80" alt="Chhail Silver">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 4)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Chhail Tribal Silver</div>
+              <h3 class="product-name"><a href="product-detail.html">Feeling Chhail Mirror Ghungroo Chandbalis</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹1,450</span>
+                <span class="price-original">₹1,999</span>
+                <span class="discount-pill">27% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 5: Men's Vault -->
+          <div class="product-card" data-category="men">
+            <div class="product-badge badge-bestseller">Unisex & Men</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=700&q=80" alt="Modern Cuban Chain">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=700&q=80" alt="Signet Ring Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 5)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Swashaa Men's Luxe</div>
+              <h3 class="product-name"><a href="product-detail.html">Matte Beveled Cuban Chain & Signet Set</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹1,650</span>
+                <span class="price-original">₹2,299</span>
+                <span class="discount-pill">28% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 6: Nazaakat Basra Pearls -->
+          <div class="product-card" data-category="pearls">
+            <div class="product-badge badge-trending">Royal Pearls</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=700&q=80" alt="Nazaakat Pearl & Polki Haar">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 6)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Nazaakat Nizam Court</div>
+              <h3 class="product-name"><a href="product-detail.html">Baroque Pearl & Polki Multi-Strand Rani Haar</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹3,450</span>
+                <span class="price-original">₹4,890</span>
+                <span class="discount-pill">29% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 7: Temple Grandeur -->
+          <div class="product-card" data-category="temple">
+            <div class="product-badge badge-artisan">Temple Antique</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=700&q=80" alt="Temple Grandeur Lakshmi Choker">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 7)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Chola Devotional Craft</div>
+              <h3 class="product-name"><a href="product-detail.html">Goddess Lakshmi Nakshi & Kemp Coin Choker</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹4,200</span>
+                <span class="price-original">₹5,999</span>
+                <span class="discount-pill">30% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 8: Solitaire Noir Diamonds -->
+          <div class="product-card" data-category="diamonds">
+            <div class="product-badge badge-waterproof">VVS Lab Diamond</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=80" alt="Solitaire Diamond Tennis Bracelet">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 8)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Paris Atelier Haute Joaillerie</div>
+              <h3 class="product-name"><a href="product-detail.html">Solitaire Noir 3.0ct VVS Diamond Tennis Bracelet</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹5,900</span>
+                <span class="price-original">₹8,500</span>
+                <span class="discount-pill">31% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 9: Noor Evil Eye Talismans -->
+          <div class="product-card" data-category="talismans">
+            <div class="product-badge badge-waterproof">18K Anti-Tarnish</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=700&q=80" alt="Noor Evil Eye Talisman">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 9)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Mediterranean Protective Edit</div>
+              <h3 class="product-name"><a href="product-detail.html">Noor Mother-of-Pearl Evil Eye Talisman Chain</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹1,150</span>
+                <span class="price-original">₹1,699</span>
+                <span class="discount-pill">32% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 10: Imperial Bridal Chuda -->
+          <div class="product-card" data-category="bangles">
+            <div class="product-badge badge-trending">Bridal Custom</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Imperial Bridal Chuda">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 10)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Punjab & Marwar Heritage</div>
+              <h3 class="product-name"><a href="product-detail.html">Imperial Crimson & Pearl Latkan Bridal Chuda Set</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹2,750</span>
+                <span class="price-original">₹3,800</span>
+                <span class="discount-pill">28% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- HAUTE JOAILLERIE MAISON FOOTER -->
+  <footer class="luxury-maison-footer">
+    <div class="footer-pillars-bar">
+      <div class="container footer-pillars-grid">
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-medal-line"></i></div>
+          <div class="fp-text">
+            <strong>100% Certified Karigari</strong>
+            <span>BIS Hallmarked & 18K Aerospace PVD Gold</span>
+          </div>
+        </div>
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-fire-line"></i></div>
+          <div class="fp-text">
+            <strong>Jaipur Enameling Legacy</strong>
+            <span>800°C Kiln-fired Meenakari & uncut Polki</span>
+          </div>
+        </div>
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-shield-check-line"></i></div>
+          <div class="fp-text">
+            <strong>Lifetime Color Warranty</strong>
+            <span>Waterproof & zero skin green discoloration</span>
+          </div>
+        </div>
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-truck-line"></i></div>
+          <div class="fp-text">
+            <strong>White-Glove Insured Delivery</strong>
+            <span>Tamper-evident luxury unboxing across India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-newsletter-wrap">
+      <span class="fn-badge">Privilege Membership</span>
+      <h3 class="fn-title">Enter The Maison Circle</h3>
+      <p class="fn-desc">Receive private invitations to limited Jaipur bridal drops, secret salon viewings, and a complimentary ₹500 voucher on your first acquisition.</p>
+      <form class="fn-form" onsubmit="handleNewsletterSubmit(event)">
+        <div class="fn-input-group">
+          <input type="email" placeholder="Enter your email address for private access..." required>
+          <button type="submit" class="btn btn-gold">Join The Circle</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container footer-columns-grid">
+      <div class="f-col">
+        <span class="f-brand-title">AURA & ARTISAN</span>
+        <p class="f-brand-desc">Haute Joaillerie & modern demi-fine atelier rooted in the royal jeweler traditions of Johari Bazaar, Jaipur and the contemporary minimalism of Mumbai.</p>
+        <div class="f-socials">
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+          <a href="#" aria-label="WhatsApp Concierge"><i class="ri-whatsapp-line"></i></a>
+        </div>
+      </div>
+
+      <div class="f-col">
+        <h4>High Jewellery & Bridal</h4>
+        <ul class="f-links">
+          <li><a href="collections.html?cat=kundan">Pachi Kundan Chokers</a></li>
+          <li><a href="collections.html?cat=kundan">Jadau & Polki Bridal Sets</a></li>
+          <li><a href="bangles-guide.html">Meera Meenakari Bangles</a></li>
+          <li><a href="collections.html?cat=oxidized">Feeling Chhail Tribal Silver</a></li>
+          <li><a href="collections.html">Temple Antique Curations</a></li>
+          <li><a href="contact.html">Bespoke Bridal Salon Booking</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h4>Everyday Demi-Fine</h4>
+        <ul class="f-links">
+          <li><a href="anti-tarnish.html">Waterproof Clover Series</a></li>
+          <li><a href="anti-tarnish.html">18K PVD Layering Chains</a></li>
+          <li><a href="anti-tarnish.html">Hypoallergenic Chunky Hoops</a></li>
+          <li><a href="anti-tarnish.html">Stackable Signet & Dome Rings</a></li>
+          <li><a href="collections.html?cat=men">Swashaa Men's Luxe Edit</a></li>
+          <li><a href="about.html">PVD Science & Metallurgy</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col f-contact-box">
+        <h4>Maison & Client Care</h4>
+        <ul class="f-links">
+          <li><a href="about.html">About Us & Heritage</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+          <li><a href="contact.html#track-order">Track Insured Shipment</a></li>
+          <li><a href="bangles-guide.html">Interactive Sizing Studio</a></li>
+          <li><a href="contact.html">Concierge & Flagship Salons</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-flex">
+        <div class="f-bottom-left">
+          <p>&copy; 2026 AURA & ARTISAN JEWELLERS PVT. LTD. ALL RIGHTS RESERVED &bull; HALLMARKED UNDER BIS REGULATIONS.</p>
+          <div class="f-legal-links">
+            <a href="about.html">About Us</a>
+            <span class="sep">&bull;</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="sep">&bull;</span>
+            <a href="terms-conditions.html">Terms & Conditions</a>
+            <span class="sep">&bull;</span>
+            <a href="contact.html">Concierge & Salons</a>
+          </div>
+        </div>
+        <div class="f-payment-badges">
+          <span class="f-pay-tag"><i class="ri-bank-card-line"></i> UPI & Netbanking</span>
+          <span class="f-pay-tag"><i class="ri-visa-line"></i> Visa</span>
+          <span class="f-pay-tag"><i class="ri-mastercard-line"></i> MasterCard</span>
+          <span class="f-pay-tag">American Express</span>
+          <span class="f-pay-tag"><i class="ri-currency-line"></i> Cash on Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LUXURY SEARCH MODAL -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop" onclick="closeSearch()"></div>
+  <div class="luxury-search-modal" id="luxurySearchModal">
+    <div class="search-modal-top">
+      <i class="ri-search-line"></i>
+      <input type="text" id="luxurySearchInput" placeholder="Search Meenakari bangles, clover bracelets, Kundan chokers..." autocomplete="off">
+      <button class="modal-close-btn" onclick="closeSearch()" aria-label="Close Search"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="search-quick-tags">
+      <span>Trending Curations:</span>
+      <button type="button" onclick="quickSearch('Meenakari')">Meera Bangles</button>
+      <button type="button" onclick="quickSearch('Clover')">18K Clover</button>
+      <button type="button" onclick="quickSearch('Kundan')">Pachi Kundan</button>
+      <button type="button" onclick="quickSearch('Silver')">Chhail Silver</button>
+      <button type="button" onclick="quickSearch('Waterproof')">Anti-Tarnish Daily</button>
+    </div>
+    <div class="search-results-box" id="searchResultsContainer">
+      <div class="search-empty-prompt">
+        <span>Type to search our Jaipur heritage & demi-fine collections...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST SLIDE-OVER DRAWER -->
+  <div class="wishlist-drawer-overlay" id="wishlistOverlay" onclick="closeWishlist()"></div>
+  <aside class="wishlist-drawer" id="wishlistDrawer" aria-label="Saved Wishlist">
+    <div class="wishlist-drawer-header">
+      <div class="cd-title-wrap">
+        <h3>Saved Pieces</h3>
+        <span class="cd-count-tag" id="wishlistDrawerCount">3 Saved</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeWishlist()" aria-label="Close Wishlist"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="wishlist-items-list" id="wishlistItemsContainer"></div>
+    <div class="wishlist-drawer-footer">
+      <button class="btn btn-gold btn-block" onclick="addAllWishlistToBag()">
+        <i class="ri-shopping-bag-line"></i> Move All Pieces to Bag
+      </button>
+    </div>
+  </aside>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cd-title-wrap">
+        <h3>Your Shopping Bag</h3>
+        <span class="cd-count-tag" id="drawerItemCount">2 Items</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Close Cart"><i class="ri-close-line"></i></button>
+    </div>
+
+    <div class="cart-shipping-bar">
+      <div class="shipping-info">
+        <i class="ri-truck-line"></i>
+        <span id="shippingGoalText">Add ₹201 more to unlock <strong>FREE Express Insured Shipping!</strong></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="shippingProgressFill" style="width: 82%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsContainer"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-coupon-box">
+        <input type="text" id="couponCodeInput" placeholder="Enter coupon code (ROYAL10)">
+        <button class="btn-apply-coupon" onclick="applyCoupon()">Apply</button>
+      </div>
+
+      <div class="cart-totals">
+        <div class="tot-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹4,149</span>
+        </div>
+        <div class="tot-row text-green" id="discountRow" style="display: none;">
+          <span>Discount Applied</span>
+          <span id="cartDiscount">-₹415</span>
+        </div>
+        <div class="tot-row">
+          <span>Estimated Insured Shipping</span>
+          <span class="free-text" id="shippingCost">FREE</span>
+        </div>
+        <div class="tot-row grand-total">
+          <span>Estimated Total</span>
+          <span id="cartGrandTotal">₹4,149</span>
+        </div>
+      </div>
+
+      <button class="btn btn-gold btn-block checkout-btn" onclick="proceedToCheckout()">
+        <i class="ri-lock-2-line"></i> Secure Checkout &bull; Pay via UPI/Card/COD
+      </button>
+
+      <div class="cart-trust-badges">
+        <span><i class="ri-shield-check-line"></i> 256-Bit SSL Encrypted</span>
+        <span><i class="ri-arrow-go-back-line"></i> 7-Day Doorstep Returns</span>
+      </div>
+    </div>
+  </aside>
+
+    <!-- FLOATING WHATSAPP VIP CONCIERGE BUTTON (Right Bottom Corner) -->
+  <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection." 
+     class="whatsapp-float-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp with VIP Concierge"
+     title="Chat with Jewellery Concierge">
+    <div class="whatsapp-pulse"></div>
+    <i class="ri-whatsapp-fill"></i>
+    <span class="whatsapp-tooltip">Chat with Concierge</span>
+  </a>
+
+  <script src="app.js?v=3.2"></script>
+</body>
+</html>

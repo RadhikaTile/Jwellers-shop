@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Private Concierge | AURA & ARTISAN Haute Joaillerie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4.0">
+  <style id="critical-tablet-nav">
+    @media (max-width: 1400px) {
+      .header-main {
+        height: 74px !important;
+        padding: 0 16px !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+      .mobile-nav-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: transparent !important;
+        border: none !important;
+        color: #1a1614 !important;
+        font-size: 1.65rem !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        z-index: 10 !important;
+      }
+      .mobile-nav-toggle i {
+        font-size: 1.65rem !important;
+        color: #1a1614 !important;
+      }
+      .mobile-nav-toggle span {
+        display: none !important;
+      }
+      .brand-logo {
+        margin: 0 !important;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        height: 44px !important;
+        max-width: calc(100% - 170px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .brand-logo-img,
+      .brand-logo-svg,
+      .brand-logo svg {
+        max-width: 220px !important;
+        height: 40px !important;
+      }
+      .header-actions {
+        margin-left: auto !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+        z-index: 10 !important;
+      }
+      .desktop-nav:not(.mobile-open) {
+        display: none !important;
+      }
+      .mobile-bottom-nav {
+        display: flex !important;
+      }
+      body {
+        padding-bottom: 60px !important;
+      }
+      .announcement-item:first-child,
+      .announcement-right {
+        display: none !important;
+      }
+      .announcement-content {
+        justify-content: center !important;
+        text-align: center !important;
+      }
+    }
+  </style>
+</head>
+<body class="mode-hifi">
+
+  <!-- 1. ANNOUNCEMENT BAR (Smooth Horizontal Marquee Ticker) -->
+  <div class="announcement-bar">
+    <div class="announcement-inner">
+      <div class="announcement-ticker-track">
+        <div class="ticker-content">
+          <span class="ticker-item"><i class="ri-sparkling-2-line"></i> Lifetime Anti-Tarnish Guarantee on 18K PVD Gold</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-truck-line"></i> Complimentary Insured Shipping Across India on Orders Above ₹1,499</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><span class="code-pill">Use Code: <strong>ROYAL10</strong> for 10% Off</span></span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-vip-crown-2-line"></i> Authentic Hand-Fired Jaipur Meenakari &amp; Kundan Karigari</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-shield-check-line"></i> 100% Hypoallergenic &bull; Zero Skin Discoloration</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-arrow-left-right-line"></i> 7-Day Sizing Exchanges on All Kadas &amp; Bangles</span>
+          <span class="ticker-divider">&bull;</span>
+        </div>
+        <div class="ticker-content" aria-hidden="true">
+          <span class="ticker-item"><i class="ri-sparkling-2-line"></i> Lifetime Anti-Tarnish Guarantee on 18K PVD Gold</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-truck-line"></i> Complimentary Insured Shipping Across India on Orders Above ₹1,499</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><span class="code-pill">Use Code: <strong>ROYAL10</strong> for 10% Off</span></span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-vip-crown-2-line"></i> Authentic Hand-Fired Jaipur Meenakari &amp; Kundan Karigari</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-shield-check-line"></i> 100% Hypoallergenic &bull; Zero Skin Discoloration</span>
+          <span class="ticker-divider">&bull;</span>
+          <span class="ticker-item"><i class="ri-arrow-left-right-line"></i> 7-Day Sizing Exchanges on All Kadas &amp; Bangles</span>
+          <span class="ticker-divider">&bull;</span>
+        </div>
+      </div>
+
+      <div class="announcement-right">
+        <div class="currency-picker">
+          <i class="ri-global-line"></i>
+          <select id="currencySelect" aria-label="Currency Selector">
+            <option value="INR" selected>INR (₹)</option>
+            <option value="USD">USD ($)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="EUR">EUR (€)</option>
+          </select>
+        </div>
+        <a href="#track-order" onclick="switchContactTab('tabTrackOrder')" class="top-link"><i class="ri-truck-line"></i> Track Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SITE HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-main">
+      <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+        <i class="ri-menu-2-line"></i>
+        <span>Menu</span>
+      </button>
+
+      <a href="index.html" class="brand-logo" aria-label="Aura and Artisan Haute Joaillerie">
+        <svg class="brand-logo-svg" viewBox="0 0 310 56" width="280" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(3, 3)">
+            <polygon points="25,1 42,8 50,25 42,42 25,49 8,42 1,25 8,8" stroke="#b8935e" stroke-width="1.6" fill="rgba(197, 168, 128, 0.10)" />
+            <polygon points="25,6 44,17 36,41 25,46 14,41 6,17" stroke="#9a7647" stroke-width="1.1" fill="none" opacity="0.90" />
+            <polygon points="17,17 33,17 38,28 25,42 12,28" stroke="#c5a880" stroke-width="1.0" fill="none" />
+            <line x1="25" y1="6" x2="25" y2="17" stroke="#c5a880" stroke-width="1.0" />
+            <line x1="17" y1="17" x2="6" y2="17" stroke="#c5a880" stroke-width="1.0" />
+            <line x1="33" y1="17" x2="44" y2="17" stroke="#c5a880" stroke-width="1.0" />
+            <line x1="25" y1="42" x2="25" y2="46" stroke="#c5a880" stroke-width="1.0" />
+            <path d="M15 26 L19 21 L25 25 L31 21 L35 26 Z" fill="#b8935e" />
+            <circle cx="19" cy="20" r="1.3" fill="#eed8b7" />
+            <circle cx="25" cy="18.5" r="1.8" fill="#ffffff" stroke="#b8935e" stroke-width="0.8" />
+            <circle cx="31" cy="20" r="1.3" fill="#eed8b7" />
+            <path d="M25 10 Q25 14 21 14 Q25 14 25 18 Q25 14 29 14 Q25 14 25 10 Z" fill="#c5a880" />
+          </g>
+          <text x="63" y="30" font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-size="23.5" font-weight="700" letter-spacing="3.8px" fill="#141210">AURA &amp; ARTISAN</text>
+          <line x1="64" y1="36" x2="300" y2="36" stroke="#c5a880" stroke-width="1.0" opacity="0.70" />
+          <text x="64" y="47" font-family="'Montserrat', -apple-system, sans-serif" font-size="7.4" font-weight="600" letter-spacing="2.8px" fill="#9a7647">HAUTE JOAILLERIE &bull; JAIPUR &bull; MUMBAI</text>
+        </svg>
+      </a>
+
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="collections.html" class="nav-link">Collections</a></li>
+          <li><a href="anti-tarnish.html" class="nav-link">Anti-Tarnish Daily</a></li>
+          <li><a href="bangles-guide.html" class="nav-link">Meenakari Bangles</a></li>
+          <li><a href="about.html" class="nav-link">The Craft</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="action-btn" id="searchTriggerBtn" onclick="openSearch()" aria-label="Search Catalog" title="Search"><i class="ri-search-line"></i></button>
+        <a href="contact.html" class="action-btn" id="userAccountBtn" aria-label="User Account" title="Account"><i class="ri-user-3-line"></i></a>
+        <button class="action-btn wishlist-btn" id="wishlistBtn" onclick="openWishlist()" aria-label="Wishlist" title="Wishlist"><i class="ri-heart-line"></i><span class="badge-count wishlist-count">3</span></button>
+        <button class="action-btn cart-btn" id="cartTriggerBtn" onclick="openCart()" aria-label="Shopping Bag" title="Cart"><i class="ri-shopping-bag-2-line"></i><span class="badge-count cart-count" id="cartCountBadge">2</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. EDITORIAL HERO BANNER -->
+  <section class="catalog-hero-banner" style="background-image: linear-gradient(to right, rgba(14,11,9,0.94) 0%, rgba(14,11,9,0.78) 50%, rgba(14,11,9,0.45) 100%), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=85'); padding: 75px 0;">
+    <div class="container">
+      <div class="catalog-hero-text" style="max-width: 820px;">
+        <span class="hero-subhead"><i class="ri-customer-service-2-line"></i> 24/7 Client Concierge &amp; Ateliers</span>
+        <h1 class="hero-title" style="font-size: 3.6rem; margin-bottom: 16px;">Contact Us</h1>
+        <p class="hero-desc" style="font-size: 1.1rem; line-height: 1.7; color: #f1ede6; max-width: 720px;">Whether commissioning a bespoke bridal heirloom, checking live insured shipment dispatch, or consulting our master karigars for wrist sizing, our luxury concierge team is at your service 7 days a week.</p>
+        
+        <div class="contact-hero-highlights">
+          <span class="ch-item"><i class="ri-flashlight-line"></i> Under 15-Min WhatsApp Reply</span>
+          <span class="ch-item"><i class="ri-store-2-line"></i> Jaipur &amp; Mumbai Private Viewing Salons</span>
+          <span class="ch-item"><i class="ri-shield-check-line"></i> 100% Insured Transit Care</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BREADCRUMBS BAR -->
+  <div class="catalog-filter-bar" style="background: #ffffff; border-bottom: 1px solid rgba(226, 218, 206, 0.8);">
+    <div class="container filter-bar-inner">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &rsaquo; <span>Contact Us &amp; Concierge</span>
+      </div>
+      <div class="filter-controls">
+        <span class="item-count-text">Guaranteed Concierge Response: <strong>Within 2 Hours</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. MAIN CONTENT -->
+  <main class="section-padding bg-cream">
+    <div class="container">
+
+      <!-- QUICK CONTACT CHANNELS -->
+      <div class="contact-channels-grid">
+        <!-- Channel 1: Phone -->
+        <div class="contact-channel-card">
+          <div class="contact-channel-icon"><i class="ri-phone-line"></i></div>
+          <h3 class="contact-channel-title">Direct Telephone</h3>
+          <p class="contact-channel-info">Speak with a dedicated jewellery styling consultant regarding orders, sizing, or bridal curation.<br><strong>+91 (0141) 256-8900</strong><br>Mon – Sat: 10:00 AM – 8:00 PM IST</p>
+          <a href="tel:+919829012345" class="contact-channel-link">Call Priority Line &rarr;</a>
+        </div>
+
+        <!-- Channel 2: WhatsApp -->
+        <div class="contact-channel-card">
+          <div class="contact-channel-icon" style="color: #059669; background: rgba(5, 150, 105, 0.1); border-color: rgba(5, 150, 105, 0.3);"><i class="ri-whatsapp-line"></i></div>
+          <h3 class="contact-channel-title">VIP WhatsApp Stylist</h3>
+          <p class="contact-channel-info">Live high-definition video inspection, trousseau color pairing, and real-time kada sizing.<br><strong>Average Response: &lt; 15 mins</strong></p>
+          <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20would%20like%20to%20connect%20with%20your%20jewellery%20concierge." target="_blank" rel="noopener noreferrer" class="contact-channel-link" style="color: #059669; border-color: rgba(5, 150, 105, 0.4); background: rgba(5, 150, 105, 0.08);">Chat with Stylist &rarr;</a>
+        </div>
+
+        <!-- Channel 3: Email -->
+        <div class="contact-channel-card">
+          <div class="contact-channel-icon"><i class="ri-mail-send-line"></i></div>
+          <h3 class="contact-channel-title">Private Email Salon</h3>
+          <p class="contact-channel-info">Bespoke jewelry commissions, custom karigari designs, press, and corporate gifting portfolios.<br><strong>care@aurartisan.com</strong><br><strong>concierge@aurartisan.com</strong></p>
+          <a href="mailto:care@aurartisan.com" class="contact-channel-link">Send Written Note &rarr;</a>
+        </div>
+
+        <!-- Channel 4: Salons -->
+        <div class="contact-channel-card">
+          <div class="contact-channel-icon"><i class="ri-map-pin-2-line"></i></div>
+          <h3 class="contact-channel-title">Private Ateliers</h3>
+          <p class="contact-channel-info">By-appointment flagship viewing salons in Johari Bazaar, Jaipur and Kala Ghoda Arts Precinct, Mumbai.<br><strong>Valet Service Available</strong></p>
+          <a href="#ateliers" class="contact-channel-link">View Salon Details &rarr;</a>
+        </div>
+      </div>
+
+      <!-- MAIN SPLIT HUB -->
+      <div class="contact-hub-grid">
+
+        <!-- LEFT COLUMN: INTERACTIVE TABS & FORMS -->
+        <div>
+          <!-- Tab Navigation Pill Bar -->
+          <div class="contact-tab-nav">
+            <button class="contact-tab-btn active" data-tab="tabMessage" onclick="switchContactTab('tabMessage')">
+              <i class="ri-mail-line"></i> Send a Message
+            </button>
+            <button class="contact-tab-btn" data-tab="tabBridal" onclick="switchContactTab('tabBridal')">
+              <i class="ri-calendar-event-line"></i> Book Bridal Consultation
+            </button>
+            <button class="contact-tab-btn" data-tab="tabTrackOrder" onclick="switchContactTab('tabTrackOrder')">
+              <i class="ri-truck-line"></i> Track Insured Order
+            </button>
+          </div>
+
+          <!-- PANE 1: SEND A MESSAGE -->
+          <div id="tabMessage" class="contact-tab-pane active">
+            <div class="contact-card-box">
+              <span class="sub-title"><i class="ri-chat-1-line"></i> Direct Inquiry</span>
+              <h2>Send a Note to Our Concierge</h2>
+              <p>Have an inquiry regarding an order, bespoke design alteration, or material certificate? Fill out the details below and a senior specialist will reply within 2 hours.</p>
+
+              <form onsubmit="handleContactFormSubmit(event)">
+                <div class="contact-form-row">
+                  <div class="contact-form-group">
+                    <label>Full Name <span class="req">*</span></label>
+                    <input type="text" name="name" required class="contact-input" placeholder="e.g. Radhika Kapoor">
+                  </div>
+                  <div class="contact-form-group">
+                    <label>Email Address <span class="req">*</span></label>
+                    <input type="email" name="email" required class="contact-input" placeholder="radhika@example.com">
+                  </div>
+                </div>
+
+                <div class="contact-form-row">
+                  <div class="contact-form-group">
+                    <label>WhatsApp / Phone <span class="req">*</span></label>
+                    <input type="tel" name="phone" required class="contact-input" placeholder="+91 98290 XXXXX">
+                  </div>
+                  <div class="contact-form-group">
+                    <label>Inquiry Topic <span class="req">*</span></label>
+                    <select name="topic" class="contact-select">
+                      <option value="order">Order Tracking &amp; Insured Dispatch</option>
+                      <option value="bespoke">Bespoke Bridal Jewellery Commission</option>
+                      <option value="sizing">Bangle &amp; Kada Sizing Guidance</option>
+                      <option value="exchange">7-Day Sizing Resizing or Exchange</option>
+                      <option value="corporate">Corporate Gifting &amp; Wholesale</option>
+                      <option value="other">General Customer Care</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="contact-form-group">
+                  <label>Order ID (Optional if already placed)</label>
+                  <input type="text" name="order_id" class="contact-input" placeholder="e.g. AA-948201">
+                </div>
+
+                <div class="contact-form-group">
+                  <label>Your Message / Specifications <span class="req">*</span></label>
+                  <textarea name="message" required class="contact-textarea" placeholder="Please describe your requirements, preferences, or questions in detail..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-gold btn-block" style="padding: 15px; font-size: 0.85rem;">
+                  <i class="ri-send-plane-fill"></i> Dispatch Message to Concierge
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- PANE 2: BRIDAL CONSULTATION -->
+          <div id="tabBridal" class="contact-tab-pane">
+            <div class="contact-card-box">
+              <span class="sub-title"><i class="ri-vip-crown-line"></i> Private Trousseau Styling</span>
+              <h2>Book a Private Bridal Appointment</h2>
+              <p>Reserve a dedicated 1-on-1 virtual styling session or an exclusive private salon appointment at our Jaipur or Mumbai flagship suites.</p>
+
+              <form onsubmit="handleAppointmentSubmit(event)">
+                <div class="contact-form-row">
+                  <div class="contact-form-group">
+                    <label>Bride / Client Name <span class="req">*</span></label>
+                    <input type="text" name="name" required class="contact-input" placeholder="e.g. Ananya Mehra">
+                  </div>
+                  <div class="contact-form-group">
+                    <label>WhatsApp Number <span class="req">*</span></label>
+                    <input type="tel" name="phone" required class="contact-input" placeholder="+91 98765 XXXXX">
+                  </div>
+                </div>
+
+                <div class="contact-form-row">
+                  <div class="contact-form-group">
+                    <label>Appointment Mode <span class="req">*</span></label>
+                    <select name="mode" class="contact-select">
+                      <option value="virtual">Virtual Video Styling (WhatsApp / Google Meet)</option>
+                      <option value="jaipur">In-Person: Jaipur Flagship Atelier (Johari Bazaar)</option>
+                      <option value="mumbai">In-Person: Mumbai Design Salon (Kala Ghoda)</option>
+                    </select>
+                  </div>
+                  <div class="contact-form-group">
+                    <label>Jewellery Focus <span class="req">*</span></label>
+                    <select name="focus" class="contact-select">
+                      <option value="bridal-full">Complete Bridal Trousseau (Kundan &amp; Meenakari)</option>
+                      <option value="bangles">Vijay Bangles &amp; Kadas Custom Stack</option>
+                      <option value="anti-tarnish">Everyday 18K Waterproof Gold Curation</option>
+                      <option value="temple">South Indian Nakshi &amp; Kemp Heirlooms</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="contact-form-row">
+                  <div class="contact-form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" name="preferred_date" class="contact-input">
+                  </div>
+                  <div class="contact-form-group">
+                    <label>Preferred Time Slot</label>
+                    <select name="time_slot" class="contact-select">
+                      <option>Morning (11:00 AM – 1:00 PM)</option>
+                      <option>Afternoon (2:00 PM – 4:00 PM)</option>
+                      <option>Evening (5:00 PM – 7:30 PM)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-gold btn-block" style="padding: 15px; font-size: 0.85rem;">
+                  <i class="ri-calendar-check-line"></i> Reserve Private Consultation Slot
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- PANE 3: TRACK ORDER -->
+          <div id="tabTrackOrder" class="contact-tab-pane">
+            <div class="contact-card-box">
+              <span class="sub-title"><i class="ri-truck-line"></i> Real-Time Telemetry</span>
+              <h2>Track Your Insured Shipment</h2>
+              <p>Enter your 8-digit Aura &amp; Artisan Order ID (e.g. <code>AA-948201</code>) to retrieve live courier telemetry, vault dispatch logs, and delivery estimates.</p>
+
+              <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                <input type="text" id="orderTrackInput" placeholder="Enter Order ID (e.g. AA-948201)" class="contact-input" style="flex: 1;">
+                <button type="button" class="btn btn-gold" onclick="trackLiveOrder()" style="padding: 0 24px;">Track</button>
+              </div>
+              <div id="trackResultMsg"></div>
+
+              <div style="margin-top: 24px; padding: 18px; background: #fdfbf9; border: 1px solid rgba(226, 218, 206, 0.8); border-radius: 6px;">
+                <h4 style="font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 6px; color: #1a1614;">Insured Shipping Partners</h4>
+                <p style="font-size: 0.82rem; color: #6b645c; line-height: 1.5; margin: 0;">
+                  All domestic consignments travel through armed vault transit with <strong>Sequel Secure</strong> and <strong>BlueDart Apex</strong>. Every parcel is tamper-sealed and fully insured by the Maison until signature delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: VISUAL SALONS & CONCIERGE SPOTLIGHT -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+
+          <!-- VIP Stylist Spotlight Card -->
+          <div class="concierge-vip-card">
+            <div class="vip-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Senior Bridal Stylist Portrait" class="vip-avatar-img">
+              <span class="vip-status-dot" title="Stylist is Live Online"></span>
+            </div>
+            <div class="vip-info-box">
+              <span class="vip-title-tag"><i class="ri-vip-diamond-line"></i> Head of Bespoke Concierge</span>
+              <h4>Radhika Singhania</h4>
+              <p style="font-size: 0.78rem; color: #d6d3d1; margin-bottom: 6px;">Available right now for personalized trousseau pairing &amp; kada fit consultations.</p>
+              <a href="https://wa.me/919829012345?text=Hello%20Radhika%2C%20I%20would%20like%20your%20advice%20on%20an%20Aura%20%26%20Artisan%20piece." target="_blank" rel="noopener noreferrer" class="vip-chat-pill">
+                <i class="ri-whatsapp-fill"></i> Connect Directly on WhatsApp &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual Flagship Salons -->
+          <div id="ateliers">
+            <h3 style="font-family: var(--font-serif); font-size: 1.45rem; color: #1a1614; margin-bottom: 14px;">Visit Our Heritage Salons</h3>
+
+            <!-- Salon 1: Jaipur -->
+            <div class="salon-photo-card">
+              <div class="salon-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Jaipur Flagship Atelier Courtyard">
+                <span class="salon-badge-overlay"><i class="ri-copper-diamond-line"></i> Heritage Flagship &bull; Johari Bazaar</span>
+              </div>
+              <div class="salon-card-body">
+                <h4 class="salon-name">Johari Bazaar Flagship Atelier</h4>
+                <p class="salon-address">42 Heritage Jewellers Courtyard, Johari Bazaar, Jaipur, Rajasthan 302003</p>
+                <div class="salon-timing"><i class="ri-time-line"></i> Monday – Saturday: 10:30 AM – 8:00 PM IST</div>
+              </div>
+            </div>
+
+            <!-- Salon 2: Mumbai -->
+            <div class="salon-photo-card">
+              <div class="salon-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Mumbai Design Salon Kala Ghoda">
+                <span class="salon-badge-overlay"><i class="ri-copper-diamond-line"></i> Design Salon &bull; Kala Ghoda</span>
+              </div>
+              <div class="salon-card-body">
+                <h4 class="salon-name">Kala Ghoda Design Salon</h4>
+                <p class="salon-address">18 Ropewalk Lane, Arts &amp; Fashion Precinct, Fort, Mumbai, Maharashtra 400001</p>
+                <div class="salon-timing"><i class="ri-time-line"></i> Tuesday – Sunday: 11:00 AM – 7:30 PM IST</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Promises -->
+          <div class="contact-card-box" style="background: #14110e; color: #ffffff; border-color: rgba(197, 168, 128, 0.35);">
+            <span class="sub-title" style="background: linear-gradient(135deg, #c5a880, #f7e6c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><i class="ri-vip-diamond-line"></i> Maison Commitments</span>
+            <h3 style="color: #ffffff; font-size: 1.45rem;">The Aura &amp; Artisan Promise</h3>
+
+            <ul style="list-style: none; padding: 0; margin-top: 16px; display: flex; flex-direction: column; gap: 14px;">
+              <li style="display: flex; gap: 12px; font-size: 0.82rem; color: #cbd5e1;">
+                <i class="ri-shield-check-fill" style="color: #c5a880; font-size: 1.1rem; flex-shrink: 0;"></i>
+                <span><strong>100% Insured Transit:</strong> Every parcel travels under tamper-evident armed seal with zero liability for you.</span>
+              </li>
+              <li style="display: flex; gap: 12px; font-size: 0.82rem; color: #c5a880; font-size: 1.1rem; flex-shrink: 0;"></i>
+                <span><strong>7-Day Sizing Resizing:</strong> Free doorstep exchange if your kada or bangle size requires adjustment.</span>
+              </li>
+              <li style="display: flex; gap: 12px; font-size: 0.82rem; color: #c5a880; font-size: 1.1rem; flex-shrink: 0;"></i>
+                <span><strong>Lifetime Anti-Tarnish:</strong> 18K aerospace PVD gold is backed against discoloration and tarnish.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FAQ ACCORDION SECTION -->
+      <div class="contact-card-box" style="margin-top: 10px;">
+        <div class="section-header text-center" style="margin-bottom: 24px;">
+          <span class="sub-title">Client Assistance</span>
+          <h2 class="section-title" style="font-size: 2.2rem;">Frequently Asked Questions</h2>
+          <div class="divider-gem"><i class="ri-vip-diamond-line"></i></div>
+        </div>
+
+        <div class="contact-faqs-wrap">
+          <div class="faq-accordion-item open">
+            <div class="faq-q" onclick="toggleContactFaq(this)">
+              <span>How do I book a private bridal styling consultation?</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-a">
+              You can click on the "Book Bridal Appointment" tab above, or chat with our VIP WhatsApp stylist. We offer both virtual styling sessions (via high-definition video with color swatch previews) and private in-person appointments at our Jaipur and Mumbai salons.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-q" onclick="toggleContactFaq(this)">
+              <span>How can I be certain of my bangle or kada size before ordering?</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-a">
+              We provide an interactive Bangles Sizing Studio (<a href="bangles-guide.html" style="color: #9e7f53; text-decoration: underline;">view sizing guide</a>) with printable measurement templates and wrist circumference calculators. If you are still unsure, our stylists can guide you via WhatsApp, and all kadas come with our complimentary 7-day sizing exchange guarantee.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-q" onclick="toggleContactFaq(this)">
+              <span>How are orders dispatched and insured?</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-a">
+              Every shipment is packed under tamper-evident holographic security seals and dispatched via specialized high-value logistics partners (Sequel Secure and BlueDart Apex). 100% of the transit value is insured by Aura &amp; Artisan until you sign upon delivery.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <div class="faq-q" onclick="toggleContactFaq(this)">
+              <span>Does your 18K anti-tarnish jewelry survive water and perfume?</span>
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <div class="faq-a">
+              Yes. Our everyday demi-fine pieces are coated with 10x thicker 18K vacuum PVD gold over surgical-grade 316L stainless steel. They are completely sweatproof, waterproof, and gym-safe with zero green skin discoloration.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 6. FOOTER -->
+  <footer class="luxury-maison-footer">
+    <div class="footer-pillars-bar">
+      <div class="container footer-pillars-grid">
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-medal-line"></i></div>
+          <div class="fp-text">
+            <strong>100% Certified Karigari</strong>
+            <span>BIS Hallmarked &amp; 18K Aerospace PVD Gold</span>
+          </div>
+        </div>
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-fire-line"></i></div>
+          <div class="fp-text">
+            <strong>Jaipur Enameling Legacy</strong>
+            <span>800°C Kiln-fired Meenakari &amp; uncut Polki</span>
+          </div>
+        </div>
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-shield-check-line"></i></div>
+          <div class="fp-text">
+            <strong>Lifetime Color Warranty</strong>
+            <span>Waterproof &amp; zero skin green discoloration</span>
+          </div>
+        </div>
+        <div class="footer-pillar-item">
+          <div class="fp-icon-wrap"><i class="ri-truck-line"></i></div>
+          <div class="fp-text">
+            <strong>White-Glove Insured Delivery</strong>
+            <span>Tamper-evident luxury unboxing across India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-newsletter-wrap">
+      <span class="fn-badge">Privilege Membership</span>
+      <h3 class="fn-title">Enter The Maison Circle</h3>
+      <p class="fn-desc">Receive private invitations to limited Jaipur bridal drops, secret salon viewings, and a complimentary ₹500 voucher on your first acquisition.</p>
+      <form class="fn-form" onsubmit="handleNewsletterSubmit(event)">
+        <div class="fn-input-group">
+          <input type="email" placeholder="Enter your email address for private access..." required>
+          <button type="submit" class="btn btn-gold">Join The Circle</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container footer-columns-grid">
+      <div class="f-col">
+        <span class="f-brand-title">AURA &amp; ARTISAN</span>
+        <p class="f-brand-desc">Haute Joaillerie &amp; modern demi-fine atelier rooted in the royal jeweler traditions of Johari Bazaar, Jaipur and the contemporary minimalism of Mumbai.</p>
+        <div class="f-socials">
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
+          <a href="#" aria-label="WhatsApp Concierge"><i class="ri-whatsapp-line"></i></a>
+        </div>
+      </div>
+
+      <div class="f-col">
+        <h4>High Jewellery &amp; Bridal</h4>
+        <ul class="f-links">
+          <li><a href="collections.html?cat=kundan">Pachi Kundan Chokers</a></li>
+          <li><a href="collections.html?cat=kundan">Jadau &amp; Polki Bridal Sets</a></li>
+          <li><a href="bangles-guide.html">Meera Meenakari Bangles</a></li>
+          <li><a href="collections.html?cat=oxidized">Feeling Chhail Tribal Silver</a></li>
+          <li><a href="collections.html?cat=temple">Temple Antique Curations</a></li>
+          <li><a href="contact.html">Bespoke Bridal Salon Booking</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col">
+        <h4>Everyday Demi-Fine</h4>
+        <ul class="f-links">
+          <li><a href="anti-tarnish.html">Waterproof Clover Series</a></li>
+          <li><a href="anti-tarnish.html">18K PVD Layering Chains</a></li>
+          <li><a href="anti-tarnish.html">Hypoallergenic Chunky Hoops</a></li>
+          <li><a href="anti-tarnish.html">Stackable Signet &amp; Dome Rings</a></li>
+          <li><a href="collections.html?cat=men">Swashaa Men's Luxe Edit</a></li>
+          <li><a href="about.html">PVD Science &amp; Metallurgy</a></li>
+        </ul>
+      </div>
+
+      <div class="f-col f-contact-box">
+        <h4>Maison &amp; Client Care</h4>
+        <ul class="f-links">
+          <li><a href="about.html">About Us &amp; Heritage</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="contact.html#track-order">Track Insured Shipment</a></li>
+          <li><a href="bangles-guide.html">Interactive Sizing Studio</a></li>
+          <li><a href="contact.html">Contact Us &amp; Salons</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-flex">
+        <div class="f-bottom-left">
+          <p>&copy; 2026 AURA &amp; ARTISAN JEWELLERS PVT. LTD. ALL RIGHTS RESERVED &bull; HALLMARKED UNDER BIS REGULATIONS.</p>
+          <div class="f-legal-links">
+            <a href="about.html">About Us</a>
+            <span class="sep">&bull;</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="sep">&bull;</span>
+            <a href="terms-conditions.html">Terms &amp; Conditions</a>
+            <span class="sep">&bull;</span>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="f-payment-badges">
+          <span class="f-pay-tag"><i class="ri-bank-card-line"></i> UPI &amp; Netbanking</span>
+          <span class="f-pay-tag"><i class="ri-visa-line"></i> Visa</span>
+          <span class="f-pay-tag"><i class="ri-mastercard-line"></i> MasterCard</span>
+          <span class="f-pay-tag">American Express</span>
+          <span class="f-pay-tag"><i class="ri-currency-line"></i> Cash on Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LUXURY SEARCH MODAL -->
+  <div class="search-modal-backdrop" id="searchModalBackdrop" onclick="closeSearch()"></div>
+  <div class="luxury-search-modal" id="luxurySearchModal">
+    <div class="search-modal-top">
+      <i class="ri-search-line"></i>
+      <input type="text" id="luxurySearchInput" placeholder="Search Meenakari bangles, clover bracelets, Kundan chokers..." autocomplete="off">
+      <button class="modal-close-btn" onclick="closeSearch()" aria-label="Close Search"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="search-quick-tags">
+      <span>Trending Curations:</span>
+      <button type="button" onclick="quickSearch('Meenakari')">Meera Bangles</button>
+      <button type="button" onclick="quickSearch('Clover')">18K Clover</button>
+      <button type="button" onclick="quickSearch('Kundan')">Pachi Kundan</button>
+      <button type="button" onclick="quickSearch('Silver')">Chhail Silver</button>
+      <button type="button" onclick="quickSearch('Waterproof')">Anti-Tarnish Daily</button>
+    </div>
+    <div class="search-results-box" id="searchResultsContainer">
+      <div class="search-empty-prompt">
+        <span>Type to search our Jaipur heritage &amp; demi-fine collections...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST SLIDE-OVER DRAWER -->
+  <div class="wishlist-drawer-overlay" id="wishlistOverlay" onclick="closeWishlist()"></div>
+  <aside class="wishlist-drawer" id="wishlistDrawer" aria-label="Saved Wishlist">
+    <div class="wishlist-drawer-header">
+      <div class="cd-title-wrap">
+        <h3>Saved Pieces</h3>
+        <span class="cd-count-tag" id="wishlistDrawerCount">3 Saved</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeWishlist()" aria-label="Close Wishlist"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="wishlist-items-list" id="wishlistItemsContainer"></div>
+    <div class="wishlist-drawer-footer">
+      <button class="btn btn-gold btn-block" onclick="addAllWishlistToBag()">
+        <i class="ri-shopping-bag-line"></i> Move All Pieces to Bag
+      </button>
+    </div>
+  </aside>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cd-title-wrap">
+        <h3>Your Shopping Bag</h3>
+        <span class="cd-count-tag" id="drawerItemCount">2 Items</span>
+      </div>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Close Cart"><i class="ri-close-line"></i></button>
+    </div>
+
+    <div class="cart-shipping-bar">
+      <div class="shipping-info">
+        <i class="ri-truck-line"></i>
+        <span id="shippingGoalText">Add ₹201 more to unlock <strong>FREE Express Insured Shipping!</strong></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="shippingProgressFill" style="width: 82%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-items-list" id="cartItemsContainer"></div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-coupon-box">
+        <input type="text" id="couponCodeInput" placeholder="Enter coupon code (ROYAL10)">
+        <button class="btn-apply-coupon" onclick="applyCoupon()">Apply</button>
+      </div>
+
+      <div class="cart-totals">
+        <div class="tot-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₹4,149</span>
+        </div>
+        <div class="tot-row text-green" id="discountRow" style="display: none;">
+          <span>Discount Applied</span>
+          <span id="cartDiscount">-₹415</span>
+        </div>
+        <div class="tot-row">
+          <span>Estimated Insured Shipping</span>
+          <span class="free-text" id="shippingCost">FREE</span>
+        </div>
+        <div class="tot-row grand-total">
+          <span>Estimated Total</span>
+          <span id="cartGrandTotal">₹4,149</span>
+        </div>
+      </div>
+
+      <button class="btn btn-gold btn-block checkout-btn" onclick="proceedToCheckout()">
+        <i class="ri-lock-2-line"></i> Secure Checkout &bull; Pay via UPI/Card/COD
+      </button>
+
+      <div class="cart-trust-badges">
+        <span><i class="ri-shield-check-line"></i> 256-Bit SSL Encrypted</span>
+        <span><i class="ri-arrow-go-back-line"></i> 7-Day Doorstep Returns</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FLOATING WHATSAPP VIP CONCIERGE BUTTON (Right Bottom Corner) -->
+  <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection." 
+     class="whatsapp-float-btn" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     aria-label="Chat on WhatsApp with VIP Concierge"
+     title="Chat with Jewellery Concierge">
+    <div class="whatsapp-pulse"></div>
+    <i class="ri-whatsapp-fill"></i>
+    <span class="whatsapp-tooltip">Chat with Concierge</span>
+  </a>
+
+  <script src="app.js?v=3.2"></script>
+</body>
+</html>

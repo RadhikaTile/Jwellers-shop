@@ -1671,7 +1671,7 @@ body.mode-wireframe .wireframe-annotation-hero {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 82%;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -8156,4 +8156,46 @@ body.mode-wireframe .sizing-tool-card::before {
   font-size: 1.3rem !important;
   flex-shrink: 0;
   margin-top: 1px;
+}
+
+
+/* ==========================================================================
+   GLOBAL TOP-CROP FOR EARRINGS IMAGE (photo-1617038220319-276d3cfab638)
+   Crops out empty top studio wall so the gold earrings on the stone are in full focus
+   ========================================================================== */
+img[src*="photo-1617038220319-276d3cfab638"] {
+  object-fit: cover !important;
+  object-position: center 82% !important;
+}
+
+.hero-model-card .hero-featured-model-img {
+  object-fit: cover !important;
+  object-position: center 82% !important;
+}
+
+.mega-img-wrap img[src*="photo-1617038220319-276d3cfab638"] {
+  object-fit: cover !important;
+  object-position: center 80% !important;
+}
+
+.product-img-wrap img[src*="photo-1617038220319-276d3cfab638"] {
+  object-fit: cover !important;
+  object-position: center 82% !important;
+}
+
+.hotspot-main-img[src*="photo-1617038220319-276d3cfab638"] {
+  object-fit: cover !important;
+  object-position: center 82% !important;
+}
+
+.hero-model-card .hero-float-badge {
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 10px 14px;
+  background: rgba(15, 21, 19, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  z-index: 3;
 }

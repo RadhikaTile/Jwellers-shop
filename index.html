@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5.0">
+  <link rel="stylesheet" href="styles.css?v=5.1">
     <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -293,7 +293,15 @@
         </svg>
       </a>
 
-      <nav class="desktop-nav" id="desktopNav">
+            <nav class="desktop-nav" id="desktopNav">
+        <!-- Mobile & Tablet Slide Drawer Header -->
+        <div class="mobile-drawer-header">
+          <div class="mobile-drawer-brand">
+            <span>Aura &amp; Artisan</span>
+            <small>Haute Joaillerie &bull; Jaipur</small>
+          </div>
+          <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation">&times;</button>
+        </div>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li class="has-mega-menu">
@@ -356,7 +364,20 @@
           <li><a href="bangles-guide.html" class="nav-link">Meenakari Bangles</a></li>
           <li><a href="about.html" class="nav-link">The Craft</a></li>
           <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-        </ul>
+                </ul>
+        <!-- Mobile & Tablet Slide Drawer Footer -->
+        <div class="mobile-drawer-footer">
+          <a href="https://wa.me/919876543210?text=Hello%20Aura%20and%20Artisan" class="drawer-wa-btn" target="_blank" rel="noopener">
+            <i class="ri-whatsapp-line"></i> Order via WhatsApp
+          </a>
+          <div class="drawer-sublinks">
+            <a href="contact.html">Track Order</a>
+            <span>&bull;</span>
+            <a href="contact.html">Boutiques</a>
+            <span>&bull;</span>
+            <a href="contact.html">Concierge</a>
+          </div>
+        </div>
       </nav>
 
       <div class="header-actions">

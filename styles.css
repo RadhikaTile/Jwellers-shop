@@ -489,6 +489,12 @@ h1, h2, h3, h4, .brand-title {
   padding: 0 16px;
 }
 
+/* Drawer Header and Footer are strictly hidden on Desktop (> 1400px) */
+.mobile-drawer-header,
+.mobile-drawer-footer {
+  display: none !important;
+}
+
 .desktop-nav .nav-links {
   display: flex;
   list-style: none;
@@ -772,10 +778,102 @@ h1, h2, h3, h4, .brand-title {
     border-right: 1px solid rgba(197, 168, 128, 0.25);
   }
 
-  /* Hide any legacy injected drawer header/footer */
-  .drawer-header,
-  .drawer-footer {
-    display: none !important;
+  /* Mobile Drawer Header with Safe-Area & Close Button */
+  .mobile-drawer-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: max(20px, env(safe-area-inset-top, 24px)) 18px 16px 18px !important;
+    background: #faf8f5 !important;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.25) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    flex-shrink: 0 !important;
+  }
+  .mobile-drawer-brand {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .mobile-drawer-brand span {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 2.2px !important;
+    color: #141210 !important;
+    text-transform: uppercase !important;
+    line-height: 1.2 !important;
+  }
+  .mobile-drawer-brand small {
+    font-size: 0.65rem !important;
+    letter-spacing: 1.5px !important;
+    color: #9a7647 !important;
+    text-transform: uppercase !important;
+  }
+  .mobile-drawer-close {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(197, 168, 128, 0.35) !important;
+    background: #ffffff !important;
+    color: #1a1614 !important;
+    font-size: 1.4rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    transition: all 0.2s ease !important;
+  }
+  .mobile-drawer-close:hover {
+    background: #1a1614 !important;
+    color: #ffffff !important;
+    border-color: #1a1614 !important;
+  }
+
+  /* Mobile Drawer Footer with WhatsApp Concierge */
+  .mobile-drawer-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 20px 18px max(24px, env(safe-area-inset-bottom, 24px)) 18px !important;
+    margin-top: auto !important;
+    border-top: 1px solid rgba(197, 168, 128, 0.25) !important;
+    background: #faf8f5 !important;
+    flex-shrink: 0 !important;
+  }
+  .drawer-wa-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: #25d366 !important;
+    color: #ffffff !important;
+    padding: 11px 16px !important;
+    border-radius: 8px !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25) !important;
+  }
+  .drawer-wa-btn i {
+    font-size: 1.15rem !important;
+  }
+  .drawer-sublinks {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    font-size: 0.78rem !important;
+    color: #7a7067 !important;
+  }
+  .drawer-sublinks a {
+    color: #5a524a !important;
+    text-decoration: none !important;
+  }
+  .drawer-sublinks a:hover {
+    color: #9a7647 !important;
   }
 
   /* Drawer Nav Links */

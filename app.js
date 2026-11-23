@@ -248,6 +248,15 @@ function initMobileDrawer() {
 
   backdrop.addEventListener('click', closeMobileNav);
 
+  // Close on dedicated drawer close button
+  const drawerCloseBtn = document.getElementById('mobileDrawerClose');
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMobileNav();
+    });
+  }
+
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && desktopNav.classList.contains('mobile-open')) {

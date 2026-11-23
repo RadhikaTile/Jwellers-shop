@@ -1045,8 +1045,127 @@ function handleNewsletterSubmit(e) {
 }
 
 // -----------------------------------------------------------------------------
-// 15. CATALOG SORT & FILTER HELPERS
+// 15. COMPREHENSIVE HAUTE JOAILLERIE CATALOG & CATEGORY ENGINE
 // -----------------------------------------------------------------------------
+
+const categoryMetadata = {
+  'all': {
+    title: 'Timeless Heirlooms & Modern Essentials',
+    subhead: 'Complete Curated Portfolio',
+    desc: 'Explore hand-enamelled Jaipuri Meenakari bangles, uncut Pachi Kundan bridal sets, and sweatproof 18K gold daily jewellery.',
+    badge: '15 Curated Universes',
+    bannerImg: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=85'
+  },
+  'meenakari': {
+    title: 'Vijay Meenakari Royal Bangles & Kadas',
+    subhead: '800°C Kiln-Fired Enamel • Johari Bazaar Heritage',
+    desc: 'Handcrafted in Jaipur with vibrant peacock blue and ruby red vitreous enameling, designed for heirloom durability and comfortable daily screw-lock wear.',
+    badge: 'Jaipur Karigari',
+    bannerImg: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1920&q=85'
+  },
+  'kundan': {
+    title: 'Sawwaisa Pachi Kundan & Polki Bridal Sets',
+    subhead: 'Sawwaisa / Khazana Royal Rajputana Edit',
+    desc: 'Hand-set uncut Polki gems in 24K pure gold foil, backed with intricate red and green Meenakari etching for timeless regal weddings.',
+    badge: 'Rajputana Heritage',
+    bannerImg: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1920&q=85'
+  },
+  'anti-tarnish': {
+    title: '18K Waterproof Everyday Anti-Tarnish Gold',
+    subhead: 'Raviva / Chahana / Arika Modern Edit',
+    desc: 'Vacuum PVD plated 18K gold over surgical steel and brass. Guaranteed 100% sweatproof, perfume-safe, and zero green skin discoloration.',
+    badge: 'Lifetime Guarantee',
+    bannerImg: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1920&q=85'
+  },
+  'oxidized': {
+    title: 'Feeling Chhail 925 Tribal Silver & Chandbalis',
+    subhead: 'Chhail Rajasthani Tribal Karigari',
+    desc: 'Antique dual-tone oxidized 925 hallmarked silver featuring mirror ghungroos, carved deity motifs, and bohemian statement earwear.',
+    badge: '925 Hallmarked',
+    bannerImg: 'https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?auto=format&fit=crop&w=1920&q=85'
+  },
+  'men': {
+    title: "Swashaa Men's Luxe & Unisex Chains",
+    subhead: 'Swashaa Minimalist Architectural Series',
+    desc: 'Beveled Cuban links, brushed matte titanium signet rings, and sleek stainless steel cuffs engineered with ergonomic daily weight balance.',
+    badge: 'Modern Minimalism',
+    bannerImg: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1920&q=85'
+  },
+  'pearls': {
+    title: 'Nazaakat Basra Pearls & Nizami Court Jewels',
+    subhead: 'Nazaakat Royal Nizami Curation',
+    desc: 'Hand-strung natural baroque Basra pearls layered with uncut polki separators, emerald drops, and multi-strand grand rani haars.',
+    badge: 'Basra Heirlooms',
+    bannerImg: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1920&q=85'
+  },
+  'temple': {
+    title: 'South Indian Temple Nakshi & Kemp Heirlooms',
+    subhead: 'Chola Devotional Repoussé Craft',
+    desc: 'Deep repoussé nakshi work portraying Goddess Lakshmi and peacocks, adorned with ruby kemp stones and antique gold patina.',
+    badge: 'Chola Dynasty',
+    bannerImg: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1920&q=85'
+  },
+  'diamonds': {
+    title: 'Solitaire Noir VVS Lab Diamond Classics',
+    subhead: 'Paris Atelier High Jewellery',
+    desc: 'Type IIa certified lab-grown diamonds set in 18K solid gold and platinum settings with maximum optical fire and scintillation.',
+    badge: 'Certified VVS',
+    bannerImg: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=85'
+  },
+  'talismans': {
+    title: 'Noor Mother-of-Pearl Evil Eye Talismans',
+    subhead: 'Mediterranean & Vedic Amulets',
+    desc: 'Hand-carved mother-of-pearl, Greek sapphire crystals, and protective astral symbols set in water-resistant 18K PVD gold chains.',
+    badge: 'Amulets of Protection',
+    bannerImg: 'https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=1920&q=85'
+  },
+  'bangles': {
+    title: 'Imperial Bridal Chuda & Marwar Kadas',
+    subhead: 'Punjab & Marwar Wedding Heirlooms',
+    desc: 'Traditional crimson and ivory acrylic chuda paired with hand-latkan pearl drops and 24K micro-gold bridal bangles.',
+    badge: 'Bridal Heritage',
+    bannerImg: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=85'
+  },
+  'navratna': {
+    title: 'Navratna Nine-Gem Vedic Astral Heirlooms',
+    subhead: 'Vedic Astrological Royal Settings',
+    desc: 'All nine sacred Vedic planetary gemstones meticulously arranged in balanced astrological harmony with 22K gold foil setting.',
+    badge: 'Vedic Astrology',
+    bannerImg: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1920&q=85'
+  },
+  'rosegold': {
+    title: 'Gulabi Jaipur 18K Rose Gold & Tourmaline',
+    subhead: 'Pink City Pastel Atelier',
+    desc: 'Romantic blush pink tourmaline baguettes and warm rose gold settings that blend modern minimalism with Indian grandeur.',
+    badge: 'Pink City Atelier',
+    bannerImg: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=1920&q=85'
+  },
+  'hathphool': {
+    title: 'Rajkumari Jadau Hathphool & Royal Hand Jewels',
+    subhead: 'Rajputana Hand Heirlooms',
+    desc: 'Triple-chain hand ornament articulating from a delicate wrist kada to five adjustable rings with uncut polki florets.',
+    badge: 'Handcrafted Regalia',
+    bannerImg: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1920&q=85'
+  },
+  'moissanite': {
+    title: 'Dewdrop D-Color VVS1 Moissanite Solitaires',
+    subhead: 'Certified Diamond Alternate',
+    desc: 'Flawless optical dispersion surpassing earth-mined diamonds with a hardness of 9.25 Mohs, set in rhodium-plated sterling silver.',
+    badge: 'D-Color Flawless',
+    bannerImg: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=85'
+  },
+  'hair-jewels': {
+    title: 'Noor-E-Passa, Maang Tikka & Matha Patti',
+    subhead: 'Mughal & Nizami Royal Headwear',
+    desc: 'Jhumar passas, crescent moon tikkas, and multi-strand pearl matha pattis crafted for unforgettable bridal crowning moments.',
+    badge: 'Nizami Court',
+    bannerImg: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1920&q=85'
+  }
+};
+
+let currentActiveCategory = 'all';
+let currentSearchQuery = '';
+
 function sortCatalog(sortVal) {
   const grid = document.getElementById('catalogGrid');
   if (!grid) return;
@@ -1055,73 +1174,172 @@ function sortCatalog(sortVal) {
   
   if (sortVal === 'price-low') {
     cards.sort((a, b) => {
-      const pa = parseInt(a.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10);
-      const pb = parseInt(b.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10);
+      const pa = parseInt(a.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10) || 0;
+      const pb = parseInt(b.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10) || 0;
       return pa - pb;
     });
   } else if (sortVal === 'price-high') {
     cards.sort((a, b) => {
-      const pa = parseInt(a.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10);
-      const pb = parseInt(b.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10);
+      const pa = parseInt(a.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10) || 0;
+      const pb = parseInt(b.querySelector('.price-current').textContent.replace(/[^\d]/g, ''), 10) || 0;
       return pb - pa;
     });
+  } else if (sortVal === 'rating') {
+    cards.sort((a, b) => (b.dataset.rating || 5) - (a.dataset.rating || 5));
   }
 
   cards.forEach(card => grid.appendChild(card));
-  showToast(`Catalog sorted by ${sortVal}`);
+  showToast('Catalog sorted by ' + sortVal);
 }
 
 function filterCategory(cat) {
+  currentActiveCategory = cat || 'all';
   const cards = document.querySelectorAll('.product-card');
-  let count = 0;
+  let visibleCount = 0;
+
   cards.forEach(card => {
-    if (cat === 'all' || card.dataset.category === cat) {
+    const matchesCat = (cat === 'all' || card.dataset.category === cat);
+    const cardText = card.textContent.toLowerCase();
+    const matchesSearch = !currentSearchQuery || cardText.includes(currentSearchQuery);
+
+    if (matchesCat && matchesSearch) {
       card.style.display = 'flex';
-      count++;
+      visibleCount++;
     } else {
       card.style.display = 'none';
     }
   });
 
-  // Sync sidebar checkboxes
-  const checkboxes = document.querySelectorAll('.catalog-sidebar .filter-checkbox input');
-  checkboxes.forEach(cb => {
-    const onchangeAttr = cb.getAttribute('onchange') || '';
-    if (onchangeAttr.includes(`'${cat}'`)) {
-      cb.checked = true;
-    } else if (cat !== 'all') {
-      cb.checked = false;
+  // 1. Sync category pills in top story bar
+  const pillButtons = document.querySelectorAll('.category-pill-card');
+  pillButtons.forEach(btn => {
+    if (btn.dataset.cat === cat) {
+      btn.classList.add('active');
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } else {
+      btn.classList.remove('active');
     }
   });
 
+  // 2. Sync sidebar checkboxes
+  const checkboxes = document.querySelectorAll('.catalog-sidebar .filter-checkbox input');
+  checkboxes.forEach(cb => {
+    const onchangeAttr = cb.getAttribute('onchange') || '';
+    if (cat === 'all') {
+      cb.checked = onchangeAttr.includes("'all'");
+    } else {
+      cb.checked = onchangeAttr.includes("'" + cat + "'");
+    }
+  });
+
+  // 3. Update count elements
   const countEl = document.querySelector('.item-count-text strong');
   if (countEl) {
-    countEl.textContent = `${count} Designs`;
+    countEl.textContent = visibleCount + ' Designs';
   }
 
-  const categoryNames = {
-    'all': 'All Collections',
-    'meenakari': 'Vijay Meenakari Bangles',
-    'kundan': 'Sawwaisa Pachi Kundan',
-    'anti-tarnish': '18K Waterproof Gold',
-    'oxidized': 'Chhail Oxidized Silver',
-    'men': "Swashaa Men's Luxe",
-    'pearls': 'Nazaakat Basra Pearls',
-    'temple': 'South Indian Temple & Kemp',
-    'diamonds': 'Solitaire Lab Diamonds',
-    'talismans': 'Noor Evil Eye Talismans',
-    'bangles': 'Imperial Bridal Chuda',
-    'navratna': 'Navratna Vedic Astral Gems',
-    'rosegold': 'Gulabi Rose Gold Heirlooms',
-    'hathphool': 'Rajkumari Jadau Hathphool',
-    'moissanite': 'Dewdrop VVS1 Moissanite',
-    'hair-jewels': 'Noor-E-Passa & Matha Patti'
-  };
+  // 4. Update Hero Banner dynamically if on collections page
+  const meta = categoryMetadata[cat] || categoryMetadata['all'];
+  const heroTitle = document.querySelector('.catalog-hero-text .hero-title');
+  const heroSubhead = document.querySelector('.catalog-hero-text .hero-subhead');
+  const heroDesc = document.querySelector('.catalog-hero-text .hero-desc');
+  const heroBanner = document.querySelector('.catalog-hero-banner');
 
-  showToast(`Showing: ${categoryNames[cat] || cat}`);
+  if (heroTitle) heroTitle.textContent = meta.title;
+  if (heroSubhead) heroSubhead.innerHTML = '<i class="ri-vip-diamond-line"></i> ' + meta.subhead;
+  if (heroDesc) heroDesc.textContent = meta.desc;
+  if (heroBanner && meta.bannerImg) {
+    heroBanner.style.backgroundImage = 'linear-gradient(to right, rgba(15,21,19,0.92), rgba(15,21,19,0.4)), url("' + meta.bannerImg + '")';
+  }
+
+  // 5. Update breadcrumbs
+  const breadcrumbSpan = document.querySelector('.breadcrumbs span');
+  if (breadcrumbSpan) {
+    breadcrumbSpan.textContent = cat === 'all' ? 'All Collections' : (meta.title.split('&')[0].trim());
+  }
+
+  // 6. Update Active Filter Chips Bar
+  const chipsBar = document.getElementById('activeFiltersBar');
+  const chipsContainer = document.getElementById('activeFilterChips');
+  if (chipsBar && chipsContainer) {
+    if (cat === 'all' && !currentSearchQuery) {
+      chipsBar.style.display = 'none';
+      chipsContainer.innerHTML = '';
+    } else {
+      chipsBar.style.display = 'flex';
+      let chipsHtml = '';
+      if (cat !== 'all') {
+        chipsHtml += '<span class="filter-chip"><span>Universe:</span> ' + (categoryMetadata[cat]?.badge || cat) + ' <button onclick="filterCategory(\'all\')" aria-label="Remove category filter">&times;</button></span>';
+      }
+      if (currentSearchQuery) {
+        chipsHtml += '<span class="filter-chip"><span>Search:</span> "' + currentSearchQuery + '" <button onclick="clearCatalogSearch()" aria-label="Clear search">&times;</button></span>';
+      }
+      chipsContainer.innerHTML = chipsHtml;
+    }
+  }
+
+  // 7. Toggle Empty State
+  const emptyState = document.getElementById('catalogEmptyState');
+  if (emptyState) {
+    emptyState.style.display = (visibleCount === 0) ? 'flex' : 'none';
+  }
+
+  // 8. Update URL query without full reload
+  if (window.history && window.history.replaceState) {
+    const url = new URL(window.location);
+    if (cat === 'all') {
+      url.searchParams.delete('cat');
+    } else {
+      url.searchParams.set('cat', cat);
+    }
+    window.history.replaceState({}, '', url);
+  }
+
+  showToast('Viewing: ' + (categoryMetadata[cat]?.title ? categoryMetadata[cat].title.split('&')[0].trim() : cat));
 }
 
-// Check URL search parameters on catalog page load
+// Horizontal category scroll buttons
+function scrollCategoryPills(dir) {
+  const container = document.getElementById('categoryPillsScroll');
+  if (!container) return;
+  const scrollAmount = 320;
+  container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+}
+
+// Live catalog keyword search
+function handleCatalogSearch(query) {
+  currentSearchQuery = (query || '').trim().toLowerCase();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) {
+    clearBtn.style.display = currentSearchQuery ? 'inline-flex' : 'none';
+  }
+  filterCategory(currentActiveCategory);
+}
+
+function clearCatalogSearch() {
+  const input = document.getElementById('catalogSearchInput');
+  if (input) input.value = '';
+  handleCatalogSearch('');
+}
+
+// Mobile sidebar drawer toggle
+function toggleMobileSidebar() {
+  const sidebar = document.querySelector('.catalog-sidebar');
+  const backdrop = document.getElementById('sidebarMobileBackdrop');
+  if (!sidebar) return;
+  const isOpen = sidebar.classList.contains('mobile-open');
+  if (isOpen) {
+    sidebar.classList.remove('mobile-open');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  } else {
+    sidebar.classList.add('mobile-open');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Initialize on DOM load
 window.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const catParam = urlParams.get('cat');

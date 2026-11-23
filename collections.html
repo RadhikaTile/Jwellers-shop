@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7.2">
+  <link rel="stylesheet" href="styles.css?v=7.3">
   <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -338,7 +338,7 @@
         <a href="index.html" class="ux-notes-btn"><i class="ri-home-line"></i> Back to Home</a>
       </div>
     </div>
-  </aside>
+</aside>
 
   <!-- 1. ANNOUNCEMENT BAR (Smooth Horizontal Marquee Ticker) -->
   <div class="announcement-bar">
@@ -620,18 +620,204 @@
     </div>
   </section>
 
+  
+  <!-- LUXURY CATEGORY STORIES & UNIVERSE SELECTOR -->
+  <section class="category-stories-section">
+    <div class="container">
+      <div class="category-stories-header">
+        <div class="csh-title-group">
+          <span class="csh-badge"><i class="ri-sparkling-fill"></i> ARCHIVAL &amp; MODERN UNIVERSES</span>
+          <h2 class="csh-title">Explore by Curated Universe</h2>
+        </div>
+        <div class="csh-nav-arrows">
+          <button class="csh-arrow-btn prev" onclick="scrollCategoryPills(-1)" aria-label="Previous Categories"><i class="ri-arrow-left-s-line"></i></button>
+          <button class="csh-arrow-btn next" onclick="scrollCategoryPills(1)" aria-label="Next Categories"><i class="ri-arrow-right-s-line"></i></button>
+        </div>
+      </div>
+      
+      <div class="category-pills-scroll" id="categoryPillsScroll">
+        <button class="category-pill-card active" data-cat="all" onclick="filterCategory('all')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=140&q=80" alt="All Collections" loading="lazy">
+            <span class="pill-status-dot"></span>
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">All Heirlooms</span>
+            <span class="pill-count">15 Curations</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="kundan" onclick="filterCategory('kundan')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=140&q=80" alt="Sawwaisa Pachi Kundan" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Sawwaisa Kundan</span>
+            <span class="pill-count">Royal Bridal</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="meenakari" onclick="filterCategory('meenakari')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=140&q=80" alt="Vijay Meenakari Bangles" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Vijay Meenakari</span>
+            <span class="pill-count">800°C Enamel</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="anti-tarnish" onclick="filterCategory('anti-tarnish')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=140&q=80" alt="18K Waterproof Gold" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">18K Anti-Tarnish</span>
+            <span class="pill-count">Waterproof</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="oxidized" onclick="filterCategory('oxidized')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?auto=format&fit=crop&w=140&q=80" alt="Chhail Tribal Silver" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Chhail Silver</span>
+            <span class="pill-count">925 Tribal</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="men" onclick="filterCategory('men')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=140&q=80" alt="Swashaa Men's Luxe" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Swashaa Men's</span>
+            <span class="pill-count">Unisex Luxe</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="pearls" onclick="filterCategory('pearls')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=140&q=80" alt="Nazaakat Basra Pearls" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Basra Pearls</span>
+            <span class="pill-count">Nizami Court</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="temple" onclick="filterCategory('temple')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=140&q=80" alt="Temple Nakshi" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Temple Nakshi</span>
+            <span class="pill-count">Devotional Kemp</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="diamonds" onclick="filterCategory('diamonds')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=140&q=80" alt="Solitaire Lab Diamonds" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Lab Diamonds</span>
+            <span class="pill-count">VVS Solitaire</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="talismans" onclick="filterCategory('talismans')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=140&q=80" alt="Noor Evil Eye" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Noor Talismans</span>
+            <span class="pill-count">Evil Eye</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="bangles" onclick="filterCategory('bangles')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=140&q=80" alt="Imperial Bridal Chuda" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Bridal Chuda</span>
+            <span class="pill-count">Marwar Sets</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="navratna" onclick="filterCategory('navratna')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=140&q=80" alt="Navratna Vedic Gems" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Navratna Vedic</span>
+            <span class="pill-count">Nine Astral Gems</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="rosegold" onclick="filterCategory('rosegold')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=140&q=80" alt="Gulabi Rose Gold" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Gulabi Rose Gold</span>
+            <span class="pill-count">Tourmaline</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="hathphool" onclick="filterCategory('hathphool')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=140&q=80" alt="Rajkumari Hathphool" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Jadau Hathphool</span>
+            <span class="pill-count">Bridal Hand Suite</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="moissanite" onclick="filterCategory('moissanite')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=140&q=80" alt="Dewdrop Moissanite" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">VVS1 Moissanite</span>
+            <span class="pill-count">D-Color Sparkle</span>
+          </div>
+        </button>
+
+        <button class="category-pill-card" data-cat="hair-jewels" onclick="filterCategory('hair-jewels')">
+          <div class="pill-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=140&q=80" alt="Noor Hair Jewels" loading="lazy">
+          </div>
+          <div class="pill-meta">
+            <span class="pill-title">Passa &amp; Matha Patti</span>
+            <span class="pill-count">Nizami Headwear</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- CATALOG BREADCRUMB & CONTROLS -->
   <div class="catalog-filter-bar">
     <div class="container filter-bar-inner">
       <div class="breadcrumbs">
         <a href="index.html">Home</a> &rsaquo; <span>All Collections</span>
       </div>
+            <div class="catalog-search-wrap">
+        <i class="ri-search-line"></i>
+        <input type="text" id="catalogSearchInput" placeholder="Filter curations by craft, stone, or style..." oninput="handleCatalogSearch(this.value)">
+        <button class="clear-search-btn" id="clearSearchBtn" onclick="clearCatalogSearch()" style="display: none;" aria-label="Clear Search">&times;</button>
+      </div>
       <div class="filter-controls">
-        <span class="item-count-text">Showing <strong>15 Signature Collections & Designs</strong></span>
+        <button class="mobile-filter-toggle-btn" onclick="toggleMobileSidebar()"><i class="ri-equalizer-line"></i> Filter Categories</button>
+        <span class="item-count-text">Showing <strong>15 Designs</strong></span>
         <div class="sort-selector">
           <label for="catalogSort">Sort by:</label>
           <select id="catalogSort" onchange="sortCatalog(this.value)">
-            <option value="featured">Featured & Best Selling</option>
+            <option value="featured">Featured &amp; Best Selling</option>
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
             <option value="rating">Highest Customer Rated</option>
@@ -645,7 +831,12 @@
   <main class="section-padding" style="padding-top: 30px;">
     <div class="container catalog-layout-grid">
       <!-- SIDEBAR FILTERS (Arika & Swashaa inspired) -->
+      <div class="sidebar-mobile-backdrop" id="sidebarMobileBackdrop" onclick="toggleMobileSidebar()"></div>
       <aside class="catalog-sidebar">
+        <div class="sidebar-mobile-header">
+          <h4>Filter Collections</h4>
+          <button class="sidebar-close-btn" onclick="toggleMobileSidebar()" aria-label="Close Filter Drawer">&times;</button>
+        </div>
         <div class="filter-group">
           <h4>Category</h4>
           <label class="filter-checkbox"><input type="checkbox" checked onchange="filterCategory('all')"> All
@@ -704,11 +895,32 @@
           <p>Book a complimentary 1-on-1 virtual styling session with our Jaipur jewellery consultants.</p>
           <a href="contact.html" class="link-arrow">Book Appointment &rarr;</a>
         </div>
+        <div class="sidebar-mobile-footer">
+          <button class="btn btn-gold btn-block" onclick="toggleMobileSidebar()">Apply Filters</button>
+        </div>
       </aside>
 
       <!-- CATALOG PRODUCT GRID -->
       <section class="catalog-products-col">
+        <!-- ACTIVE FILTER CHIPS BAR -->
+        <div class="active-filters-bar" id="activeFiltersBar" style="display: none;">
+          <span class="af-label">Active Filter:</span>
+          <div class="af-chips" id="activeFilterChips"></div>
+          <button class="af-clear-all" onclick="filterCategory('all')">Clear All</button>
+        </div>
+
         <div class="product-grid" id="catalogGrid">
+          <!-- Empty Search/Filter State -->
+          <div class="catalog-empty-state" id="catalogEmptyState" style="display: none;">
+            <div class="ces-icon"><i class="ri-sparkling-2-line"></i></div>
+            <h3>No Heirlooms Found in this Curation</h3>
+            <p>We couldn't find any designs matching your selected filters. Explore our full archival directory or contact our personal jewelry concierge.</p>
+            <div class="ces-actions">
+              <button class="btn btn-gold" onclick="filterCategory('all')">View All 15 Collections</button>
+              <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20looking%20for%20a%20custom%20jewellery%20design" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp Bespoke Styling</a>
+            </div>
+          </div>
+
           <!-- Product cards rendered dynamically or populated -->
           <!-- Card 1 -->
           <div class="product-card" data-category="meenakari">
@@ -730,8 +942,14 @@
                 <span class="price-original">₹3,999</span>
                 <span class="discount-pill">29% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -755,8 +973,14 @@
                 <span class="price-original">₹1,899</span>
                 <span class="discount-pill">31% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -781,8 +1005,14 @@
                 <span class="price-original">₹7,200</span>
                 <span class="discount-pill">31% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -806,8 +1036,14 @@
                 <span class="price-original">₹1,999</span>
                 <span class="discount-pill">27% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -831,8 +1067,14 @@
                 <span class="price-original">₹2,299</span>
                 <span class="discount-pill">28% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -857,8 +1099,14 @@
                 <span class="price-original">₹4,890</span>
                 <span class="discount-pill">29% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -882,8 +1130,14 @@
                 <span class="price-original">₹5,999</span>
                 <span class="discount-pill">30% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -908,8 +1162,14 @@
                 <span class="price-original">₹8,500</span>
                 <span class="discount-pill">31% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -934,8 +1194,14 @@
                 <span class="price-original">₹1,699</span>
                 <span class="discount-pill">32% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -960,8 +1226,14 @@
                 <span class="price-original">₹3,800</span>
                 <span class="discount-pill">28% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -986,8 +1258,14 @@
                 <span class="price-original">₹8,200</span>
                 <span class="discount-pill">29% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -1012,8 +1290,14 @@
                 <span class="price-original">₹4,900</span>
                 <span class="discount-pill">30% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -1038,8 +1322,14 @@
                 <span class="price-original">₹5,800</span>
                 <span class="discount-pill">27% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -1064,8 +1354,14 @@
                 <span class="price-original">₹9,500</span>
                 <span class="discount-pill">33% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
 
@@ -1090,8 +1386,14 @@
                 <span class="price-original">₹4,500</span>
                 <span class="discount-pill">30% OFF</span>
               </div>
-              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product
-                Details</a>
+              <div class="card-action-group">
+                <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Details</a>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20this%20design" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> Insured Delivery</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1336,7 +1638,7 @@
     <span class="whatsapp-tooltip">Chat with Concierge</span>
   </a>
 
-  <script src="app.js?v=7.2"></script>
+  <script src="app.js?v=7.3"></script>
 </body>
 
 </html>

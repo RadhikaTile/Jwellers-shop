@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5.1">
+  <link rel="stylesheet" href="styles.css?v=5.2">
     <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -71,6 +71,101 @@
         gap: 8px !important;
         flex-shrink: 0 !important;
         z-index: 10 !important;
+      }
+            body.drawer-open .site-header {
+        z-index: 100000 !important;
+      }
+      body.drawer-open .header-main > *:not(.desktop-nav) {
+        opacity: 0.25 !important;
+        pointer-events: none !important;
+      }
+      .desktop-nav.mobile-open {
+        z-index: 100001 !important;
+        background: #ffffff !important;
+      }
+      .mobile-nav-backdrop {
+        z-index: 99999 !important;
+      }
+      .mobile-drawer-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: max(20px, env(safe-area-inset-top, 24px)) 18px 16px 18px !important;
+        background: #faf8f5 !important;
+        border-bottom: 1px solid rgba(197, 168, 128, 0.25) !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 10 !important;
+        flex-shrink: 0 !important;
+      }
+      .mobile-drawer-brand {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .mobile-drawer-brand span {
+        font-family: 'Cormorant Garamond', Georgia, serif !important;
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2.2px !important;
+        color: #141210 !important;
+        text-transform: uppercase !important;
+        line-height: 1.2 !important;
+      }
+      .mobile-drawer-brand small {
+        font-size: 0.65rem !important;
+        letter-spacing: 1.5px !important;
+        color: #9a7647 !important;
+        text-transform: uppercase !important;
+      }
+      .mobile-drawer-close {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(197, 168, 128, 0.35) !important;
+        background: #ffffff !important;
+        color: #1a1614 !important;
+        font-size: 1.4rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        line-height: 1 !important;
+        padding: 0 !important;
+      }
+      .mobile-drawer-footer {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        padding: 20px 18px max(24px, env(safe-area-inset-bottom, 24px)) 18px !important;
+        margin-top: auto !important;
+        border-top: 1px solid rgba(197, 168, 128, 0.25) !important;
+        background: #faf8f5 !important;
+        flex-shrink: 0 !important;
+      }
+      .drawer-wa-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        background: #25d366 !important;
+        color: #ffffff !important;
+        padding: 11px 16px !important;
+        border-radius: 8px !important;
+        font-size: 0.84rem !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+      }
+      .drawer-sublinks {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        font-size: 0.78rem !important;
+        color: #7a7067 !important;
+      }
+      .drawer-sublinks a {
+        color: #5a524a !important;
+        text-decoration: none !important;
       }
       .desktop-nav:not(.mobile-open) {
         display: none !important;

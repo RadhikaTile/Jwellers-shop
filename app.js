@@ -1110,7 +1110,12 @@ function filterCategory(cat) {
     'temple': 'South Indian Temple & Kemp',
     'diamonds': 'Solitaire Lab Diamonds',
     'talismans': 'Noor Evil Eye Talismans',
-    'bangles': 'Imperial Bridal Chuda'
+    'bangles': 'Imperial Bridal Chuda',
+    'navratna': 'Navratna Vedic Astral Gems',
+    'rosegold': 'Gulabi Rose Gold Heirlooms',
+    'hathphool': 'Rajkumari Jadau Hathphool',
+    'moissanite': 'Dewdrop VVS1 Moissanite',
+    'hair-jewels': 'Noor-E-Passa & Matha Patti'
   };
 
   showToast(`Showing: ${categoryNames[cat] || cat}`);

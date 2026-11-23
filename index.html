@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6.0">
+  <link rel="stylesheet" href="styles.css?v=6.2">
     <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -280,7 +280,96 @@
         font-size: 1.05rem !important;
       }
     }
-  </style>
+  
+      /* Guarantee 100% visibility of hero stats bar on mobile and tablet */
+      @media (max-width: 768px) {
+        .hero-text-box {
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+        }
+        .hero-subhead { order: 1 !important; }
+        .hero-title { order: 2 !important; font-size: 2.1rem !important; }
+        .hero-desc { order: 3 !important; }
+        .hero-stats {
+          order: 4 !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          width: 100% !important;
+          gap: 6px !important;
+          margin: 4px 0 18px 0 !important;
+          padding: 12px 10px !important;
+          background: rgba(15, 21, 19, 0.88) !important;
+          border: 1px solid rgba(197, 168, 128, 0.35) !important;
+          border-radius: 8px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        .hero-stats .stat-item {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+          flex: 1 1 0 !important;
+          min-width: 0 !important;
+        }
+        .hero-stats .stat-num {
+          font-family: 'Cormorant Garamond', Georgia, serif !important;
+          font-size: 1.08rem !important;
+          font-weight: 700 !important;
+          color: #e6ca9c !important;
+          white-space: nowrap !important;
+        }
+        .hero-stats .stat-lbl {
+          font-family: 'Montserrat', sans-serif !important;
+          font-size: 0.58rem !important;
+          color: #cbd5e1 !important;
+          text-transform: uppercase !important;
+          text-align: center !important;
+          white-space: normal !important;
+        }
+        .hero-stats .stat-divider {
+          display: block !important;
+          width: 1px !important;
+          height: 22px !important;
+          background: rgba(197, 168, 128, 0.35) !important;
+        }
+        .hero-cta-group { order: 5 !important; }
+        .hero-model-showcase { order: 6 !important; }
+      }
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .hero-stats {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          width: 100% !important;
+          padding: 14px 16px !important;
+          background: rgba(15, 21, 19, 0.72) !important;
+          border: 1px solid rgba(197, 168, 128, 0.3) !important;
+          border-radius: 8px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        .hero-stats .stat-item {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          flex: 1 1 0 !important;
+        }
+        .hero-stats .stat-num {
+          font-size: 1.20rem !important;
+          color: #e6ca9c !important;
+          font-weight: 700 !important;
+        }
+        .hero-stats .stat-lbl {
+          font-size: 0.64rem !important;
+          color: #cbd5e1 !important;
+          text-align: center !important;
+        }
+      }
+
+    </style>
 </head>
 <body class="mode-hifi">
 
@@ -1956,7 +2045,7 @@
       <button class="cart-close-btn" onclick="closeWishlist()" aria-label="Close Wishlist"><i class="ri-close-line"></i></button>
     </div>
     <div class="wishlist-items-list" id="wishlistItemsContainer">
-      <!-- Injected dynamically by app.js?v=6.1 renderWishlist() -->
+      <!-- Injected dynamically by app.js?v=6.2 renderWishlist() -->
     </div>
     <div class="wishlist-drawer-footer">
       <button class="btn btn-gold btn-block" onclick="addAllWishlistToBag()">
@@ -2092,6 +2181,6 @@
 
   <!-- Three.js WebGL 3D Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="app.js?v=6.1"></script>
+  <script src="app.js?v=6.2"></script>
 </body>
 </html>

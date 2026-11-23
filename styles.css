@@ -6779,3 +6779,177 @@ body.mode-wireframe .sizing-tool-card::before {
     overflow-x: auto !important;
   }
 }
+
+
+/* =============================================================================
+   BESTSELLERS ("MOST COVETED PIECES") LUXURY ANIMATIONS
+   ============================================================================= */
+
+/* 1. Header Diamond Ornament Sparkle */
+.divider-gem i {
+  display: inline-block;
+  color: var(--color-gold-primary, #c5a880);
+  animation: headerDiamondSparkle 6s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes headerDiamondSparkle {
+  0%, 80%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0 rgba(197, 168, 128, 0));
+  }
+  90% {
+    transform: scale(1.25) rotate(12deg);
+    filter: drop-shadow(0 0 8px rgba(197, 168, 128, 0.7));
+    color: #e6ca9c;
+  }
+}
+
+/* 2. Interactive Filter Tabs Silk Glow & Click Pop */
+.category-tabs {
+  position: relative;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.category-tabs:hover {
+  border-color: rgba(197, 168, 128, 0.55);
+  box-shadow: 0 6px 24px rgba(197, 168, 128, 0.12);
+}
+
+.tab-btn {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.tab-btn:active {
+  transform: scale(0.95);
+}
+
+.tab-btn.active {
+  background: #1a1614 !important;
+  color: #e6ca9c !important;
+  border-color: rgba(197, 168, 128, 0.5) !important;
+  box-shadow: 0 6px 18px rgba(26, 22, 20, 0.35), 0 0 12px rgba(197, 168, 128, 0.25) !important;
+}
+
+/* 3. Product Card Staggered Filter Entrance */
+.product-card.card-filter-enter {
+  animation: cardFilterEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cardFilterEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 4. Luxury Jewel Light Sweep Across Product Photos */
+.product-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img-wrap::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 220%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.25) 47%,
+    rgba(255, 240, 220, 0.55) 50%,
+    rgba(255, 255, 255, 0.25) 53%,
+    transparent 65%
+  );
+  transform: translate3d(-100%, 0, 0) rotate(25deg);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.product-card:hover .product-img-wrap::after {
+  transform: translate3d(100%, 0, 0) rotate(25deg);
+}
+
+/* 5. Wishlist Heart Pop & Sparkle Animation */
+.card-wishlist {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  color: #57534e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-wishlist:hover {
+  transform: scale(1.15);
+  color: #e11d48;
+  border-color: rgba(225, 29, 72, 0.4);
+  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.22);
+}
+
+.card-wishlist.active {
+  color: #e11d48 !important;
+  background: #ffffff !important;
+  border-color: #e11d48 !important;
+  animation: heartPopBounce 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartPopBounce {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.38); }
+  75% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+/* 6. Quick View Button Hover Sweep */
+.btn-quick-view {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-quick-view::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn-quick-view:hover::before {
+  left: 140%;
+}

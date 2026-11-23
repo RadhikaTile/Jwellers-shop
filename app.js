@@ -652,11 +652,21 @@ function initProductFilter() {
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
+      let visibleIndex = 0;
+
       cards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
+        const matches = (filter === 'all' || card.dataset.category === filter);
+        if (matches) {
           card.style.display = 'flex';
+          // Trigger smooth staggered entrance animation
+          card.classList.remove('card-filter-enter');
+          void card.offsetWidth; // Force reflow
+          card.style.animationDelay = `${visibleIndex * 0.05}s`;
+          card.classList.add('card-filter-enter');
+          visibleIndex++;
         } else {
           card.style.display = 'none';
+          card.classList.remove('card-filter-enter');
         }
       });
     });

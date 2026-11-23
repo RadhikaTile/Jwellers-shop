@@ -574,6 +574,7 @@ function initCollectionsSlider() {
   const currentSlideEl = document.getElementById('collCurrentSlide');
   const totalSlidesEl = document.getElementById('collTotalSlides');
   const progressBar = document.getElementById('collProgressBar');
+  const sliderSection = track ? (track.closest('.section') || track.closest('.collections-slider-container')) : null;
 
   if (!track || !prevBtn || !nextBtn) return;
 
@@ -581,7 +582,7 @@ function initCollectionsSlider() {
   if (!tiles.length) return;
 
   if (totalSlidesEl) {
-    totalSlidesEl.textContent = tiles.length < 10 ? `0${tiles.length}` : `${tiles.length}`;
+    totalSlidesEl.textContent = tiles.length < 10 ? '0' + tiles.length : '' + tiles.length;
   }
 
   function getScrollStep() {
@@ -595,30 +596,116 @@ function initCollectionsSlider() {
     const maxScroll = track.scrollWidth - track.clientWidth;
     const progress = maxScroll > 0 ? (scrollLeft / maxScroll) : 0;
 
-    // Progress bar width (between 15% and 100%)
     if (progressBar) {
       const barWidth = 15 + (progress * 85);
-      progressBar.style.width = `${barWidth}%`;
+      progressBar.style.width = barWidth + '%';
     }
 
-    // Active slide counter based on scroll position
     const step = getScrollStep();
     const activeIndex = Math.min(Math.round(scrollLeft / step) + 1, tiles.length);
     if (currentSlideEl) {
-      currentSlideEl.textContent = activeIndex < 10 ? `0${activeIndex}` : `${activeIndex}`;
+      currentSlideEl.textContent = activeIndex < 10 ? '0' + activeIndex : '' + activeIndex;
     }
 
-    // Button states
-    prevBtn.disabled = scrollLeft <= 8;
-    nextBtn.disabled = scrollLeft >= (maxScroll - 8);
+    // Keep navigation continuous
+    prevBtn.disabled = false;
+    nextBtn.disabled = false;
   }
 
+  function slideNext() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const step = getScrollStep();
+    if (track.scrollLeft >= maxScroll - 20) {
+      // Smoothly cycle back to first slide
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      track.scrollBy({ left: step, behavior: 'smooth' });
+    }
+  }
+
+  function slidePrev() {
+    const step = getScrollStep();
+    if (track.scrollLeft <= 20) {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+    } else {
+      track.scrollBy({ left: -step, behavior: 'smooth' });
+    }
+  }
+
+  // --- AUTOMATIC SLIDER SYSTEM ---
+  let autoSlideTimer = null;
+  let isUserInteracting = false;
+  let isSectionVisible = true;
+  const AUTO_INTERVAL_MS = 3800; // Refined 3.8s slide pacing
+
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlideTimer = setInterval(() => {
+      if (!isUserInteracting && isSectionVisible) {
+        slideNext();
+      }
+    }, AUTO_INTERVAL_MS);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideTimer) {
+      clearInterval(autoSlideTimer);
+      autoSlideTimer = null;
+    }
+  }
+
+  function restartAutoSlideWithDelay(delay = 4500) {
+    stopAutoSlide();
+    setTimeout(() => {
+      if (!isUserInteracting) {
+        startAutoSlide();
+      }
+    }, delay);
+  }
+
+  // Viewport Observer: Pause auto-slide when collections section is scrolled out of view
+  if ('IntersectionObserver' in window && sliderSection) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isSectionVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0.15 });
+    sectionObserver.observe(sliderSection);
+  }
+
+  // Pause on hover
+  track.addEventListener('mouseenter', () => {
+    isUserInteracting = true;
+    stopAutoSlide();
+  });
+
+  track.addEventListener('mouseleave', () => {
+    if (!isDown) {
+      isUserInteracting = false;
+      startAutoSlide();
+    }
+  });
+
+  // Touch handling for mobile / tablets
+  track.addEventListener('touchstart', () => {
+    isUserInteracting = true;
+    stopAutoSlide();
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    isUserInteracting = false;
+    restartAutoSlideWithDelay(4000);
+  }, { passive: true });
+
   prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    slidePrev();
+    restartAutoSlideWithDelay(5000);
   });
 
   nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    slideNext();
+    restartAutoSlideWithDelay(5000);
   });
 
   // Mouse drag functionality for desktop
@@ -628,19 +715,20 @@ function initCollectionsSlider() {
 
   track.addEventListener('mousedown', (e) => {
     isDown = true;
+    isUserInteracting = true;
+    stopAutoSlide();
     track.classList.add('grabbing');
     startX = e.pageX - track.offsetLeft;
     scrollLeftStart = track.scrollLeft;
   });
 
-  track.addEventListener('mouseleave', () => {
-    isDown = false;
-    track.classList.remove('grabbing');
-  });
-
   track.addEventListener('mouseup', () => {
-    isDown = false;
-    track.classList.remove('grabbing');
+    if (isDown) {
+      isDown = false;
+      track.classList.remove('grabbing');
+      isUserInteracting = false;
+      restartAutoSlideWithDelay(4000);
+    }
   });
 
   track.addEventListener('mousemove', (e) => {
@@ -654,8 +742,9 @@ function initCollectionsSlider() {
   track.addEventListener('scroll', updateSliderState, { passive: true });
   window.addEventListener('resize', updateSliderState);
 
-  // Initial update
+  // Initial calculation and launch auto-slide
   updateSliderState();
+  startAutoSlide();
 }
 
 // -----------------------------------------------------------------------------

@@ -6953,3 +6953,463 @@ body.mode-wireframe .sizing-tool-card::before {
 .btn-quick-view:hover::before {
   left: 140%;
 }
+
+
+/* =============================================================================
+   HAUTE JOAILLERIE LIGHT LUXURY COLOR PALETTE (PRESTIGE EDITORIAL THEME)
+   Van Cleef & Arpels / Cartier / Tiffany & Co. Inspired Warm Light Palette
+   ============================================================================= */
+
+/* 1. Global Reset & Tokens for Light Palette */
+:root {
+  --color-bg-ivory: #fdfbf7;
+  --color-bg-cream: #faf6ef;
+  --color-bg-sand: #f3ecdf;
+  --color-bg-pearl: #ffffff;
+  --color-bg-charcoal: #ffffff;
+  --color-bg-royal-dark: #faf6ef;
+
+  --color-gold-light: #d4af7a;
+  --color-gold-primary: #b89058;
+  --color-gold-dark: #8e6d3c;
+  --color-gold-antique: #7a5c30;
+  --color-gold-glow: rgba(184, 144, 88, 0.22);
+
+  --color-text-main: #1c1815;
+  --color-text-muted: #5e544b;
+  --color-text-light: #1c1815;
+
+  --color-border-subtle: rgba(197, 168, 128, 0.28);
+  --color-border-dark: rgba(197, 168, 128, 0.45);
+}
+
+body {
+  background-color: #fdfbf7 !important;
+  color: #1c1815 !important;
+}
+
+/* 2. Light Announcement Bar */
+.announcement-bar {
+  background: #f7f3eb !important;
+  color: #3d352e !important;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.35) !important;
+}
+
+.announcement-bar .ticker-item {
+  color: #3d352e !important;
+  font-weight: 600 !important;
+}
+
+.announcement-bar .ticker-item i {
+  color: #9a7647 !important;
+}
+
+.announcement-bar .ticker-divider {
+  color: rgba(197, 168, 128, 0.6) !important;
+}
+
+.announcement-right a {
+  color: #5c5044 !important;
+}
+.announcement-right a:hover {
+  color: #1a1614 !important;
+}
+
+/* 3. Light Editorial Hero Section */
+.hero-section {
+  background: radial-gradient(circle at 68% 32%, rgba(246, 237, 222, 0.95) 0%, #fbf9f5 52%, #f4eee4 100%) !important;
+  color: #1c1815 !important;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.28) !important;
+}
+
+.hero-text-box {
+  color: #1c1815 !important;
+}
+
+.hero-subhead {
+  background: rgba(197, 168, 128, 0.16) !important;
+  border: 1px solid rgba(197, 168, 128, 0.5) !important;
+  color: #8a6a3b !important;
+}
+
+.hero-title {
+  color: #1a1614 !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.hero-desc {
+  color: #5a5148 !important;
+}
+
+.hero-cta-group .btn-gold {
+  background: linear-gradient(135deg, #c5a880 0%, #9e7f53 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(158, 127, 83, 0.25) !important;
+}
+
+.hero-cta-group .btn-outline-light {
+  border: 1.5px solid #1a1614 !important;
+  color: #1a1614 !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+.hero-cta-group .btn-outline-light:hover {
+  background: #1a1614 !important;
+  color: #ffffff !important;
+}
+
+.hero-stats {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(197, 168, 128, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(160, 130, 90, 0.08) !important;
+}
+
+.hero-stats .stat-num {
+  color: #9a7647 !important;
+}
+
+.hero-stats .stat-lbl {
+  color: #5c5249 !important;
+}
+
+.hero-stats .stat-divider {
+  background: rgba(197, 168, 128, 0.45) !important;
+}
+
+.hero-model-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(197, 168, 128, 0.45) !important;
+  box-shadow: 0 20px 50px rgba(35, 30, 26, 0.1) !important;
+}
+
+.hero-float-badge {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(197, 168, 128, 0.4) !important;
+  color: #1a1614 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+}
+.hero-float-badge strong {
+  color: #1a1614 !important;
+}
+.hero-float-badge span {
+  color: #8a6a3b !important;
+}
+.hero-float-badge i {
+  color: #9a7647 !important;
+}
+
+.hero-price-tag {
+  background: #1a1614 !important;
+  color: #e6ca9c !important;
+}
+
+.hero-banner-strip {
+  background: linear-gradient(to top, rgba(247, 243, 235, 0.98), rgba(247, 243, 235, 0.7) 70%, transparent) !important;
+}
+
+.banner-thumb {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+}
+.banner-thumb:hover,
+.banner-thumb.active {
+  background: #ffffff !important;
+  border-color: #9a7647 !important;
+  box-shadow: 0 6px 22px rgba(154, 118, 71, 0.22) !important;
+}
+.b-thumb-text strong {
+  color: #1a1614 !important;
+}
+.b-thumb-text span {
+  color: #8a6a3b !important;
+}
+
+.slider-arrow {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(197, 168, 128, 0.45) !important;
+  color: #1a1614 !important;
+}
+.slider-arrow:hover {
+  background: #9a7647 !important;
+  color: #ffffff !important;
+  border-color: #9a7647 !important;
+}
+.slider-dots .dot {
+  background: rgba(197, 168, 128, 0.45) !important;
+}
+.slider-dots .dot.active {
+  background: #9a7647 !important;
+}
+
+/* 4. Light Trust Ticker Section */
+.trust-ticker-section {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.25) !important;
+}
+.trust-icon-wrap {
+  background: #faf6ee !important;
+  color: #9a7647 !important;
+  border: 1px solid rgba(197, 168, 128, 0.3) !important;
+}
+.trust-info h4 {
+  color: #1a1614 !important;
+}
+.trust-info p {
+  color: #63584e !important;
+}
+
+/* 5. Light Signature Collections Section */
+.collections-showcase {
+  background: #fdfbf7 !important;
+}
+.collections-marquee-group .collection-tile {
+  background: #ffffff !important;
+  border: 1px solid rgba(197, 168, 128, 0.3) !important;
+  box-shadow: 0 10px 32px rgba(35, 30, 26, 0.08) !important;
+}
+.tile-tag {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #8a6a3b !important;
+  border: 1px solid rgba(197, 168, 128, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+.tile-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+.tile-desc {
+  color: #f1ede7 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+}
+.slider-nav-btn {
+  background: #ffffff !important;
+  border: 1px solid rgba(197, 168, 128, 0.45) !important;
+  color: #1a1614 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+}
+.slider-nav-btn:hover {
+  background: #9a7647 !important;
+  color: #ffffff !important;
+  border-color: #9a7647 !important;
+}
+.slider-progress-track {
+  background: rgba(197, 168, 128, 0.25) !important;
+}
+.slider-progress-bar {
+  background: #9a7647 !important;
+}
+.link-view-all {
+  color: #8a6a3b !important;
+  font-weight: 600 !important;
+}
+.link-view-all:hover {
+  color: #1a1614 !important;
+}
+
+/* 6. Light Bestsellers & Product Cards */
+.bg-cream {
+  background: #faf6ee !important;
+}
+.product-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 218, 206, 0.8) !important;
+  box-shadow: 0 4px 20px rgba(35, 30, 26, 0.04) !important;
+}
+.product-card:hover {
+  box-shadow: 0 16px 40px rgba(35, 30, 26, 0.08), 0 0 0 1px rgba(197, 168, 128, 0.45) !important;
+}
+.product-img-wrap {
+  background: radial-gradient(circle, #fdfcfb 0%, #f7f3ed 100%) !important;
+}
+.product-brand-tag {
+  color: #8a6a3b !important;
+}
+.product-name a {
+  color: #1a1614 !important;
+}
+.product-name a:hover {
+  color: #9a7647 !important;
+}
+.price-current {
+  color: #1a1614 !important;
+}
+.price-strike {
+  color: #9c9288 !important;
+}
+
+/* 7. Light Material Science & Comparison Section */
+.material-science-section {
+  background: linear-gradient(180deg, #fdfbf7 0%, #f6f1e8 50%, #fdfbf7 100%) !important;
+  color: #1c1815 !important;
+  border-top: 1px solid rgba(197, 168, 128, 0.28) !important;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.28) !important;
+}
+.material-science-section .text-white {
+  color: #1a1614 !important;
+}
+.material-science-section .text-light {
+  color: #5c5249 !important;
+}
+.science-col {
+  border-radius: var(--radius-md) !important;
+}
+.traditional-way {
+  background: #ffffff !important;
+  border: 1px solid rgba(220, 210, 195, 0.8) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03) !important;
+}
+.traditional-way .col-header h3 {
+  color: #1a1614 !important;
+}
+.traditional-way .science-points li {
+  color: #5c5249 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+.traditional-way .science-points li i {
+  color: #dc2626 !important;
+}
+
+.aura-way {
+  background: #ffffff !important;
+  border: 2px solid #c5a880 !important;
+  box-shadow: 0 16px 45px rgba(197, 168, 128, 0.2) !important;
+}
+.aura-way .col-header h3 {
+  color: #1a1614 !important;
+}
+.aura-way .science-points li {
+  color: #1a1614 !important;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.2) !important;
+}
+.aura-way .science-points li i {
+  color: #059669 !important;
+}
+
+/* 8. Light Interactive Shop The Look Hotspot Studio */
+.hotspot-section {
+  background: #faf6ee !important;
+}
+.hotspot-studio-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  box-shadow: 0 16px 45px rgba(35, 30, 26, 0.08) !important;
+  color: #1c1815 !important;
+}
+.hotspot-editorial h3 {
+  color: #1a1614 !important;
+}
+.hotspot-editorial p {
+  color: #5c5249 !important;
+}
+.bundle-item {
+  background: #faf7f2 !important;
+  border: 1px solid rgba(197, 168, 128, 0.3) !important;
+}
+.bi-title {
+  color: #1a1614 !important;
+}
+.bi-price {
+  color: #9a7647 !important;
+}
+.hotspot-pin {
+  background: #ffffff !important;
+  border: 2px solid #9a7647 !important;
+  color: #9a7647 !important;
+  box-shadow: 0 4px 16px rgba(154, 118, 71, 0.35) !important;
+}
+.hotspot-pin.active {
+  background: #9a7647 !important;
+  color: #ffffff !important;
+}
+
+/* 9. Light Jaipur Bangle Studio Box */
+.bangle-studio-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f4ed 100%) !important;
+  border: 1.5px solid rgba(197, 168, 128, 0.45) !important;
+  box-shadow: 0 20px 50px rgba(35, 30, 26, 0.08) !important;
+  color: #1c1815 !important;
+}
+.bangle-studio-box h3,
+.bangle-studio-box h4 {
+  color: #1a1614 !important;
+}
+.bangle-studio-box p,
+.bangle-studio-box span {
+  color: #5c5249 !important;
+}
+.bangle-3d-atelier,
+.atelier-3d-customizer {
+  background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f6f0e4 100%) !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  color: #1c1815 !important;
+}
+.live-3d-price {
+  color: #1a1614 !important;
+}
+.price-desc {
+  color: #8a6a3b !important;
+}
+
+/* 10. Light French Haute Joaillerie Footer */
+.site-footer {
+  background: #f8f4ec !important;
+  color: #5c5249 !important;
+  border-top: 1px solid rgba(197, 168, 128, 0.35) !important;
+}
+.footer-main {
+  border-bottom: 1px solid rgba(197, 168, 128, 0.28) !important;
+}
+.footer-brand-title {
+  color: #1a1614 !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+.footer-bio {
+  color: #63584e !important;
+}
+.footer-col h4 {
+  color: #1a1614 !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.2rem !important;
+}
+.footer-col ul li a {
+  color: #5c5249 !important;
+}
+.footer-col ul li a:hover {
+  color: #9a7647 !important;
+}
+.footer-socials a {
+  background: #ffffff !important;
+  color: #1a1614 !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+.footer-socials a:hover {
+  background: #9a7647 !important;
+  color: #ffffff !important;
+  border-color: #9a7647 !important;
+}
+.newsletter-form input {
+  background: #ffffff !important;
+  border: 1px solid rgba(197, 168, 128, 0.45) !important;
+  color: #1a1614 !important;
+}
+.newsletter-form input::placeholder {
+  color: #9c9288 !important;
+}
+.footer-bottom {
+  background: #efe7d9 !important;
+  border-top: 1px solid rgba(197, 168, 128, 0.25) !important;
+  color: #706459 !important;
+}
+.footer-bottom a {
+  color: #5c5249 !important;
+}
+.footer-bottom a:hover {
+  color: #1a1614 !important;
+}

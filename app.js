@@ -1210,6 +1210,16 @@ function filterCategory(cat) {
     }
   });
 
+  // Sync sidebar category items
+  const sidebarItems = document.querySelectorAll('.category-filter-item');
+  sidebarItems.forEach(item => {
+    if (item.dataset.cat === cat) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
   // 1. Sync category pills in top story bar
   const pillButtons = document.querySelectorAll('.category-pill-card');
   pillButtons.forEach(btn => {
@@ -1296,6 +1306,28 @@ function filterCategory(cat) {
   }
 
   showToast('Viewing: ' + (categoryMetadata[cat]?.title ? categoryMetadata[cat].title.split('&')[0].trim() : cat));
+}
+
+
+// Toggle Desktop Sidebar visibility
+function toggleCatalogSidebar() {
+  const grid = document.querySelector('.catalog-layout-grid');
+  const btnText = document.getElementById('sidebarToggleText');
+  const btn = document.getElementById('sidebarToggleBtn');
+  if (!grid) return;
+
+  const isCollapsed = grid.classList.toggle('sidebar-collapsed');
+  if (btnText) {
+    btnText.textContent = isCollapsed ? 'Show Sidebar' : 'Hide Sidebar';
+  }
+  if (btn) {
+    if (isCollapsed) {
+      btn.classList.add('collapsed');
+    } else {
+      btn.classList.remove('collapsed');
+    }
+  }
+  showToast(isCollapsed ? 'Sidebar hidden (Full width view)' : 'Sidebar restored');
 }
 
 // Horizontal category scroll buttons

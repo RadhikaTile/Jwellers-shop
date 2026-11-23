@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7.3">
+  <link rel="stylesheet" href="styles.css?v=7.4">
   <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -813,6 +813,7 @@
       </div>
       <div class="filter-controls">
         <button class="mobile-filter-toggle-btn" onclick="toggleMobileSidebar()"><i class="ri-equalizer-line"></i> Filter Categories</button>
+        <button class="desktop-sidebar-toggle-btn" id="sidebarToggleBtn" onclick="toggleCatalogSidebar()"><i class="ri-layout-right-line"></i> <span id="sidebarToggleText">Hide Sidebar</span></button>
         <span class="item-count-text">Showing <strong>15 Designs</strong></span>
         <div class="sort-selector">
           <label for="catalogSort">Sort by:</label>
@@ -832,69 +833,211 @@
     <div class="container catalog-layout-grid">
       <!-- SIDEBAR FILTERS (Arika & Swashaa inspired) -->
       <div class="sidebar-mobile-backdrop" id="sidebarMobileBackdrop" onclick="toggleMobileSidebar()"></div>
-      <aside class="catalog-sidebar">
+      <aside class="catalog-sidebar" id="catalogSidebar">
+        
+        <!-- Mobile Drawer Header -->
         <div class="sidebar-mobile-header">
-          <h4>Filter Collections</h4>
+          <h4>Refine Collections</h4>
           <button class="sidebar-close-btn" onclick="toggleMobileSidebar()" aria-label="Close Filter Drawer">&times;</button>
         </div>
-        <div class="filter-group">
-          <h4>Category</h4>
-          <label class="filter-checkbox"><input type="checkbox" checked onchange="filterCategory('all')"> All
-            Categories</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('meenakari')"> Vijay Meenakari
-            Bangles</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('kundan')"> Sawwaisa Pachi
-            Kundan</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('anti-tarnish')"> 18K
-            Waterproof Gold</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('oxidized')"> Chhail Oxidized
-            Silver</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('men')"> Swashaa Men's
-            Luxe</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('pearls')"> Nazaakat Basra
-            Pearls</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('temple')"> South Indian Temple
-            & Kemp</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('diamonds')"> Solitaire Lab
-            Diamonds</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('talismans')"> Noor Evil Eye &
-            Talismans</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('bangles')"> Imperial Bridal
-            Chuda</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('navratna')"> Navratna Vedic
-            Gems</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('rosegold')"> Gulabi Rose Gold
-            & Tourmaline</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('hathphool')"> Rajkumari Jadau
-            Hathphool</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('moissanite')"> Dewdrop VVS1
-            Moissanite</label>
-          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('hair-jewels')"> Noor-E-Passa &
-            Matha Patti</label>
+
+        <!-- Sidebar Header Box with Reset -->
+        <div class="sidebar-header-box">
+          <div class="shb-top">
+            <span class="shb-label"><i class="ri-compass-3-line"></i> Ateliers &amp; Curations</span>
+            <button type="button" class="shb-reset-btn" onclick="filterCategory('all')"><i class="ri-refresh-line"></i> Reset All</button>
+          </div>
+          <h3 class="shb-title">Design Universes</h3>
         </div>
 
+        <!-- Category Atelier Directory List -->
         <div class="filter-group">
-          <h4>Metal & Plating</h4>
-          <label class="filter-checkbox"><input type="checkbox"> 18K Vacuum PVD Gold</label>
-          <label class="filter-checkbox"><input type="checkbox"> 24K Micro Gold Brass Core</label>
-          <label class="filter-checkbox"><input type="checkbox"> 925 Hallmarked German Silver</label>
-          <label class="filter-checkbox"><input type="checkbox"> 316L Surgical Stainless Steel</label>
+          <div class="category-filter-list">
+            <button type="button" class="category-filter-item active" data-cat="all" onclick="filterCategory('all')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">All Heirlooms</span>
+              </div>
+              <span class="cf-pill">15 Styles</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="kundan" onclick="filterCategory('kundan')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Sawwaisa Pachi Kundan</span>
+              </div>
+              <span class="cf-pill">Royal Bridal</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="meenakari" onclick="filterCategory('meenakari')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Vijay Meenakari Bangles</span>
+              </div>
+              <span class="cf-pill">800°C Enamel</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="anti-tarnish" onclick="filterCategory('anti-tarnish')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">18K Waterproof Gold</span>
+              </div>
+              <span class="cf-pill">Lifetime</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="oxidized" onclick="filterCategory('oxidized')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Chhail Oxidized Silver</span>
+              </div>
+              <span class="cf-pill">925 Tribal</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="men" onclick="filterCategory('men')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Swashaa Men's Luxe</span>
+              </div>
+              <span class="cf-pill">Unisex Luxe</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="pearls" onclick="filterCategory('pearls')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Nazaakat Basra Pearls</span>
+              </div>
+              <span class="cf-pill">Nizami</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="temple" onclick="filterCategory('temple')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">South Indian Temple Nakshi</span>
+              </div>
+              <span class="cf-pill">Kemp Gems</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="diamonds" onclick="filterCategory('diamonds')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Solitaire Lab Diamonds</span>
+              </div>
+              <span class="cf-pill">VVS Certified</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="talismans" onclick="filterCategory('talismans')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Noor Evil Eye Talismans</span>
+              </div>
+              <span class="cf-pill">Amulets</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="bangles" onclick="filterCategory('bangles')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Imperial Bridal Chuda</span>
+              </div>
+              <span class="cf-pill">Marwar Sets</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="navratna" onclick="filterCategory('navratna')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Navratna Vedic Gems</span>
+              </div>
+              <span class="cf-pill">Nine Gems</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="rosegold" onclick="filterCategory('rosegold')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Gulabi Rose Gold &amp; Tourmaline</span>
+              </div>
+              <span class="cf-pill">Pink City</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="hathphool" onclick="filterCategory('hathphool')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Rajkumari Jadau Hathphool</span>
+              </div>
+              <span class="cf-pill">Hand Suite</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="moissanite" onclick="filterCategory('moissanite')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Dewdrop VVS1 Moissanite</span>
+              </div>
+              <span class="cf-pill">D-Color</span>
+            </button>
+
+            <button type="button" class="category-filter-item" data-cat="hair-jewels" onclick="filterCategory('hair-jewels')">
+              <div class="cf-left">
+                <span class="cf-bullet">✦</span>
+                <span class="cf-name">Noor Passa &amp; Matha Patti</span>
+              </div>
+              <span class="cf-pill">Headwear</span>
+            </button>
+          </div>
         </div>
 
+        <!-- Metal & Plating Filter Chips -->
         <div class="filter-group">
-          <h4>Occasion</h4>
-          <label class="filter-checkbox"><input type="checkbox"> Bridal & Wedding</label>
-          <label class="filter-checkbox"><input type="checkbox"> Daily & Office Wear</label>
-          <label class="filter-checkbox"><input type="checkbox"> Festive & Sangeet</label>
-          <label class="filter-checkbox"><input type="checkbox"> Luxury Gifting</label>
+          <div class="filter-group-header">
+            <h4>Metal &amp; Plating</h4>
+            <span class="fgh-tag">Aerospace PVD</span>
+          </div>
+          <div class="luxury-chip-grid">
+            <button type="button" class="luxury-chip-btn active" onclick="this.classList.toggle('active')">
+              <span class="chip-color-dot gold-pvd"></span> 18K Vacuum Gold
+            </button>
+            <button type="button" class="luxury-chip-btn" onclick="this.classList.toggle('active')">
+              <span class="chip-color-dot micro-gold"></span> 24K Micro Gold
+            </button>
+            <button type="button" class="luxury-chip-btn" onclick="this.classList.toggle('active')">
+              <span class="chip-color-dot silver-hallmark"></span> 925 German Silver
+            </button>
+            <button type="button" class="luxury-chip-btn" onclick="this.classList.toggle('active')">
+              <span class="chip-color-dot steel-316"></span> 316L Surgical Steel
+            </button>
+          </div>
         </div>
 
+        <!-- Occasion Filter Chips -->
+        <div class="filter-group">
+          <div class="filter-group-header">
+            <h4>Occasion</h4>
+            <span class="fgh-tag">Curated Edits</span>
+          </div>
+          <div class="luxury-chip-grid">
+            <button type="button" class="luxury-chip-btn active" onclick="this.classList.toggle('active')">
+              <i class="ri-vip-crown-line"></i> Bridal &amp; Wedding
+            </button>
+            <button type="button" class="luxury-chip-btn" onclick="this.classList.toggle('active')">
+              <i class="ri-sparkling-line"></i> Daily &amp; Office
+            </button>
+            <button type="button" class="luxury-chip-btn" onclick="this.classList.toggle('active')">
+              <i class="ri-fire-line"></i> Festive &amp; Sangeet
+            </button>
+            <button type="button" class="luxury-chip-btn" onclick="this.classList.toggle('active')">
+              <i class="ri-gift-line"></i> Luxury Gifting
+            </button>
+          </div>
+        </div>
+
+        <!-- Styling Advice VIP Box -->
         <div class="sidebar-help-card">
-          <i class="ri-customer-service-2-line"></i>
+          <div class="shc-badge"><i class="ri-customer-service-2-line"></i> VIP Concierge</div>
           <h5>Need Styling Advice?</h5>
-          <p>Book a complimentary 1-on-1 virtual styling session with our Jaipur jewellery consultants.</p>
-          <a href="contact.html" class="link-arrow">Book Appointment &rarr;</a>
+          <p>Book a private 1-on-1 virtual styling consultation with our Jaipur jewellery curators.</p>
+          <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20would%20like%20to%20book%20a%20private%20virtual%20jewellery%20styling%20session" class="btn btn-outline btn-block" target="_blank" rel="noopener">
+            <i class="ri-whatsapp-line"></i> Book via WhatsApp
+          </a>
         </div>
+
+        <!-- Mobile Drawer Apply Button -->
         <div class="sidebar-mobile-footer">
           <button class="btn btn-gold btn-block" onclick="toggleMobileSidebar()">Apply Filters</button>
         </div>
@@ -1638,7 +1781,7 @@
     <span class="whatsapp-tooltip">Chat with Concierge</span>
   </a>
 
-  <script src="app.js?v=7.3"></script>
+  <script src="app.js?v=7.4"></script>
 </body>
 
 </html>

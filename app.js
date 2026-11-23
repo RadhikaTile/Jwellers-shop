@@ -571,180 +571,72 @@ function initCollectionsSlider() {
   const track = document.getElementById('collectionsSliderTrack');
   const prevBtn = document.getElementById('collPrevBtn');
   const nextBtn = document.getElementById('collNextBtn');
-  const currentSlideEl = document.getElementById('collCurrentSlide');
-  const totalSlidesEl = document.getElementById('collTotalSlides');
+  const pauseBtn = document.getElementById('collPauseBtn');
+  const pauseIcon = document.getElementById('collPauseIcon');
+  const groups = document.querySelectorAll('.collections-marquee-group');
   const progressBar = document.getElementById('collProgressBar');
-  const sliderSection = track ? (track.closest('.section') || track.closest('.collections-slider-container')) : null;
 
-  if (!track || !prevBtn || !nextBtn) return;
+  if (!track || !groups.length) return;
 
-  const tiles = track.querySelectorAll('.collection-tile');
-  if (!tiles.length) return;
-
-  if (totalSlidesEl) {
-    totalSlidesEl.textContent = tiles.length < 10 ? '0' + tiles.length : '' + tiles.length;
+  if (progressBar) {
+    progressBar.classList.add('marquee-progress-bar');
   }
 
-  function getScrollStep() {
-    const tile = tiles[0];
-    const gap = window.innerWidth <= 640 ? 16 : 24;
-    return tile ? (tile.offsetWidth + gap) : 380;
-  }
+  let isPaused = false;
+  let isReverse = false;
 
-  function updateSliderState() {
-    const scrollLeft = track.scrollLeft;
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    const progress = maxScroll > 0 ? (scrollLeft / maxScroll) : 0;
-
-    if (progressBar) {
-      const barWidth = 15 + (progress * 85);
-      progressBar.style.width = barWidth + '%';
+  function togglePause() {
+    isPaused = !isPaused;
+    track.classList.toggle('is-paused', isPaused);
+    if (pauseIcon) {
+      pauseIcon.className = isPaused ? 'ri-play-line' : 'ri-pause-line';
     }
-
-    const step = getScrollStep();
-    const activeIndex = Math.min(Math.round(scrollLeft / step) + 1, tiles.length);
-    if (currentSlideEl) {
-      currentSlideEl.textContent = activeIndex < 10 ? '0' + activeIndex : '' + activeIndex;
-    }
-
-    // Keep navigation continuous
-    prevBtn.disabled = false;
-    nextBtn.disabled = false;
-  }
-
-  function slideNext() {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    const step = getScrollStep();
-    if (track.scrollLeft >= maxScroll - 20) {
-      // Smoothly cycle back to first slide
-      track.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      track.scrollBy({ left: step, behavior: 'smooth' });
+    if (pauseBtn) {
+      pauseBtn.setAttribute('title', isPaused ? 'Play Infinite Flow' : 'Pause Flow');
     }
   }
 
-  function slidePrev() {
-    const step = getScrollStep();
-    if (track.scrollLeft <= 20) {
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      track.scrollTo({ left: maxScroll, behavior: 'smooth' });
-    } else {
-      track.scrollBy({ left: -step, behavior: 'smooth' });
-    }
-  }
-
-  // --- AUTOMATIC SLIDER SYSTEM ---
-  let autoSlideTimer = null;
-  let isUserInteracting = false;
-  let isSectionVisible = true;
-  const AUTO_INTERVAL_MS = 3800; // Refined 3.8s slide pacing
-
-  function startAutoSlide() {
-    stopAutoSlide();
-    autoSlideTimer = setInterval(() => {
-      if (!isUserInteracting && isSectionVisible) {
-        slideNext();
+  function setReverse(reverse) {
+    isReverse = reverse;
+    groups.forEach(g => {
+      if (reverse) {
+        g.classList.add('reverse-flow');
+      } else {
+        g.classList.remove('reverse-flow');
       }
-    }, AUTO_INTERVAL_MS);
+    });
   }
 
-  function stopAutoSlide() {
-    if (autoSlideTimer) {
-      clearInterval(autoSlideTimer);
-      autoSlideTimer = null;
-    }
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', togglePause);
   }
 
-  function restartAutoSlideWithDelay(delay = 4500) {
-    stopAutoSlide();
-    setTimeout(() => {
-      if (!isUserInteracting) {
-        startAutoSlide();
-      }
-    }, delay);
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      setReverse(true);
+      if (isPaused) togglePause();
+    });
   }
 
-  // Viewport Observer: Pause auto-slide when collections section is scrolled out of view
-  if ('IntersectionObserver' in window && sliderSection) {
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isSectionVisible = entry.isIntersecting;
-      });
-    }, { threshold: 0.15 });
-    sectionObserver.observe(sliderSection);
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      setReverse(false);
+      if (isPaused) togglePause();
+    });
   }
 
-  // Pause on hover
-  track.addEventListener('mouseenter', () => {
-    isUserInteracting = true;
-    stopAutoSlide();
-  });
-
-  track.addEventListener('mouseleave', () => {
-    if (!isDown) {
-      isUserInteracting = false;
-      startAutoSlide();
-    }
-  });
-
-  // Touch handling for mobile / tablets
+  // Touch handling for mobile: pause when user interacts with card
   track.addEventListener('touchstart', () => {
-    isUserInteracting = true;
-    stopAutoSlide();
+    track.classList.add('is-paused');
   }, { passive: true });
 
   track.addEventListener('touchend', () => {
-    isUserInteracting = false;
-    restartAutoSlideWithDelay(4000);
-  }, { passive: true });
-
-  prevBtn.addEventListener('click', () => {
-    slidePrev();
-    restartAutoSlideWithDelay(5000);
-  });
-
-  nextBtn.addEventListener('click', () => {
-    slideNext();
-    restartAutoSlideWithDelay(5000);
-  });
-
-  // Mouse drag functionality for desktop
-  let isDown = false;
-  let startX;
-  let scrollLeftStart;
-
-  track.addEventListener('mousedown', (e) => {
-    isDown = true;
-    isUserInteracting = true;
-    stopAutoSlide();
-    track.classList.add('grabbing');
-    startX = e.pageX - track.offsetLeft;
-    scrollLeftStart = track.scrollLeft;
-  });
-
-  track.addEventListener('mouseup', () => {
-    if (isDown) {
-      isDown = false;
-      track.classList.remove('grabbing');
-      isUserInteracting = false;
-      restartAutoSlideWithDelay(4000);
+    if (!isPaused) {
+      setTimeout(() => {
+        track.classList.remove('is-paused');
+      }, 1800);
     }
-  });
-
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    track.scrollLeft = scrollLeftStart - walk;
-  });
-
-  track.addEventListener('scroll', updateSliderState, { passive: true });
-  window.addEventListener('resize', updateSliderState);
-
-  // Initial calculation and launch auto-slide
-  updateSliderState();
-  startAutoSlide();
+  }, { passive: true });
 }
 
 // -----------------------------------------------------------------------------

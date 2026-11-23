@@ -6640,3 +6640,142 @@ body.mode-wireframe .sizing-tool-card::before {
     letter-spacing: 0.02em !important;
   }
 }
+
+
+/* =============================================================================
+   CONTINUOUS INFINITE LUXURY COLLECTIONS MARQUEE (TOP TICKER STYLE)
+   ============================================================================= */
+
+.collections-slider-container {
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  padding: 14px 0 24px 0 !important;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 2.5%, #000 97.5%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 2.5%, #000 97.5%, transparent 100%) !important;
+}
+
+.collections-marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  gap: 24px !important;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.collections-marquee-group {
+  display: flex !important;
+  gap: 24px !important;
+  flex-shrink: 0 !important;
+  animation: collectionsMarqueeSlide 65s linear infinite !important;
+  will-change: transform;
+}
+
+/* Reverse flow when reverse class is active */
+.collections-marquee-group.reverse-flow {
+  animation-direction: reverse !important;
+}
+
+/* Hover or is-paused: Pause smoothly on hover so cards are easy to click */
+.collections-slider-container:hover .collections-marquee-group,
+.collections-marquee-track:hover .collections-marquee-group,
+.collections-marquee-track.is-paused .collections-marquee-group {
+  animation-play-state: paused !important;
+}
+
+@keyframes collectionsMarqueeSlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* Continuous Progress Bar */
+.marquee-progress-bar {
+  animation: marqueeProgressLoop 65s linear infinite !important;
+}
+.collections-slider-container:hover ~ .collections-slider-footer .marquee-progress-bar,
+.collections-marquee-track.is-paused ~ .collections-slider-footer .marquee-progress-bar {
+  animation-play-state: paused !important;
+}
+@keyframes marqueeProgressLoop {
+  0% {
+    width: 5%;
+  }
+  50% {
+    width: 55%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Card dimensions inside continuous marquee */
+.collections-marquee-group .collection-tile {
+  width: 380px !important;
+  flex: 0 0 380px !important;
+  height: 480px !important;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--color-bg-charcoal);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  grid-column: unset !important;
+}
+
+.collections-marquee-group .collection-tile:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25) !important;
+  z-index: 5;
+}
+
+@media (max-width: 1024px) {
+  .collections-marquee-group .collection-tile {
+    width: 320px !important;
+    flex: 0 0 320px !important;
+    height: 450px !important;
+  }
+  .collections-marquee-group {
+    animation-duration: 52s !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .collections-slider-container {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    padding: 8px 0 16px 0 !important;
+  }
+  .collections-marquee-group {
+    gap: 16px !important;
+    animation-duration: 45s !important;
+  }
+  .collections-marquee-group .collection-tile {
+    width: 290px !important;
+    flex: 0 0 290px !important;
+    height: 420px !important;
+  }
+  .collections-slider-header {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collections-marquee-group .collection-tile {
+    width: 260px !important;
+    flex: 0 0 260px !important;
+    height: 390px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collections-marquee-group {
+    animation: none !important;
+    overflow-x: auto !important;
+  }
+}

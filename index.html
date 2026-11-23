@@ -833,7 +833,27 @@
           <p class="section-subtitle">From minimal everyday waterproof stacks to majestic bridal Meenakari bangles, explore our distinct design universes.</p>
         </div>
 
-        <div class="collections-masonry-grid">
+        <!-- Collections Slider Controls & Counter -->
+        <div class="collections-slider-header">
+          <div class="slider-counter">
+            <span class="current-slide" id="collCurrentSlide">01</span>
+            <span class="counter-slash">/</span>
+            <span class="total-slides" id="collTotalSlides">15</span>
+            <span class="slider-label">Collections</span>
+          </div>
+          <div class="collections-slider-arrows">
+            <button class="slider-nav-btn prev-btn" id="collPrevBtn" aria-label="Previous Collection">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button class="slider-nav-btn next-btn" id="collNextBtn" aria-label="Next Collection">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Collections Slider Container & Track -->
+        <div class="collections-slider-container" id="collectionsSliderContainer">
+          <div class="collections-slider-track" id="collectionsSliderTrack">
           <!-- Card 1 -->
           <article class="collection-tile tile-large">
             <div class="tile-img-box">
@@ -1088,6 +1108,17 @@
               </div>
             </div>
           </article>
+          </div>
+        </div>
+
+        <!-- Slider Progress Bar and Quick Nav -->
+        <div class="collections-slider-footer">
+          <div class="slider-progress-track">
+            <div class="slider-progress-bar" id="collProgressBar"></div>
+          </div>
+          <div class="slider-quick-nav">
+            <a href="collections.html" class="link-view-all">View All 15 Collections &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1925,7 +1956,7 @@
       <button class="cart-close-btn" onclick="closeWishlist()" aria-label="Close Wishlist"><i class="ri-close-line"></i></button>
     </div>
     <div class="wishlist-items-list" id="wishlistItemsContainer">
-      <!-- Injected dynamically by app.js renderWishlist() -->
+      <!-- Injected dynamically by app.js?v=5.0 renderWishlist() -->
     </div>
     <div class="wishlist-drawer-footer">
       <button class="btn btn-gold btn-block" onclick="addAllWishlistToBag()">
@@ -2061,6 +2092,6 @@
 
   <!-- Three.js WebGL 3D Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="app.js?v=3.2"></script>
+  <script src="app.js?v=5.0"></script>
 </body>
 </html>

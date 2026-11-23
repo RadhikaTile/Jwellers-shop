@@ -161,6 +161,7 @@ const productDatabase = {
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderButtons();
   initHeroSlider();
+  initCollectionsSlider();
   initSearch();
   initProductFilter();
   initHotspots();
@@ -559,6 +560,100 @@ function jumpToHeroSlide(index) {
 
   currentHeroSlide = index;
   resetHeroAutoTimer();
+}
+
+// -----------------------------------------------------------------------------
+// 6B. SIGNATURE COLLECTIONS LUXURY HORIZONTAL SLIDER
+// -----------------------------------------------------------------------------
+function initCollectionsSlider() {
+  const track = document.getElementById('collectionsSliderTrack');
+  const prevBtn = document.getElementById('collPrevBtn');
+  const nextBtn = document.getElementById('collNextBtn');
+  const currentSlideEl = document.getElementById('collCurrentSlide');
+  const totalSlidesEl = document.getElementById('collTotalSlides');
+  const progressBar = document.getElementById('collProgressBar');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const tiles = track.querySelectorAll('.collection-tile');
+  if (!tiles.length) return;
+
+  if (totalSlidesEl) {
+    totalSlidesEl.textContent = tiles.length < 10 ? `0${tiles.length}` : `${tiles.length}`;
+  }
+
+  function getScrollStep() {
+    const tile = tiles[0];
+    const gap = window.innerWidth <= 640 ? 16 : 24;
+    return tile ? (tile.offsetWidth + gap) : 380;
+  }
+
+  function updateSliderState() {
+    const scrollLeft = track.scrollLeft;
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const progress = maxScroll > 0 ? (scrollLeft / maxScroll) : 0;
+
+    // Progress bar width (between 15% and 100%)
+    if (progressBar) {
+      const barWidth = 15 + (progress * 85);
+      progressBar.style.width = `${barWidth}%`;
+    }
+
+    // Active slide counter based on scroll position
+    const step = getScrollStep();
+    const activeIndex = Math.min(Math.round(scrollLeft / step) + 1, tiles.length);
+    if (currentSlideEl) {
+      currentSlideEl.textContent = activeIndex < 10 ? `0${activeIndex}` : `${activeIndex}`;
+    }
+
+    // Button states
+    prevBtn.disabled = scrollLeft <= 8;
+    nextBtn.disabled = scrollLeft >= (maxScroll - 8);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+  });
+
+  // Mouse drag functionality for desktop
+  let isDown = false;
+  let startX;
+  let scrollLeftStart;
+
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.classList.add('grabbing');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeftStart = track.scrollLeft;
+  });
+
+  track.addEventListener('mouseleave', () => {
+    isDown = false;
+    track.classList.remove('grabbing');
+  });
+
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+    track.classList.remove('grabbing');
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeftStart - walk;
+  });
+
+  track.addEventListener('scroll', updateSliderState, { passive: true });
+  window.addEventListener('resize', updateSliderState);
+
+  // Initial update
+  updateSliderState();
 }
 
 // -----------------------------------------------------------------------------

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5.2">
+  <link rel="stylesheet" href="styles.css?v=5.3">
     <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -432,7 +432,7 @@
         <a href="index.html">Home</a> &rsaquo; <span>All Collections</span>
       </div>
       <div class="filter-controls">
-        <span class="item-count-text">Showing <strong>10 Signature Collections & Designs</strong></span>
+        <span class="item-count-text">Showing <strong>15 Signature Collections & Designs</strong></span>
         <div class="sort-selector">
           <label for="catalogSort">Sort by:</label>
           <select id="catalogSort" onchange="sortCatalog(this.value)">
@@ -464,6 +464,11 @@
           <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('diamonds')"> Solitaire Lab Diamonds</label>
           <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('talismans')"> Noor Evil Eye & Talismans</label>
           <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('bangles')"> Imperial Bridal Chuda</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('navratna')"> Navratna Vedic Gems</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('rosegold')"> Gulabi Rose Gold & Tourmaline</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('hathphool')"> Rajkumari Jadau Hathphool</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('moissanite')"> Dewdrop VVS1 Moissanite</label>
+          <label class="filter-checkbox"><input type="checkbox" onchange="filterCategory('hair-jewels')"> Noor-E-Passa & Matha Patti</label>
         </div>
 
         <div class="filter-group">
@@ -689,6 +694,106 @@
                 <span class="price-current">₹2,750</span>
                 <span class="price-original">₹3,800</span>
                 <span class="discount-pill">28% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 11: Navratna Celestial Nine-Gem Heritage -->
+          <div class="product-card" data-category="navratna">
+            <div class="product-badge badge-artisan">Vedic Royalty</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Navratna Celestial Choker">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 11)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Vedic Astrological Heirlooms</div>
+              <h3 class="product-name"><a href="product-detail.html">Navratna Nine-Gem 22K Gold Foil Filigree Choker & Jhumkas</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹5,850</span>
+                <span class="price-original">₹8,200</span>
+                <span class="discount-pill">29% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 12: Gulabi Jaipur Rose Gold & Tourmaline -->
+          <div class="product-card" data-category="rosegold">
+            <div class="product-badge badge-waterproof">Modern Blush</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=700&q=80" alt="Gulabi Rose Gold Tourmaline">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 12)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Pastel Bridal & Demi-Fine Luxe</div>
+              <h3 class="product-name"><a href="product-detail.html">Gulabi Jaipur 18K Rose Gold & Tourmaline Baguette Collier</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹3,450</span>
+                <span class="price-original">₹4,900</span>
+                <span class="discount-pill">30% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 13: Rajkumari Jadau Hathphool -->
+          <div class="product-card" data-category="hathphool">
+            <div class="product-badge badge-trending">Bridal Handcraft</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Rajkumari Jadau Hathphool">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 13)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Rajputana Hand Heirlooms</div>
+              <h3 class="product-name"><a href="product-detail.html">Rajkumari Triple-Chain Jadau Hathphool & Cocktail Ring</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹4,250</span>
+                <span class="price-original">₹5,800</span>
+                <span class="discount-pill">27% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 14: Dewdrop Moissanite & Solitaires -->
+          <div class="product-card" data-category="moissanite">
+            <div class="product-badge badge-waterproof">VVS1 Brilliance</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=80" alt="Dewdrop Moissanite Tennis Choker">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 14)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Certified Diamond Alternate</div>
+              <h3 class="product-name"><a href="product-detail.html">Dewdrop D-Color VVS1 Moissanite Eternity Tennis Choker</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹6,400</span>
+                <span class="price-original">₹9,500</span>
+                <span class="discount-pill">33% OFF</span>
+              </div>
+              <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
+            </div>
+          </div>
+
+          <!-- Card 15: Noor-E-Passa & Matha Patti -->
+          <div class="product-card" data-category="hair-jewels">
+            <div class="product-badge badge-bestseller">Nizami Heirlooms</div>
+            <div class="product-img-wrap">
+              <img class="img-primary" src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=700&q=80" alt="Noor-E-Passa Matha Patti">
+              <img class="img-secondary" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80" alt="Detail">
+              <button class="card-wishlist" onclick="toggleWishlist(this, 15)"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">Mughal & Nizami Royal Jewels</div>
+              <h3 class="product-name"><a href="product-detail.html">Noor-E-Chauraha Crescent Polki Passa & Matha Patti Suite</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹3,150</span>
+                <span class="price-original">₹4,500</span>
+                <span class="discount-pill">30% OFF</span>
               </div>
               <a href="product-detail.html" class="btn btn-add-cart"><i class="ri-eye-line"></i> View Product Details</a>
             </div>

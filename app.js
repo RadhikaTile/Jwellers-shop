@@ -169,6 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderWishlist();
   updateHeaderBadges();
   initCurrencySelector();
+  initScrollReveal();
+  initScrollHeader();
 });
 
 // -----------------------------------------------------------------------------
@@ -1595,4 +1597,90 @@ function switchContactTab(tabId) {
   
   if (activeBtn) activeBtn.classList.add('active');
   if (activePane) activePane.classList.add('active');
+}
+
+
+// -----------------------------------------------------------------------------
+// LUXURY SCROLL REVEAL & HEADER SCROLL CONTROLLER
+// -----------------------------------------------------------------------------
+function initScrollReveal() {
+  const selector = [
+    '.section-header',
+    '.product-card',
+    '.collection-slide-card',
+    '.collection-tile',
+    '.trust-item',
+    '.footer-pillar-item',
+    '.science-card',
+    '.bangle-studio-box',
+    '.heritage-story-text',
+    '.heritage-story-visual',
+    '.instagram-feed-item',
+    '.faq-accordion-item',
+    '.reveal-on-scroll'
+  ].join(', ');
+
+  const revealTargets = document.querySelectorAll(selector);
+  if (!revealTargets.length) return;
+
+  revealTargets.forEach(el => {
+    if (!el.classList.contains('reveal-on-scroll') && !el.classList.contains('reveal-scale')) {
+      el.classList.add('reveal-on-scroll');
+    }
+  });
+
+  // Stagger siblings inside grids/tracks for cascading ripple entrance
+  document.querySelectorAll('.products-grid, .trust-pillars-grid, .footer-pillars-grid, .collections-slider-track, .science-pillars-grid').forEach(grid => {
+    const children = grid.querySelectorAll('.reveal-on-scroll');
+    children.forEach((child, index) => {
+      const staggerClass = `reveal-stagger-${(index % 6) + 1}`;
+      child.classList.add(staggerClass);
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    revealTargets.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.10
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealTargets.forEach(el => revealObserver.observe(el));
+}
+
+function initScrollHeader() {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+
+  let ticking = false;
+  const updateHeader = () => {
+    if (window.scrollY > 40) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHeader();
 }

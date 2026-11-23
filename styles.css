@@ -6270,3 +6270,210 @@ body.mode-wireframe .sizing-tool-card::before {
     height: 420px;
   }
 }
+
+
+/* =============================================================================
+   LUXURY JEWELLERY ANIMATION SUITE (ELEGANT, HARDWARE-ACCELERATED, NON-INTRUSIVE)
+   ============================================================================= */
+
+/* 1. Viewport Scroll-Reveal Keyframes & Base States */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger utilities for organic cascades across grids */
+.reveal-stagger-1 { transition-delay: 0.06s; }
+.reveal-stagger-2 { transition-delay: 0.12s; }
+.reveal-stagger-3 { transition-delay: 0.18s; }
+.reveal-stagger-4 { transition-delay: 0.24s; }
+.reveal-stagger-5 { transition-delay: 0.30s; }
+.reveal-stagger-6 { transition-delay: 0.36s; }
+
+/* Scale Reveal for Hero Banners & Featured Spots */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(18px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-scale.is-revealed {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+
+/* 2. Compact Glassmorphic Header on Scroll */
+.site-header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease !important;
+}
+.site-header.header-scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 22px rgba(20, 18, 16, 0.08) !important;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.28) !important;
+}
+
+/* 3. Subtle Gold Shimmer Sweep on Badges & Heritage Tags */
+.product-badge,
+.mega-badge,
+.badge-heritage,
+.badge-purity {
+  position: relative;
+  overflow: hidden;
+}
+.product-badge::after,
+.mega-badge::after,
+.badge-heritage::after,
+.badge-purity::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: badgeLightSweep 5.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes badgeLightSweep {
+  0%, 70% {
+    left: -120%;
+  }
+  100% {
+    left: 220%;
+  }
+}
+
+/* 4. Luxury Button Shimmer & Micro-Elevation */
+.btn-primary,
+.btn-gold,
+.cta-gold-btn,
+.btn-hero-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease !important;
+}
+.btn-primary::before,
+.btn-gold::before,
+.cta-gold-btn::before,
+.btn-hero-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.btn-primary:hover::before,
+.btn-gold:hover::before,
+.cta-gold-btn:hover::before,
+.btn-hero-primary:hover::before {
+  left: 140%;
+}
+.btn-primary:hover,
+.btn-gold:hover,
+.cta-gold-btn:hover,
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 168, 128, 0.32) !important;
+}
+
+/* 5. Product Card Hover Elevation & Silky Zoom */
+.product-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.product-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
+}
+.product-card .card-media img,
+.product-card .card-img-wrap img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.product-card:hover .card-media img,
+.product-card:hover .card-img-wrap img {
+  transform: scale(1.05) !important;
+}
+
+/* 6. Cinematic Hero Slide Background Zoom (Ken Burns) */
+.hero-slide.active .hero-slide-bg {
+  animation: heroKenBurns 8s ease-out forwards;
+}
+@keyframes heroKenBurns {
+  0% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(1.045);
+  }
+}
+.hero-slide.active .slide-caption > * {
+  animation: slideFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-slide.active .slide-caption > *:nth-child(1) { animation-delay: 0.08s; }
+.hero-slide.active .slide-caption > *:nth-child(2) { animation-delay: 0.18s; }
+.hero-slide.active .slide-caption > *:nth-child(3) { animation-delay: 0.28s; }
+.hero-slide.active .slide-caption > *:nth-child(4) { animation-delay: 0.38s; }
+
+@keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 7. Trust Pillars Micro-Interactions */
+.trust-item:hover .trust-icon-box,
+.footer-pillar-item:hover .pillar-icon-box {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(197, 168, 128, 0.28);
+}
+
+/* 8. Reduced Motion Accessibility Support */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .product-badge::after,
+  .mega-badge::after,
+  .badge-heritage::after,
+  .badge-purity::after,
+  .btn-primary::before,
+  .btn-gold::before,
+  .cta-gold-btn::before,
+  .btn-hero-primary::before,
+  .hero-slide.active .hero-slide-bg {
+    animation: none !important;
+  }
+}

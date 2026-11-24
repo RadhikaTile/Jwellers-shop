@@ -171,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCurrencySelector();
   initScrollReveal();
   initScrollHeader();
+  syncCatalogFromStoreEngine();
+  initBullionAnnouncementTicker();
 });
 
 // -----------------------------------------------------------------------------
@@ -820,9 +822,23 @@ function applyCoupon() {
   const input = document.getElementById('couponCodeInput');
   if (!input) return;
   const code = input.value.trim().toUpperCase();
+  const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+  if (typeof StoreEngine !== 'undefined' && StoreEngine.Coupons) {
+    const res = StoreEngine.Coupons.validate(code, subtotal);
+    if (res.valid) {
+      state.appliedCoupon = { code: res.code, discountAmount: res.discountAmount };
+      showToast(res.message);
+      renderCart();
+      return;
+    } else {
+      showToast(res.message);
+      return;
+    }
+  }
 
   if (code === 'ROYAL10') {
-    state.appliedCoupon = { code: 'ROYAL10', rate: 0.10 };
+    state.appliedCoupon = { code: 'ROYAL10', rate: 0.10, discountAmount: Math.round(subtotal * 0.10) };
     showToast('Promo Code ROYAL10 applied (10% Privilege Discount)!');
     renderCart();
   } else {
@@ -885,7 +901,7 @@ function renderCart() {
   const discRow = document.getElementById('discountRow');
   const cartDisc = document.getElementById('cartDiscount');
   if (state.appliedCoupon) {
-    discount = Math.round(subtotal * state.appliedCoupon.rate);
+    discount = state.appliedCoupon.discountAmount !== undefined ? state.appliedCoupon.discountAmount : Math.round(subtotal * (state.appliedCoupon.rate || 0.1));
     if (discRow) discRow.style.display = 'flex';
     if (cartDisc) cartDisc.textContent = `-₹${discount.toLocaleString()}`;
   } else {
@@ -922,10 +938,8 @@ function proceedToCheckout() {
     showToast('Your shopping bag is empty.');
     return;
   }
-  showToast('Redirecting to 256-bit Secure Checkout gateway...');
-  setTimeout(() => {
-    alert(`Order Summary Prototype:\nTotal Amount: ${document.getElementById('cartGrandTotal').textContent}\nItems: ${state.cart.length}\nPayment: UPI / Netbanking / Credit Card / Cash On Delivery\n\nThank you for choosing AURA & ARTISAN.`);
-  }, 600);
+  closeCart();
+  openCheckoutModal();
 }
 
 // -----------------------------------------------------------------------------
@@ -1930,3 +1944,427 @@ function initScrollHeader() {
 
   updateHeader();
 }
+
+
+// -----------------------------------------------------------------------------
+// 17. DYNAMIC STOREFRONT & CHECKOUT ENGINE
+// -----------------------------------------------------------------------------
+let selectedPaymentMethod = 'upi';
+let verifiedShippingPincode = null;
+
+function syncCatalogFromStoreEngine() {
+  if (typeof StoreEngine !== 'undefined' && StoreEngine.Products) {
+    const products = StoreEngine.Products.getAll();
+    products.forEach(p => {
+      productDatabase[p.id] = p;
+    });
+
+    // Listen for storage changes from Admin
+    window.addEventListener('aa_store_updated', (e) => {
+      if (e.detail && e.detail.key === StoreEngine.STORAGE_KEYS.PRODUCTS) {
+        const updated = e.detail.data;
+        if (Array.isArray(updated)) {
+          updated.forEach(p => { productDatabase[p.id] = p; });
+          renderCart();
+          renderWishlist();
+        }
+      }
+    });
+  }
+}
+
+function initBullionAnnouncementTicker() {
+  if (typeof StoreEngine !== 'undefined' && StoreEngine.MetalPricing) {
+    const rates = StoreEngine.MetalPricing.getRates();
+    const tickerContainers = document.querySelectorAll('.ticker-content');
+    tickerContainers.forEach(container => {
+      const livePill = document.createElement('span');
+      livePill.className = 'ticker-item';
+      livePill.style.color = '#d4af37';
+      livePill.innerHTML = `<i class="ri-scales-3-line"></i> Today's Hallmark 24K: ₹${rates.gold24k.toLocaleString('en-IN')}/g &bull; 925 Silver: ₹${rates.silver925.toLocaleString('en-IN')}/g`;
+      const divider = document.createElement('span');
+      divider.className = 'ticker-divider';
+      divider.innerHTML = '&bull;';
+      container.insertBefore(divider, container.firstChild);
+      container.insertBefore(livePill, container.firstChild);
+    });
+  }
+}
+
+function openCheckoutModal() {
+  const modal = document.getElementById('luxuryCheckoutModal');
+  const backdrop = document.getElementById('checkoutModalBackdrop');
+  if (!modal || !backdrop) return;
+
+  renderCheckoutSummary();
+  selectPaymentMethod('upi');
+
+  backdrop.classList.add('open');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckoutModal() {
+  const modal = document.getElementById('luxuryCheckoutModal');
+  const backdrop = document.getElementById('checkoutModalBackdrop');
+  if (modal) modal.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderCheckoutSummary() {
+  const itemsContainer = document.getElementById('checkoutItemsContainer');
+  if (!itemsContainer) return;
+
+  const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  let discount = 0;
+  if (state.appliedCoupon) {
+    discount = state.appliedCoupon.discountAmount !== undefined ? state.appliedCoupon.discountAmount : Math.round(subtotal * (state.appliedCoupon.rate || 0.1));
+  }
+
+  const isExpress = document.getElementById('shipOptionExpress')?.checked;
+  const shippingFee = (typeof StoreEngine !== 'undefined' && StoreEngine.Shipping) 
+    ? StoreEngine.Shipping.calculateShippingFee(subtotal, isExpress)
+    : (subtotal >= 1499 ? 0 : 99);
+
+  const grandTotal = Math.max(0, subtotal - discount + shippingFee);
+
+  itemsContainer.innerHTML = state.cart.map(item => `
+    <div class="checkout-item-row">
+      <img src="${item.image}" alt="${item.name}" class="checkout-item-thumb">
+      <div>
+        <div class="checkout-item-title">${item.name}</div>
+        <small style="color:#888;">${item.variant || 'Standard'} &times; ${item.quantity}</small>
+      </div>
+      <div class="checkout-item-price">₹${(item.price * item.quantity).toLocaleString('en-IN')}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('checkoutSubtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+  const discRow = document.getElementById('checkoutDiscountRow');
+  if (discount > 0) {
+    discRow.style.display = 'flex';
+    document.getElementById('checkoutDiscount').textContent = `-₹${discount.toLocaleString('en-IN')}`;
+  } else {
+    discRow.style.display = 'none';
+  }
+
+  document.getElementById('checkoutShippingFee').textContent = shippingFee === 0 ? 'FREE' : `₹${shippingFee}`;
+  document.getElementById('checkoutGrandTotal').textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
+}
+
+function selectPaymentMethod(method) {
+  selectedPaymentMethod = method;
+  document.querySelectorAll('.payment-method-card').forEach(card => {
+    if (card.dataset.method === method) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+
+  const panel = document.getElementById('paymentDetailsPanel');
+  if (!panel) return;
+
+  if (method === 'upi') {
+    panel.innerHTML = `
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <div style="background:#fff; padding:10px; border-radius:8px; width:130px; text-align:center;">
+          <!-- Simulated Real-time UPI QR Code -->
+          <svg viewBox="0 0 100 100" width="110" height="110">
+            <rect width="100" height="100" fill="#ffffff"/>
+            <rect x="10" y="10" width="25" height="25" fill="#000"/>
+            <rect x="15" y="15" width="15" height="15" fill="#fff"/>
+            <rect x="18" y="18" width="9" height="9" fill="#000"/>
+            <rect x="65" y="10" width="25" height="25" fill="#000"/>
+            <rect x="70" y="15" width="15" height="15" fill="#fff"/>
+            <rect x="73" y="18" width="9" height="9" fill="#000"/>
+            <rect x="10" y="65" width="25" height="25" fill="#000"/>
+            <rect x="15" y="70" width="15" height="15" fill="#fff"/>
+            <rect x="18" y="73" width="9" height="9" fill="#000"/>
+            <rect x="42" y="12" width="16" height="6" fill="#000"/>
+            <rect x="45" y="24" width="12" height="8" fill="#000"/>
+            <rect x="40" y="42" width="20" height="16" fill="#000"/>
+            <rect x="68" y="45" width="20" height="12" fill="#000"/>
+            <rect x="45" y="70" width="14" height="18" fill="#000"/>
+            <rect x="70" y="75" width="18" height="14" fill="#000"/>
+          </svg>
+          <span style="font-size:0.65rem; color:#111; font-weight:700; display:block; margin-top:4px;">Scan with Any App</span>
+        </div>
+        <div style="flex:1; min-width:200px;">
+          <label style="font-size:0.75rem; text-transform:uppercase; color:#a3998b; display:block; margin-bottom:6px;">Or Pay via UPI VPA / Phone Number</label>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="upiVpaInput" class="checkout-input" placeholder="e.g. mobile@upi or patron@okhdfcbank" style="flex:1;">
+            <button class="pincode-verify-btn" type="button" onclick="showToast('UPI VPA Verified')">Verify</button>
+          </div>
+          <small style="color:#2ecc71; font-size:0.75rem; margin-top:6px; display:block;"><i class="ri-shield-check-line"></i> Instant 0% Convenience Fee via BHIM, GPay, PhonePe, Paytm</small>
+        </div>
+      </div>
+    `;
+  } else if (method === 'card') {
+    panel.innerHTML = `
+      <div class="checkout-input-grid">
+        <div class="checkout-field full">
+          <label>Card Number</label>
+          <input type="text" class="checkout-input" placeholder="4111 2222 3333 4444" maxlength="19">
+        </div>
+        <div class="checkout-field full">
+          <label>Cardholder Name</label>
+          <input type="text" class="checkout-input" placeholder="Name as embossed on card">
+        </div>
+        <div class="checkout-field">
+          <label>Expiry Date</label>
+          <input type="text" class="checkout-input" placeholder="MM / YY" maxlength="5">
+        </div>
+        <div class="checkout-field">
+          <label>CVV / CVC</label>
+          <input type="password" class="checkout-input" placeholder="&bull;&bull;&bull;" maxlength="4">
+        </div>
+      </div>
+      <small style="color:#888; font-size:0.72rem; margin-top:8px; display:block;"><i class="ri-lock-line"></i> 256-Bit TLS Bank-Grade Card Tokenization (PCI-DSS Level 1)</small>
+    `;
+  } else if (method === 'netbanking') {
+    panel.innerHTML = `
+      <div class="checkout-field full">
+        <label>Select Preferred Bank</label>
+        <select class="checkout-input" style="width:100%;">
+          <option value="HDFC">HDFC Bank</option>
+          <option value="ICICI">ICICI Bank</option>
+          <option value="SBI">State Bank of India</option>
+          <option value="AXIS">Axis Bank</option>
+          <option value="KOTAK">Kotak Mahindra Bank</option>
+          <option value="OTHER">Other Indian Scheduled Bank</option>
+        </select>
+      </div>
+    `;
+  } else if (method === 'cod') {
+    panel.innerHTML = `
+      <div style="background:rgba(212,175,55,0.08); border:1px solid rgba(212,175,55,0.25); padding:12px; border-radius:6px;">
+        <strong style="color:#d4af37; font-size:0.85rem;"><i class="ri-hand-coin-line"></i> Cash on Delivery Available</strong>
+        <p style="font-size:0.75rem; color:#aaa; margin-top:4px; line-height:1.4;">
+          Please keep exact cash ready upon delivery. Our tamper-proof courier security bag will be verified in your presence prior to payment.
+        </p>
+      </div>
+    `;
+  }
+}
+
+function verifyCheckoutPincode() {
+  const pinInput = document.getElementById('checkoutPincode');
+  const statusBox = document.getElementById('checkoutPincodeStatus');
+  if (!pinInput || !statusBox) return;
+
+  const pin = pinInput.value.trim();
+  if (typeof StoreEngine !== 'undefined' && StoreEngine.Shipping) {
+    const res = StoreEngine.Shipping.checkPincode(pin);
+    if (res.valid) {
+      verifiedShippingPincode = pin;
+      statusBox.innerHTML = `<span style="color:#2ecc71;"><i class="ri-checkbox-circle-fill"></i> ${res.message}</span>`;
+      statusBox.style.display = 'block';
+    } else {
+      statusBox.innerHTML = `<span style="color:#e74c3c;"><i class="ri-error-warning-fill"></i> ${res.message}</span>`;
+      statusBox.style.display = 'block';
+    }
+  }
+}
+
+function submitCheckoutOrder(e) {
+  if (e) e.preventDefault();
+
+  const name = document.getElementById('checkoutName')?.value.trim();
+  const phone = document.getElementById('checkoutPhone')?.value.trim();
+  const email = document.getElementById('checkoutEmail')?.value.trim();
+  const address = document.getElementById('checkoutAddress')?.value.trim();
+  const city = document.getElementById('checkoutCity')?.value.trim();
+  const stateVal = document.getElementById('checkoutState')?.value.trim();
+  const pin = document.getElementById('checkoutPincode')?.value.trim();
+
+  if (!name || !phone || !address || !pin) {
+    showToast('Please fill all mandatory shipping address fields.');
+    return;
+  }
+
+  const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  let discount = 0;
+  if (state.appliedCoupon) {
+    discount = state.appliedCoupon.discountAmount !== undefined ? state.appliedCoupon.discountAmount : Math.round(subtotal * (state.appliedCoupon.rate || 0.1));
+  }
+  const isExpress = document.getElementById('shipOptionExpress')?.checked;
+  const shippingFee = (typeof StoreEngine !== 'undefined' && StoreEngine.Shipping) 
+    ? StoreEngine.Shipping.calculateShippingFee(subtotal, isExpress)
+    : (subtotal >= 1499 ? 0 : 99);
+  const grandTotal = Math.max(0, subtotal - discount + shippingFee);
+
+  const submitBtn = document.getElementById('btnSubmitOrder');
+  const originalText = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) {
+    submitBtn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i> Authorizing 256-Bit Payment...';
+    submitBtn.disabled = true;
+  }
+
+  setTimeout(() => {
+    let orderRecord = null;
+    if (typeof StoreEngine !== 'undefined' && StoreEngine.Orders) {
+      orderRecord = StoreEngine.Orders.createOrder({
+        customerName: name,
+        phone: phone,
+        email: email,
+        shippingAddress: `${address}, ${city}, ${stateVal} - ${pin}`,
+        city: city,
+        state: stateVal,
+        pincode: pin,
+        items: state.cart.map(c => ({ id: c.id, title: c.name, price: c.price, quantity: c.quantity, variant: c.variant })),
+        subtotal: subtotal,
+        discount: discount,
+        couponApplied: state.appliedCoupon ? state.appliedCoupon.code : null,
+        shippingFee: shippingFee,
+        totalAmount: grandTotal,
+        paymentMethod: selectedPaymentMethod.toUpperCase(),
+        paymentStatus: selectedPaymentMethod === 'cod' ? 'PENDING_DELIVERY' : 'PAID'
+      });
+    }
+
+    if (submitBtn) {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+
+    // Reset cart
+    state.cart = [];
+    state.appliedCoupon = null;
+    renderCart();
+    updateHeaderBadges();
+
+    closeCheckoutModal();
+    openSuccessModal(orderRecord);
+  }, 1200);
+}
+
+function openSuccessModal(order) {
+  const modal = document.getElementById('orderSuccessModal');
+  const backdrop = document.getElementById('checkoutModalBackdrop');
+  if (!modal || !backdrop) return;
+
+  const orderId = order ? order.orderId : 'ORD-2026-' + Math.floor(1000 + Math.random() * 9000);
+  const trackingId = order ? order.trackingId : 'BD-991823712IN';
+  const courier = order ? order.courierPartner : 'BlueDart Express';
+  const total = order ? order.totalAmount : 0;
+
+  document.getElementById('successOrderId').textContent = orderId;
+  document.getElementById('successTrackingText').textContent = `${courier} &bull; Tracking ID: ${trackingId}`;
+  document.getElementById('successAmountText').textContent = `₹${Number(total).toLocaleString('en-IN')}`;
+
+  backdrop.classList.add('open');
+  modal.classList.add('open');
+}
+
+function closeSuccessModal() {
+  const modal = document.getElementById('orderSuccessModal');
+  const backdrop = document.getElementById('checkoutModalBackdrop');
+  if (modal) modal.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+}
+
+function openTrackOrderModal() {
+  const modal = document.getElementById('trackOrderModal');
+  const backdrop = document.getElementById('checkoutModalBackdrop');
+  if (modal && backdrop) {
+    backdrop.classList.add('open');
+    modal.classList.add('open');
+  }
+}
+
+function closeTrackOrderModal() {
+  const modal = document.getElementById('trackOrderModal');
+  const backdrop = document.getElementById('checkoutModalBackdrop');
+  if (modal) modal.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+}
+
+function lookupOrderTracking() {
+  const input = document.getElementById('trackOrderQueryInput');
+  const resultBox = document.getElementById('trackOrderResultBox');
+  if (!input || !resultBox) return;
+
+  const q = input.value.trim().toUpperCase();
+  if (!q) {
+    showToast('Please enter Order ID or phone number.');
+    return;
+  }
+
+  let order = null;
+  if (typeof StoreEngine !== 'undefined' && StoreEngine.Orders) {
+    const orders = StoreEngine.Orders.getAll();
+    order = orders.find(o => o.orderId.toUpperCase() === q || o.phone.replace(/\D/g, '').includes(q.replace(/\D/g, '')));
+  }
+
+  if (!order) {
+    resultBox.innerHTML = `
+      <div style="background:rgba(231,76,60,0.1); border:1px solid rgba(231,76,60,0.3); padding:16px; border-radius:8px; color:#ec7063; text-align:center;">
+        <i class="ri-error-warning-line" style="font-size:1.5rem;"></i>
+        <p style="margin-top:6px; font-size:0.85rem;">No active order found for "${q}". Please verify your Order Reference ID or contact our concierge.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const dateFormatted = new Date(order.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+  const status = (order.orderStatus || 'Confirmed').toLowerCase();
+
+  let step1Class = 'completed';
+  let step2Class = (status === 'processing' || status === 'shipped' || status === 'delivered') ? 'completed' : 'active';
+  let step3Class = (status === 'shipped' || status === 'delivered') ? 'completed' : (status === 'processing' ? 'active' : '');
+  let step4Class = (status === 'delivered') ? 'completed' : (status === 'shipped' ? 'active' : '');
+
+  resultBox.innerHTML = `
+    <div style="background:#090806; border:1px solid rgba(212,175,55,0.25); border-radius:10px; padding:20px; margin-top:16px; text-align:left;">
+      <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(212,175,55,0.15); padding-bottom:12px; margin-bottom:16px;">
+        <div>
+          <strong style="color:#d4af37; font-size:1.1rem;">${order.orderId}</strong>
+          <small style="color:#888; display:block;">Placed on ${dateFormatted}</small>
+        </div>
+        <div style="text-align:right;">
+          <span style="background:rgba(46,204,113,0.15); color:#2ecc71; border:1px solid rgba(46,204,113,0.3); padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:600;">${order.orderStatus}</span>
+          <small style="color:#aaa; display:block; margin-top:4px;">${order.courierPartner}</small>
+        </div>
+      </div>
+
+      <!-- Live Stepper -->
+      <div class="tracking-stepper">
+        <div class="step-node ${step1Class}">
+          <div class="step-dot"><i class="ri-checkbox-circle-line"></i></div>
+          <span class="step-label">Confirmed</span>
+        </div>
+        <div class="step-node ${step2Class}">
+          <div class="step-dot"><i class="ri-shield-star-line"></i></div>
+          <span class="step-label">Hallmarked</span>
+        </div>
+        <div class="step-node ${step3Class}">
+          <div class="step-dot"><i class="ri-truck-line"></i></div>
+          <span class="step-label">Shipped</span>
+        </div>
+        <div class="step-node ${step4Class}">
+          <div class="step-dot"><i class="ri-gift-line"></i></div>
+          <span class="step-label">Delivered</span>
+        </div>
+      </div>
+
+      <div style="font-size:0.8rem; color:#aaa; line-height:1.6; border-top:1px solid rgba(212,175,55,0.1); padding-top:12px;">
+        <p><strong style="color:#fff;">Patron:</strong> ${order.customerName} (${order.phone})</p>
+        <p><strong style="color:#fff;">Destination:</strong> ${order.shippingAddress}</p>
+        <p><strong style="color:#fff;">Air Waybill / Tracking:</strong> <span style="color:#d4af37;">${order.trackingId || 'Allocating hub...'}</span></p>
+      </div>
+    </div>
+  `;
+}
+
+// Expose Checkout and Tracking helpers globally
+window.openCheckoutModal = openCheckoutModal;
+window.closeCheckoutModal = closeCheckoutModal;
+window.selectPaymentMethod = selectPaymentMethod;
+window.verifyCheckoutPincode = verifyCheckoutPincode;
+window.submitCheckoutOrder = submitCheckoutOrder;
+window.closeSuccessModal = closeSuccessModal;
+window.openTrackOrderModal = openTrackOrderModal;
+window.closeTrackOrderModal = closeTrackOrderModal;
+window.lookupOrderTracking = lookupOrderTracking;

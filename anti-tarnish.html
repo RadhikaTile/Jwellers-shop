@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=7.7">
+  <link rel="stylesheet" href="styles.css?v=8.0">
     <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -340,7 +340,7 @@
             <option value="EUR">EUR (€)</option>
           </select>
         </div>
-        <a href="contact.html#track-order" class="top-link"><i class="ri-truck-line"></i> Track Order</a>
+        <a href="javascript:void(0)" onclick="openTrackOrderModal()" class="top-link"><i class="ri-truck-line"></i> Track Order</a>
       </div>
     </div>
   </div>
@@ -536,6 +536,9 @@
         <button class="action-btn" id="searchTriggerBtn" onclick="openSearch()" aria-label="Search Catalog" title="Search"><i class="ri-search-line"></i></button>
         <a href="contact.html" class="action-btn" id="userAccountBtn" aria-label="User Account" title="Account"><i class="ri-user-3-line"></i></a>
         <button class="action-btn wishlist-btn" id="wishlistBtn" onclick="openWishlist()" aria-label="Wishlist" title="Wishlist"><i class="ri-heart-line"></i><span class="badge-count wishlist-count">3</span></button>
+        
+        <a href="admin.html" class="action-btn admin-btn" id="adminPortalBtn" aria-label="Admin Portal" title="Atelier Admin Portal"><i class="ri-shield-keyhole-line"></i></a>
+        <button class="action-btn" onclick="openTrackOrderModal()" aria-label="Track Order" title="Track Live Order"><i class="ri-truck-line"></i></button>
         <button class="action-btn cart-btn" id="cartTriggerBtn" onclick="openCart()" aria-label="Shopping Bag" title="Cart"><i class="ri-shopping-bag-2-line"></i><span class="badge-count cart-count" id="cartCountBadge">2</span></button>
       </div>
     </div>
@@ -754,7 +757,7 @@
           <li><a href="about.html">About Us & Heritage</a></li>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-          <li><a href="contact.html#track-order">Track Insured Shipment</a></li>
+          <li><a href="javascript:void(0)" onclick="openTrackOrderModal()">Track Insured Shipment</a></li>
           <li><a href="bangles-guide.html">Interactive Sizing Studio</a></li>
           <li><a href="contact.html">Concierge & Flagship Salons</a></li>
         </ul>
@@ -897,6 +900,222 @@
     <span class="whatsapp-tooltip">Chat with Concierge</span>
   </a>
 
-  <script src="app.js?v=7.7"></script>
+  <script src="store-engine.js?v=8.0"></script>
+  <script src="app.js?v=8.0"></script>
+
+  <!-- DYNAMIC LUXURY CHECKOUT & ORDER MODALS BACKDROP -->
+  <div class="luxury-modal-backdrop" id="checkoutModalBackdrop">
+    
+    <!-- 1. LUXURY CHECKOUT MODAL -->
+    <div class="luxury-checkout-modal" id="luxuryCheckoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+      <div class="checkout-modal-header">
+        <h3 id="checkoutModalTitle"><i class="ri-shield-check-line" style="color:#d4af37;"></i> 256-Bit Encrypted Luxury Checkout</h3>
+        <button class="btn-close-checkout" onclick="closeCheckoutModal()" aria-label="Close Checkout">&times;</button>
+      </div>
+
+      <div class="checkout-layout-grid">
+        <!-- Left Column: Shipping & Payment -->
+        <div class="checkout-form-column">
+          <!-- Section: Shipping Address -->
+          <div class="checkout-section-block">
+            <h4 class="checkout-section-title"><i class="ri-map-pin-user-line"></i> 1. Patron &amp; Delivery Destination</h4>
+            <div class="checkout-input-grid">
+              <div class="checkout-field">
+                <label>Full Name *</label>
+                <input type="text" id="checkoutName" class="checkout-input" placeholder="e.g. Maharani Gayatri Devi" required>
+              </div>
+              <div class="checkout-field">
+                <label>Contact Phone (+91) *</label>
+                <input type="tel" id="checkoutPhone" class="checkout-input" placeholder="e.g. 98201 44521" required>
+              </div>
+              <div class="checkout-field full">
+                <label>Email Address (For Tax Invoice &amp; Tracking)</label>
+                <input type="email" id="checkoutEmail" class="checkout-input" placeholder="patron@royalmail.com">
+              </div>
+              <div class="checkout-field full">
+                <label>Street Address / Suite / Landmark *</label>
+                <input type="text" id="checkoutAddress" class="checkout-input" placeholder="Flat / House No., Building, Street" required>
+              </div>
+              <div class="checkout-field">
+                <label>City *</label>
+                <input type="text" id="checkoutCity" class="checkout-input" placeholder="e.g. Jaipur" value="Jaipur">
+              </div>
+              <div class="checkout-field">
+                <label>State *</label>
+                <input type="text" id="checkoutState" class="checkout-input" placeholder="e.g. Rajasthan" value="Rajasthan">
+              </div>
+              <div class="checkout-field full">
+                <label>6-Digit PIN Code *</label>
+                <div style="display:flex; gap:8px;">
+                  <input type="text" id="checkoutPincode" class="checkout-input" placeholder="e.g. 302001 or 400053" maxlength="6" style="flex:1;" oninput="verifyCheckoutPincode()">
+                  <button type="button" class="pincode-verify-btn" onclick="verifyCheckoutPincode()">Check PIN</button>
+                </div>
+                <div id="checkoutPincodeStatus" class="pincode-status-box" style="display:none;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Delivery Method -->
+          <div class="checkout-section-block">
+            <h4 class="checkout-section-title"><i class="ri-truck-line"></i> 2. Insured Transit Selection</h4>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <label style="display:flex; align-items:center; gap:12px; background:#090806; border:1px solid rgba(212,175,55,0.25); padding:12px 14px; border-radius:8px; cursor:pointer;">
+                <input type="radio" name="shippingTransitOption" id="shipOptionStandard" checked onchange="renderCheckoutSummary()" style="accent-color:#d4af37;">
+                <div style="flex:1;">
+                  <strong style="color:#fff; font-size:0.85rem;">Complimentary White-Glove Transit</strong>
+                  <small style="color:#aaa; display:block;">Delivery in 2 to 4 business days via BlueDart Express &bull; 100% Insured</small>
+                </div>
+                <span style="color:#2ecc71; font-weight:700; font-size:0.85rem;">FREE</span>
+              </label>
+
+              <label style="display:flex; align-items:center; gap:12px; background:#090806; border:1px solid rgba(212,175,55,0.25); padding:12px 14px; border-radius:8px; cursor:pointer;">
+                <input type="radio" name="shippingTransitOption" id="shipOptionExpress" onchange="renderCheckoutSummary()" style="accent-color:#d4af37;">
+                <div style="flex:1;">
+                  <strong style="color:#fff; font-size:0.85rem;">Priority VIP Air Transit (Tamper-Evident Seal)</strong>
+                  <small style="color:#aaa; display:block;">Next-Day Dispatch &bull; Dedicated courier security escort</small>
+                </div>
+                <span style="color:#d4af37; font-weight:700; font-size:0.85rem;">₹199</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Section: Payment Method -->
+          <div class="checkout-section-block">
+            <h4 class="checkout-section-title"><i class="ri-bank-card-line"></i> 3. Bank-Grade Payment Options</h4>
+            <div class="payment-methods-grid">
+              <div class="payment-method-card active" data-method="upi" onclick="selectPaymentMethod('upi')">
+                <i class="ri-qr-code-line"></i>
+                <div>
+                  <strong>UPI Instant</strong>
+                  <small>GPay, PhonePe, QR</small>
+                </div>
+              </div>
+              <div class="payment-method-card" data-method="card" onclick="selectPaymentMethod('card')">
+                <i class="ri-bank-card-2-line"></i>
+                <div>
+                  <strong>Credit / Debit</strong>
+                  <small>Visa, MC, RuPay, Amex</small>
+                </div>
+              </div>
+              <div class="payment-method-card" data-method="netbanking" onclick="selectPaymentMethod('netbanking')">
+                <i class="ri-government-line"></i>
+                <div>
+                  <strong>Net Banking</strong>
+                  <small>All Indian Banks</small>
+                </div>
+              </div>
+              <div class="payment-method-card" data-method="cod" onclick="selectPaymentMethod('cod')">
+                <i class="ri-hand-coin-line"></i>
+                <div>
+                  <strong>Cash on Delivery</strong>
+                  <small>Inspect &amp; Pay</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Details Panel for Selected Method -->
+            <div id="paymentDetailsPanel" class="payment-details-panel"></div>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary & Place Order -->
+        <div class="checkout-summary-column">
+          <div class="checkout-summary-card">
+            <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:#d4af37; margin-bottom:14px;">Bespoke Bag Summary</h4>
+            <div class="checkout-items-list" id="checkoutItemsContainer"></div>
+
+            <div class="checkout-totals-row">
+              <span>Atelier Subtotal</span>
+              <span id="checkoutSubtotal">₹0</span>
+            </div>
+            <div class="checkout-totals-row" id="checkoutDiscountRow" style="display:none; color:#2ecc71;">
+              <span>Privilege Discount</span>
+              <span id="checkoutDiscount">-₹0</span>
+            </div>
+            <div class="checkout-totals-row">
+              <span>Insured Transit</span>
+              <span id="checkoutShippingFee" style="color:#2ecc71;">FREE</span>
+            </div>
+            <div class="checkout-totals-row">
+              <span>Applicable GST (3% Incl.)</span>
+              <span style="color:#888;">Included</span>
+            </div>
+            <div class="checkout-totals-row grand">
+              <span>Total Payable Amount</span>
+              <span id="checkoutGrandTotal">₹0</span>
+            </div>
+
+            <button type="button" id="btnSubmitOrder" class="btn-complete-order" onclick="submitCheckoutOrder(event)">
+              <i class="ri-shield-keyhole-line"></i> Authorize &amp; Confirm Order
+            </button>
+
+            <div style="margin-top:16px; border-top:1px solid rgba(212,175,55,0.15); padding-top:12px; font-size:0.72rem; color:#888; text-align:center; line-height:1.5;">
+              <p><i class="ri-shield-check-line" style="color:#d4af37;"></i> BIS Hallmarked Authentic Karigari</p>
+              <p><i class="ri-lock-2-line" style="color:#d4af37;"></i> 256-Bit TLS Bank-Grade Authorization</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ORDER CONFIRMATION / SUCCESS MODAL -->
+    <div class="order-success-card" id="orderSuccessModal" style="display:none;" role="dialog" aria-modal="true">
+      <div class="success-check-badge">
+        <i class="ri-check-line"></i>
+      </div>
+      <h3>Royal Order Confirmed</h3>
+      <p>We have received your bespoke patronage. Our Jaipur karigars are preparing your hallmarked jewellery piece with white-glove care.</p>
+      
+      <div class="order-receipt-box">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:#888;">Order Reference:</span>
+          <strong id="successOrderId" style="color:#d4af37; font-size:1.05rem;">ORD-2026-XXXX</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:#888;">Fulfillment Transit:</span>
+          <strong id="successTrackingText">BlueDart Express &bull; Awaiting Pickup</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:#888;">Total Amount Paid:</span>
+          <strong id="successAmountText" style="color:#2ecc71;">₹0</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between;">
+          <span style="color:#888;">Estimated Doorstep Arrival:</span>
+          <strong style="color:#fff;">2 to 3 Business Days</strong>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="closeSuccessModal(); openTrackOrderModal();">
+          <i class="ri-truck-line"></i> Live Track Order
+        </button>
+        <button class="btn btn-outline-gold" onclick="closeSuccessModal()">
+          Continue Browsing
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. LIVE ORDER TRACKING MODAL -->
+    <div class="order-success-card" id="trackOrderModal" style="display:none; max-width:620px;" role="dialog" aria-modal="true">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(212,175,55,0.2); padding-bottom:12px; margin-bottom:16px;">
+        <h3 style="font-family:'Cormorant Garamond',serif; color:#d4af37; font-size:1.5rem; margin:0;">
+          <i class="ri-truck-line"></i> Live Order Tracking
+        </h3>
+        <button class="btn-close-checkout" onclick="closeTrackOrderModal()" style="font-size:1.5rem;">&times;</button>
+      </div>
+      <p style="font-size:0.8rem; color:#aaa; margin-bottom:14px;">
+        Enter your Order ID (e.g. ORD-2026-9481) or your registered 10-digit mobile number to inspect real-time courier dispatch status.
+      </p>
+
+      <div style="display:flex; gap:10px; margin-bottom:16px;">
+        <input type="text" id="trackOrderQueryInput" class="checkout-input" placeholder="e.g. ORD-2026-9481 or 9820144521" style="flex:1;">
+        <button class="btn btn-gold" style="padding:8px 18px;" onclick="lookupOrderTracking()">Locate Status</button>
+      </div>
+
+      <div id="trackOrderResultBox"></div>
+    </div>
+
+  </div>
+
 </body>
 </html>

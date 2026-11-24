@@ -59,7 +59,7 @@
     "gemstoneCost": 450,
     "isDynamicPricing": false,
     "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1611591475870-761376e10793?auto=format&fit=crop&w=700&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80",
     "description": "Directly inspired by the legendary Meera Meenakari bangles of Tripolia Bazaar, Jaipur. Hand-enameled in high-fire kiln at 800°C with vivid peacock motifs.",
     "specs": {
       "Craft Style": "Authentic Jaipuri Meenakari (Hand-enameled)",
@@ -168,7 +168,7 @@
     "gemstoneCost": 0,
     "isDynamicPricing": false,
     "image": "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=700&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80",
     "description": "Engineered for the modern gentleman. Precision diamond-cut beveled Cuban links paired with an open-ended brushed steel wrist kada.",
     "specs": {
       "Chain Spec": "6mm width, 22 inches length with lobster clasp",
@@ -272,7 +272,7 @@
     "gemstoneCost": 350,
     "isDynamicPricing": false,
     "image": "https://images.unsplash.com/photo-1674554875210-49b2a1c163d4?auto=format&fit=crop&w=800&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=700&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80",
     "description": "Waterproof mother-of-pearl talismans, sapphire evil eye amulets, and starry constellation charms on 18K PVD chain.",
     "specs": {
       "Amulet Core": "Natural Mother-of-Pearl & Cobalt Enamel",
@@ -298,7 +298,7 @@
     "gemstoneCost": 400,
     "isDynamicPricing": false,
     "image": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80",
-    "secondaryImage": "https://images.unsplash.com/photo-1611591475870-761376e10793?auto=format&fit=crop&w=700&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80",
     "description": "Traditional crimson red and ivory bridal chuda set accented with cultured pearl latkans, gold beaded edges, and filigree kada spacers.",
     "specs": {
       "Package": "Full Bridal Set (Both Hands - 24 Pieces)",
@@ -375,7 +375,7 @@
     "makingCharges": 18,
     "gemstoneCost": 1400,
     "isDynamicPricing": true,
-    "image": "https://images.unsplash.com/photo-1611591475870-761376e10793?auto=format&fit=crop&w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80",
     "secondaryImage": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80",
     "description": "Intricate multi-strand ring-to-cuff hand harnesses studded with flat-cut Polki, seed pearls, and meena florets.",
     "specs": {

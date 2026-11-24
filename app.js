@@ -173,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollHeader();
   syncCatalogFromStoreEngine();
   initBullionAnnouncementTicker();
+  initCategoryPillsAutoSlider();
 });
 
 // -----------------------------------------------------------------------------
@@ -1131,7 +1132,7 @@ const categoryMetadata = {
     subhead: 'Mediterranean & Vedic Amulets',
     desc: 'Hand-carved mother-of-pearl, Greek sapphire crystals, and protective astral symbols set in water-resistant 18K PVD gold chains.',
     badge: 'Amulets of Protection',
-    bannerImg: 'https://images.unsplash.com/photo-1611591475878-1a74288029c7?auto=format&fit=crop&w=1920&q=85'
+    bannerImg: 'https://images.unsplash.com/photo-1674554875210-49b2a1c163d4?auto=format&fit=crop&w=1920&q=85'
   },
   'bangles': {
     title: 'Imperial Bridal Chuda & Marwar Kadas',
@@ -1240,6 +1241,9 @@ function filterCategory(cat) {
     if (btn.dataset.cat === cat) {
       btn.classList.add('active');
       btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      isPillsPaused = true;
+      if (pillsResumeTimeout) clearTimeout(pillsResumeTimeout);
+      pillsResumeTimeout = setTimeout(() => { isPillsPaused = false; }, 4500);
     } else {
       btn.classList.remove('active');
     }
@@ -1344,12 +1348,113 @@ function toggleCatalogSidebar() {
   showToast(isCollapsed ? 'Sidebar hidden (Full width view)' : 'Sidebar restored');
 }
 
-// Horizontal category scroll buttons
+// =============================================================================
+// CATEGORY PILLS AUTOMATIC SLIDER (Collections Page)
+// =============================================================================
+let categoryPillsAutoTimer = null;
+let isPillsPaused = false;
+let pillsResumeTimeout = null;
+
+function initCategoryPillsAutoSlider() {
+  const container = document.getElementById('categoryPillsScroll');
+  if (!container) return;
+
+  if (categoryPillsAutoTimer) {
+    clearInterval(categoryPillsAutoTimer);
+    categoryPillsAutoTimer = null;
+  }
+
+  // Smooth continuous auto-advance step (~1 card width: 180px)
+  const slideStep = 180;
+  const autoInterval = 2800; // Auto-slides every 2.8 seconds
+
+  function advanceCategorySlide() {
+    if (isPillsPaused) return;
+    
+    // Check if reached end or near the end (within 25px)
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (container.scrollLeft >= maxScroll - 25) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: slideStep, behavior: 'smooth' });
+    }
+  }
+
+  categoryPillsAutoTimer = setInterval(advanceCategorySlide, autoInterval);
+
+  function pauseAutoSlide(resumeDelay) {
+    isPillsPaused = true;
+    if (pillsResumeTimeout) clearTimeout(pillsResumeTimeout);
+    if (resumeDelay && resumeDelay > 0) {
+      pillsResumeTimeout = setTimeout(() => {
+        isPillsPaused = false;
+      }, resumeDelay);
+    }
+  }
+
+  function resumeAutoSlide() {
+    if (pillsResumeTimeout) clearTimeout(pillsResumeTimeout);
+    isPillsPaused = false;
+  }
+
+  // Hover pause / resume on desktop
+  container.addEventListener('mouseenter', () => pauseAutoSlide(0));
+  container.addEventListener('mouseleave', () => resumeAutoSlide());
+
+  // Also pause if hovering over navigation arrows
+  const navArrows = document.querySelector('.csh-nav-arrows');
+  if (navArrows) {
+    navArrows.addEventListener('mouseenter', () => pauseAutoSlide(0));
+    navArrows.addEventListener('mouseleave', () => resumeAutoSlide());
+  }
+
+  // Touch interactions on mobile & tablet
+  container.addEventListener('touchstart', () => pauseAutoSlide(0), { passive: true });
+  container.addEventListener('touchend', () => pauseAutoSlide(3500), { passive: true });
+
+  // Native touch/wheel scroll detection
+  let scrollTimeout = null;
+  container.addEventListener('scroll', () => {
+    if (!isPillsPaused) {
+      isPillsPaused = true;
+    }
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      isPillsPaused = false;
+    }, 3500);
+  }, { passive: true });
+
+  // Pause when switching browser tab to save cycles
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      pauseAutoSlide(0);
+    } else {
+      resumeAutoSlide();
+    }
+  });
+}
+
+// Horizontal category scroll buttons (Next / Prev)
 function scrollCategoryPills(dir) {
   const container = document.getElementById('categoryPillsScroll');
   if (!container) return;
   const scrollAmount = 320;
-  container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+  
+  const maxScroll = container.scrollWidth - container.clientWidth;
+  if (dir > 0 && container.scrollLeft >= maxScroll - 25) {
+    container.scrollTo({ left: 0, behavior: 'smooth' });
+  } else if (dir < 0 && container.scrollLeft <= 15) {
+    container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+  } else {
+    container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+  }
+
+  // Pause automatic sliding for 4.5 seconds after manual arrow click
+  isPillsPaused = true;
+  if (pillsResumeTimeout) clearTimeout(pillsResumeTimeout);
+  pillsResumeTimeout = setTimeout(() => {
+    isPillsPaused = false;
+  }, 4500);
 }
 
 // Live catalog keyword search
@@ -1394,6 +1499,7 @@ window.addEventListener('DOMContentLoaded', () => {
       filterCategory(catParam);
     }, 150);
   }
+  initCategoryPillsAutoSlider();
 });
 
 // =============================================================================

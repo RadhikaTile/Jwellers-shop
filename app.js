@@ -1207,6 +1207,59 @@ function sortCatalog(sortVal) {
   showToast('Catalog sorted by ' + sortVal);
 }
 
+
+// =============================================================================
+// SIGNATURE COLLECTIONS MARQUEE SLIDER SELECTION (Collections Page)
+// =============================================================================
+function selectUniverseFromSlider(cat) {
+  filterCategory(cat);
+
+  // Sync active class on marquee cards
+  const allTiles = document.querySelectorAll('.collections-marquee-track .collection-tile');
+  allTiles.forEach(tile => {
+    if (cat === 'all') {
+      tile.classList.remove('active');
+    } else if (tile.dataset.cat === cat) {
+      tile.classList.add('active');
+    } else {
+      tile.classList.remove('active');
+    }
+  });
+
+  // Smooth scroll down to catalog filter bar or grid
+  const target = document.querySelector('.catalog-filter-bar') || document.querySelector('.catalog-layout-grid');
+  if (target) {
+    const headerOffset = 90;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  const nameMap = {
+    'all': 'All 15 Curated Universes',
+    'kundan': 'Sawwaisa Pachi Kundan & Polki',
+    'meenakari': 'Jaipuri Meera Meenakari',
+    'waterproof': '18K Anti-Tarnish Waterproof Gold',
+    'silver': 'Feeling Chhail 925 Oxidized Silver',
+    'men': "Swashaa Men's Luxe",
+    'pearls': 'Nazaakat Basra Pearls',
+    'temple': 'South Indian Temple Nakshi & Kemp',
+    'diamonds': 'Solitaire Lab Diamonds',
+    'talismans': 'Noor Evil Eye Talismans',
+    'bangles': 'Imperial Bridal Chuda & Marwar Sets',
+    'navratna': 'Navratna Celestial Nine-Gem',
+    'rosegold': 'Gulabi Rose Gold & Tourmaline',
+    'hathphool': 'Rajkumari Jadau Hathphool',
+    'moissanite': 'Dewdrop VVS1 Moissanite',
+    'hair-jewels': 'Noor-E-Passa & Matha Patti'
+  };
+
+  showToast('Universe Filtered: ' + (nameMap[cat] || cat));
+}
+
 function filterCategory(cat) {
   currentActiveCategory = cat || 'all';
   const cards = document.querySelectorAll('.product-card');
@@ -1222,6 +1275,17 @@ function filterCategory(cat) {
       visibleCount++;
     } else {
       card.style.display = 'none';
+    }
+  });
+
+  
+  // Sync marquee collection tiles
+  const marqueeTiles = document.querySelectorAll('.collections-marquee-track .collection-tile');
+  marqueeTiles.forEach(tile => {
+    if (cat !== 'all' && tile.dataset.cat === cat) {
+      tile.classList.add('active');
+    } else {
+      tile.classList.remove('active');
     }
   });
 

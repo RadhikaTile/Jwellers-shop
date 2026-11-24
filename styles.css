@@ -8615,3 +8615,71 @@ img[src*="photo-1617038220319-276d3cfab638"] {
   color: #d4af37;
   font-weight: 600;
 }
+
+
+/* ==========================================================================
+   SIGNATURE COLLECTIONS SLIDER ENHANCEMENTS (Interactive Filter & Active State)
+   ========================================================================== */
+.collections-marquee-group .collection-tile {
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+  border: 1px solid rgba(226, 218, 206, 0.2);
+}
+
+.collections-marquee-group .collection-tile:hover {
+  transform: translateY(-8px) scale(1.025) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(197, 168, 128, 0.6) !important;
+}
+
+.collections-marquee-group .collection-tile.active {
+  border: 2px solid #c5a880 !important;
+  box-shadow: 0 0 28px rgba(197, 168, 128, 0.7), 0 14px 40px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-6px) scale(1.02) !important;
+}
+
+.collections-marquee-group .collection-tile.active .tile-tag {
+  background: #c5a880 !important;
+  color: #121714 !important;
+  font-weight: 700 !important;
+}
+
+.collections-marquee-group .collection-tile.active .tile-btn {
+  background: #c5a880 !important;
+  color: #121714 !important;
+  border-color: #c5a880 !important;
+  font-weight: 600;
+}
+
+.btn-reset-collections {
+  background: none;
+  border: none;
+  color: #c5a880;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(197, 168, 128, 0.1);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-reset-collections:hover {
+  background: #c5a880;
+  color: #121714;
+  border-color: #c5a880;
+  transform: translateY(-2px);
+}
+
+.slider-hint {
+  font-size: 0.88rem;
+  color: rgba(226, 218, 206, 0.8);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

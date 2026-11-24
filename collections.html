@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8.3">
+  <link rel="stylesheet" href="styles.css?v=8.4">
   <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -624,181 +624,596 @@
   </section>
 
   
-  <!-- LUXURY CATEGORY STORIES & UNIVERSE SELECTOR -->
-  <section class="category-stories-section">
+    <!-- 5. SIGNATURE COLLECTIONS LUXURY INFINITE MARQUEE SLIDER -->
+  <section class="section-padding collections-showcase collections-page-slider" id="collections" style="padding-top: 35px; padding-bottom: 30px;">
     <div class="container">
-      <div class="category-stories-header">
-        <div class="csh-title-group">
-          <span class="csh-badge"><i class="ri-sparkling-fill"></i> ARCHIVAL &amp; MODERN UNIVERSES</span>
-          <h2 class="csh-title">Explore by Curated Universe</h2>
+      <div class="section-header text-center" style="margin-bottom: 24px;">
+        <span class="sub-title"><i class="ri-sparkling-fill"></i> ARCHIVAL &amp; MODERN UNIVERSES</span>
+        <h2 class="section-title">Explore by Curated Universe</h2>
+        <div class="divider-gem"><i class="ri-vip-diamond-line"></i></div>
+        <p class="section-subtitle">Click any signature universe to instantly filter our royal ateliers and explore handcrafted curations below.</p>
+      </div>
+
+      <!-- Collections Slider Controls & Counter -->
+      <div class="collections-slider-header">
+        <div class="slider-counter">
+          <span class="current-slide" id="collCurrentSlide">15</span>
+          <span class="counter-slash">/</span>
+          <span class="total-slides" id="collTotalSlides">15</span>
+          <span class="slider-label">Signature Portfolios &bull; Infinite Flow</span>
         </div>
-        <div class="csh-nav-arrows">
-          <button class="csh-arrow-btn prev" onclick="scrollCategoryPills(-1)" aria-label="Previous Categories"><i class="ri-arrow-left-s-line"></i></button>
-          <button class="csh-arrow-btn next" onclick="scrollCategoryPills(1)" aria-label="Next Categories"><i class="ri-arrow-right-s-line"></i></button>
+        <div class="collections-slider-arrows">
+          <button class="slider-nav-btn prev-btn" id="collPrevBtn" aria-label="Reverse Flow Direction" title="Flow Left">
+            <i class="ri-arrow-left-s-line"></i>
+          </button>
+          <button class="slider-nav-btn pause-btn" id="collPauseBtn" aria-label="Pause / Play Marquee" title="Pause / Play">
+            <i class="ri-pause-line" id="collPauseIcon"></i>
+          </button>
+          <button class="slider-nav-btn next-btn" id="collNextBtn" aria-label="Forward Flow Direction" title="Flow Right">
+            <i class="ri-arrow-right-s-line"></i>
+          </button>
         </div>
       </div>
-      
-      <div class="category-pills-scroll" id="categoryPillsScroll">
-        <button class="category-pill-card active" data-cat="all" onclick="filterCategory('all')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=140&q=80" alt="All Collections" loading="lazy">
-            <span class="pill-status-dot"></span>
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">All Heirlooms</span>
-            <span class="pill-count">15 Curations</span>
-          </div>
-        </button>
 
-        <button class="category-pill-card" data-cat="kundan" onclick="filterCategory('kundan')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=140&q=80" alt="Sawwaisa Pachi Kundan" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Sawwaisa Kundan</span>
-            <span class="pill-count">Royal Bridal</span>
-          </div>
-        </button>
+      <!-- Collections Slider Container & Marquee Track -->
+      <div class="collections-slider-container" id="collectionsSliderContainer">
+        <div class="collections-marquee-track" id="collectionsSliderTrack">
+          <div class="collections-marquee-group" id="collMarqueeGroup1">
+          <article class="collection-tile tile-large" data-cat="kundan" onclick="selectUniverseFromSlider('kundan')" title="Click to filter by Pachi Kundan & Polki Heirlooms">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Pachi Kundan & Polki Heirlooms" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Royal Heritage &bull; Sawwaisa Inspired</span>
+              <h3 class="tile-title">Pachi Kundan & Polki Heirlooms</h3>
+              <p class="tile-desc">High-finish uncut stones set with green emerald drops and hand-woven pearl dori.</p>
+              <div class="tile-meta">
+                <span class="price-start">Starting at ₹2,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('kundan'); event.stopPropagation();">
+                  Explore Bridal Sets <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="meenakari" onclick="filterCategory('meenakari')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=140&q=80" alt="Vijay Meenakari Bangles" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Vijay Meenakari</span>
-            <span class="pill-count">800°C Enamel</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="meenakari" onclick="selectUniverseFromSlider('meenakari')" title="Click to filter by The Meera Meenakari Bangles">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80" alt="Meera Meenakari Bangles" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Specialist Craft &bull; Vijay Bangles Inspired</span>
+              <h3 class="tile-title">The Meera Meenakari Bangles</h3>
+              <p class="tile-desc">Vibrant hand-enameled peacock, lotus, and floral motifs with screw-locking kadas.</p>
+              <div class="tile-meta">
+                <span class="price-start">Sets from ₹1,850</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('meenakari'); event.stopPropagation();">
+                  Shop Bangles <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="anti-tarnish" onclick="filterCategory('anti-tarnish')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=140&q=80" alt="18K Waterproof Gold" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">18K Anti-Tarnish</span>
-            <span class="pill-count">Waterproof</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="waterproof" onclick="selectUniverseFromSlider('waterproof')" title="Click to filter by 18K Anti-Tarnish Waterproof">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80" alt="18K Anti-Tarnish Waterproof Everyday Gold" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Everyday Luxe &bull; Raviva & Arika Inspired</span>
+              <h3 class="tile-title">18K Anti-Tarnish Waterproof</h3>
+              <p class="tile-desc">Sweatproof paperclip chains, clover bracelets, and huggies that stay lustrous 24/7.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹799</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('waterproof'); event.stopPropagation();">
+                  Shop Waterproof <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="oxidized" onclick="filterCategory('oxidized')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?auto=format&fit=crop&w=140&q=80" alt="Chhail Tribal Silver" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Chhail Silver</span>
-            <span class="pill-count">925 Tribal</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="silver" onclick="selectUniverseFromSlider('silver')" title="Click to filter by Feeling Chhail: Oxidized Edit">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=800&q=80" alt="Feeling Chhail Oxidized Silver" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Artisanal Silver &bull; Chhail Inspired</span>
+              <h3 class="tile-title">Feeling Chhail: Oxidized Edit</h3>
+              <p class="tile-desc">Bohemian ghungroo jhumkas, carved coin chokers, and dual-tone statement pieces.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹999</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('silver'); event.stopPropagation();">
+                  Shop Silver <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="men" onclick="filterCategory('men')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=140&q=80" alt="Swashaa Men's Luxe" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Swashaa Men's</span>
-            <span class="pill-count">Unisex Luxe</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="men" onclick="selectUniverseFromSlider('men')" title="Click to filter by The Modern Men's Vault">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=80" alt="The Modern Men's Luxe" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">For Him & Unisex &bull; Swashaa Inspired</span>
+              <h3 class="tile-title">The Modern Men's Vault</h3>
+              <p class="tile-desc">Brushed matte Cuban chains, signet rings, and sleek stainless steel wrist kadas.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹849</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('men'); event.stopPropagation();">
+                  Shop For Him <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="pearls" onclick="filterCategory('pearls')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=140&q=80" alt="Nazaakat Basra Pearls" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Basra Pearls</span>
-            <span class="pill-count">Nizami Court</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="pearls" onclick="selectUniverseFromSlider('pearls')" title="Click to filter by The Nazaakat Pearl & Polki Suite">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Nazaakat Basra Pearls" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Fine Pearls &bull; Nizam Court Inspired</span>
+              <h3 class="tile-title">The Nazaakat Pearl & Polki Suite</h3>
+              <p class="tile-desc">Hand-strung cultured freshwater pearls accented with uncut polki florets and 18K gold wirework.</p>
+              <div class="tile-meta">
+                <span class="price-start">Starting at ₹1,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('pearls'); event.stopPropagation();">
+                  Shop Pearls <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="temple" onclick="filterCategory('temple')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=140&q=80" alt="Temple Nakshi" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Temple Nakshi</span>
-            <span class="pill-count">Devotional Kemp</span>
-          </div>
-        </button>
+          <article class="collection-tile tile-large" data-cat="temple" onclick="selectUniverseFromSlider('temple')" title="Click to filter by Temple Grandeur: Nakshi & Kemp Heirlooms">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=800&q=80" alt="Temple Grandeur Nakshi & Kemp" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Devotional Heritage &bull; Chola & Dravidian Inspired</span>
+              <h3 class="tile-title">Temple Grandeur: Nakshi & Kemp Heirlooms</h3>
+              <p class="tile-desc">Antique matte gold featuring hand-embossed Lakshmi motifs, Kemp ruby-emerald cabochons, and sacred temple coin haars.</p>
+              <div class="tile-meta">
+                <span class="price-start">Sets from ₹2,699</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('temple'); event.stopPropagation();">
+                  Explore Temple Sets <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="diamonds" onclick="filterCategory('diamonds')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=140&q=80" alt="Solitaire Lab Diamonds" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Lab Diamonds</span>
-            <span class="pill-count">VVS Solitaire</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="diamonds" onclick="selectUniverseFromSlider('diamonds')" title="Click to filter by Solitaire Noir: Lab Diamonds">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Solitaire Lab Diamonds" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Haute Joaillerie &bull; Paris Atelier Inspired</span>
+              <h3 class="tile-title">Solitaire Noir: Lab Diamonds</h3>
+              <p class="tile-desc">Conflict-free VVS brilliant cuts, tennis bracelets, and diamond eternity bands set in 18K white gold.</p>
+              <div class="tile-meta">
+                <span class="price-start">Starting at ₹3,250</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('diamonds'); event.stopPropagation();">
+                  Shop Diamonds <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="talismans" onclick="filterCategory('talismans')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1674554875210-49b2a1c163d4?auto=format&fit=crop&w=140&q=80" alt="Noor Evil Eye" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Noor Talismans</span>
-            <span class="pill-count">Evil Eye</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="talismans" onclick="selectUniverseFromSlider('talismans')" title="Click to filter by Noor Evil Eye & Talismans">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1674554875210-49b2a1c163d4?auto=format&fit=crop&w=800&q=80" alt="Noor Evil Eye & Talismans" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Mediterranean Protection &bull; Evil Eye Edit</span>
+              <h3 class="tile-title">Noor Evil Eye & Talismans</h3>
+              <p class="tile-desc">Protective blue enamel evil eye amulets, mother-of-pearl charms, and celestial sun pendants.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,150</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('talismans'); event.stopPropagation();">
+                  Shop Talismans <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="bangles" onclick="filterCategory('bangles')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=140&q=80" alt="Imperial Bridal Chuda" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Bridal Chuda</span>
-            <span class="pill-count">Marwar Sets</span>
-          </div>
-        </button>
+          <article class="collection-tile tile-large" data-cat="bangles" onclick="selectUniverseFromSlider('bangles')" title="Click to filter by Imperial Bridal Chuda & Marwar Sets">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Imperial Bridal Chuda & Marwar Sets" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Bridal Tradition &bull; Marwar Royal Edit</span>
+              <h3 class="tile-title">Imperial Bridal Chuda & Marwar Sets</h3>
+              <p class="tile-desc">Traditional crimson red and ivory bridal chuda set accented with cultured pearl latkans and filigree kada spacers.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹2,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('bangles'); event.stopPropagation();">
+                  Shop Chuda Sets <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="navratna" onclick="filterCategory('navratna')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=140&q=80" alt="Navratna Vedic Gems" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Navratna Vedic</span>
-            <span class="pill-count">Nine Astral Gems</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="navratna" onclick="selectUniverseFromSlider('navratna')" title="Click to filter by Navratna Celestial Nine-Gem">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Navratna Celestial Nine-Gem" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Vedic Astrology &bull; Navratna Edit</span>
+              <h3 class="tile-title">Navratna Celestial Nine-Gem</h3>
+              <p class="tile-desc">Nine astrological gemstones aligned to celestial bodies in auspicious filigree gold settings.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹2,299</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('navratna'); event.stopPropagation();">
+                  Shop Navratna <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="rosegold" onclick="filterCategory('rosegold')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=140&q=80" alt="Gulabi Rose Gold" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Gulabi Rose Gold</span>
-            <span class="pill-count">Tourmaline</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="rosegold" onclick="selectUniverseFromSlider('rosegold')" title="Click to filter by Gulabi Rose Gold & Tourmaline">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=800&q=80" alt="Gulabi Rose Gold & Tourmaline" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Pastel Romance &bull; Jaipur Gulabi Edit</span>
+              <h3 class="tile-title">Gulabi Rose Gold & Tourmaline</h3>
+              <p class="tile-desc">Delicate blush pink tourmaline and morganite cabochons handset in 18K warm rose gold.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,299</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('rosegold'); event.stopPropagation();">
+                  Shop Rose Gold <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="hathphool" onclick="filterCategory('hathphool')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=140&q=80" alt="Rajkumari Hathphool" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">Jadau Hathphool</span>
-            <span class="pill-count">Bridal Hand Suite</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="hathphool" onclick="selectUniverseFromSlider('hathphool')" title="Click to filter by Rajkumari Jadau Hathphool">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Rajkumari Jadau Hathphool" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Bridal Handcraft &bull; Hathphool Suite</span>
+              <h3 class="tile-title">Rajkumari Jadau Hathphool</h3>
+              <p class="tile-desc">Intricate multi-strand ring-to-cuff hand harnesses studded with flat-cut Polki, seed pearls, and meena florets.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹2,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('hathphool'); event.stopPropagation();">
+                  Shop Hathphool <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="moissanite" onclick="filterCategory('moissanite')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=140&q=80" alt="Dewdrop Moissanite" loading="lazy">
-          </div>
-          <div class="pill-meta">
-            <span class="pill-title">VVS1 Moissanite</span>
-            <span class="pill-count">D-Color Sparkle</span>
-          </div>
-        </button>
+          <article class="collection-tile " data-cat="moissanite" onclick="selectUniverseFromSlider('moissanite')" title="Click to filter by Dewdrop VVS1 Moissanite">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Dewdrop VVS1 Moissanite" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">High Fire Brilliance &bull; VVS1 Edit</span>
+              <h3 class="tile-title">Dewdrop VVS1 Moissanite</h3>
+              <p class="tile-desc">D-Color flawless lab moissanite eternity tennis chains and solitaire rings with diamond-rivaling fire.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,899</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('moissanite'); event.stopPropagation();">
+                  Shop Moissanite <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <button class="category-pill-card" data-cat="hair-jewels" onclick="filterCategory('hair-jewels')">
-          <div class="pill-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=140&q=80" alt="Noor Hair Jewels" loading="lazy">
+          <article class="collection-tile " data-cat="hair-jewels" onclick="selectUniverseFromSlider('hair-jewels')" title="Click to filter by Noor-E-Passa & Matha Patti">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80" alt="Noor-E-Passa & Matha Patti" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Mughal & Nizami &bull; Forehead Adornments</span>
+              <h3 class="tile-title">Noor-E-Passa & Matha Patti</h3>
+              <p class="tile-desc">Royal crescent jhumars, sheeshphool hair bands, and pearl-tasseled maang tikkas crafted for bridal grandeur.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,999</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('hair-jewels'); event.stopPropagation();">
+                  Shop Passa & Tikkas <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
           </div>
-          <div class="pill-meta">
-            <span class="pill-title">Passa &amp; Matha Patti</span>
-            <span class="pill-count">Nizami Headwear</span>
+          <div class="collections-marquee-group" id="collMarqueeGroup2" aria-hidden="true">
+          <article class="collection-tile tile-large" data-cat="kundan" onclick="selectUniverseFromSlider('kundan')" title="Click to filter by Pachi Kundan & Polki Heirlooms">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Pachi Kundan & Polki Heirlooms" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Royal Heritage &bull; Sawwaisa Inspired</span>
+              <h3 class="tile-title">Pachi Kundan & Polki Heirlooms</h3>
+              <p class="tile-desc">High-finish uncut stones set with green emerald drops and hand-woven pearl dori.</p>
+              <div class="tile-meta">
+                <span class="price-start">Starting at ₹2,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('kundan'); event.stopPropagation();">
+                  Explore Bridal Sets <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="meenakari" onclick="selectUniverseFromSlider('meenakari')" title="Click to filter by The Meera Meenakari Bangles">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=80" alt="Meera Meenakari Bangles" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Specialist Craft &bull; Vijay Bangles Inspired</span>
+              <h3 class="tile-title">The Meera Meenakari Bangles</h3>
+              <p class="tile-desc">Vibrant hand-enameled peacock, lotus, and floral motifs with screw-locking kadas.</p>
+              <div class="tile-meta">
+                <span class="price-start">Sets from ₹1,850</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('meenakari'); event.stopPropagation();">
+                  Shop Bangles <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="waterproof" onclick="selectUniverseFromSlider('waterproof')" title="Click to filter by 18K Anti-Tarnish Waterproof">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80" alt="18K Anti-Tarnish Waterproof Everyday Gold" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Everyday Luxe &bull; Raviva & Arika Inspired</span>
+              <h3 class="tile-title">18K Anti-Tarnish Waterproof</h3>
+              <p class="tile-desc">Sweatproof paperclip chains, clover bracelets, and huggies that stay lustrous 24/7.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹799</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('waterproof'); event.stopPropagation();">
+                  Shop Waterproof <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="silver" onclick="selectUniverseFromSlider('silver')" title="Click to filter by Feeling Chhail: Oxidized Edit">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=800&q=80" alt="Feeling Chhail Oxidized Silver" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Artisanal Silver &bull; Chhail Inspired</span>
+              <h3 class="tile-title">Feeling Chhail: Oxidized Edit</h3>
+              <p class="tile-desc">Bohemian ghungroo jhumkas, carved coin chokers, and dual-tone statement pieces.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹999</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('silver'); event.stopPropagation();">
+                  Shop Silver <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="men" onclick="selectUniverseFromSlider('men')" title="Click to filter by The Modern Men's Vault">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=80" alt="The Modern Men's Luxe" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">For Him & Unisex &bull; Swashaa Inspired</span>
+              <h3 class="tile-title">The Modern Men's Vault</h3>
+              <p class="tile-desc">Brushed matte Cuban chains, signet rings, and sleek stainless steel wrist kadas.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹849</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('men'); event.stopPropagation();">
+                  Shop For Him <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="pearls" onclick="selectUniverseFromSlider('pearls')" title="Click to filter by The Nazaakat Pearl & Polki Suite">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Nazaakat Basra Pearls" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Fine Pearls &bull; Nizam Court Inspired</span>
+              <h3 class="tile-title">The Nazaakat Pearl & Polki Suite</h3>
+              <p class="tile-desc">Hand-strung cultured freshwater pearls accented with uncut polki florets and 18K gold wirework.</p>
+              <div class="tile-meta">
+                <span class="price-start">Starting at ₹1,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('pearls'); event.stopPropagation();">
+                  Shop Pearls <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile tile-large" data-cat="temple" onclick="selectUniverseFromSlider('temple')" title="Click to filter by Temple Grandeur: Nakshi & Kemp Heirlooms">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=800&q=80" alt="Temple Grandeur Nakshi & Kemp" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Devotional Heritage &bull; Chola & Dravidian Inspired</span>
+              <h3 class="tile-title">Temple Grandeur: Nakshi & Kemp Heirlooms</h3>
+              <p class="tile-desc">Antique matte gold featuring hand-embossed Lakshmi motifs, Kemp ruby-emerald cabochons, and sacred temple coin haars.</p>
+              <div class="tile-meta">
+                <span class="price-start">Sets from ₹2,699</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('temple'); event.stopPropagation();">
+                  Explore Temple Sets <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="diamonds" onclick="selectUniverseFromSlider('diamonds')" title="Click to filter by Solitaire Noir: Lab Diamonds">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Solitaire Lab Diamonds" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Haute Joaillerie &bull; Paris Atelier Inspired</span>
+              <h3 class="tile-title">Solitaire Noir: Lab Diamonds</h3>
+              <p class="tile-desc">Conflict-free VVS brilliant cuts, tennis bracelets, and diamond eternity bands set in 18K white gold.</p>
+              <div class="tile-meta">
+                <span class="price-start">Starting at ₹3,250</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('diamonds'); event.stopPropagation();">
+                  Shop Diamonds <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="talismans" onclick="selectUniverseFromSlider('talismans')" title="Click to filter by Noor Evil Eye & Talismans">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1674554875210-49b2a1c163d4?auto=format&fit=crop&w=800&q=80" alt="Noor Evil Eye & Talismans" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Mediterranean Protection &bull; Evil Eye Edit</span>
+              <h3 class="tile-title">Noor Evil Eye & Talismans</h3>
+              <p class="tile-desc">Protective blue enamel evil eye amulets, mother-of-pearl charms, and celestial sun pendants.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,150</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('talismans'); event.stopPropagation();">
+                  Shop Talismans <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile tile-large" data-cat="bangles" onclick="selectUniverseFromSlider('bangles')" title="Click to filter by Imperial Bridal Chuda & Marwar Sets">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Imperial Bridal Chuda & Marwar Sets" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Bridal Tradition &bull; Marwar Royal Edit</span>
+              <h3 class="tile-title">Imperial Bridal Chuda & Marwar Sets</h3>
+              <p class="tile-desc">Traditional crimson red and ivory bridal chuda set accented with cultured pearl latkans and filigree kada spacers.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹2,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('bangles'); event.stopPropagation();">
+                  Shop Chuda Sets <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="navratna" onclick="selectUniverseFromSlider('navratna')" title="Click to filter by Navratna Celestial Nine-Gem">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Navratna Celestial Nine-Gem" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Vedic Astrology &bull; Navratna Edit</span>
+              <h3 class="tile-title">Navratna Celestial Nine-Gem</h3>
+              <p class="tile-desc">Nine astrological gemstones aligned to celestial bodies in auspicious filigree gold settings.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹2,299</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('navratna'); event.stopPropagation();">
+                  Shop Navratna <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="rosegold" onclick="selectUniverseFromSlider('rosegold')" title="Click to filter by Gulabi Rose Gold & Tourmaline">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=800&q=80" alt="Gulabi Rose Gold & Tourmaline" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Pastel Romance &bull; Jaipur Gulabi Edit</span>
+              <h3 class="tile-title">Gulabi Rose Gold & Tourmaline</h3>
+              <p class="tile-desc">Delicate blush pink tourmaline and morganite cabochons handset in 18K warm rose gold.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,299</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('rosegold'); event.stopPropagation();">
+                  Shop Rose Gold <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="hathphool" onclick="selectUniverseFromSlider('hathphool')" title="Click to filter by Rajkumari Jadau Hathphool">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=800&q=80" alt="Rajkumari Jadau Hathphool" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Bridal Handcraft &bull; Hathphool Suite</span>
+              <h3 class="tile-title">Rajkumari Jadau Hathphool</h3>
+              <p class="tile-desc">Intricate multi-strand ring-to-cuff hand harnesses studded with flat-cut Polki, seed pearls, and meena florets.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹2,499</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('hathphool'); event.stopPropagation();">
+                  Shop Hathphool <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="moissanite" onclick="selectUniverseFromSlider('moissanite')" title="Click to filter by Dewdrop VVS1 Moissanite">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Dewdrop VVS1 Moissanite" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">High Fire Brilliance &bull; VVS1 Edit</span>
+              <h3 class="tile-title">Dewdrop VVS1 Moissanite</h3>
+              <p class="tile-desc">D-Color flawless lab moissanite eternity tennis chains and solitaire rings with diamond-rivaling fire.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,899</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('moissanite'); event.stopPropagation();">
+                  Shop Moissanite <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="collection-tile " data-cat="hair-jewels" onclick="selectUniverseFromSlider('hair-jewels')" title="Click to filter by Noor-E-Passa & Matha Patti">
+            <div class="tile-img-box">
+              <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=800&q=80" alt="Noor-E-Passa & Matha Patti" loading="lazy">
+              <div class="tile-gradient-overlay"></div>
+            </div>
+            <div class="tile-content">
+              <span class="tile-tag">Mughal & Nizami &bull; Forehead Adornments</span>
+              <h3 class="tile-title">Noor-E-Passa & Matha Patti</h3>
+              <p class="tile-desc">Royal crescent jhumars, sheeshphool hair bands, and pearl-tasseled maang tikkas crafted for bridal grandeur.</p>
+              <div class="tile-meta">
+                <span class="price-start">From ₹1,999</span>
+                <button type="button" class="btn btn-outline-white tile-btn" onclick="selectUniverseFromSlider('hair-jewels'); event.stopPropagation();">
+                  Shop Passa & Tikkas <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+          </article>
           </div>
-        </button>
+        </div>
+      </div>
+
+      <!-- Slider Progress Bar and Quick Nav -->
+      <div class="collections-slider-footer">
+        <div class="slider-progress-track">
+          <div class="slider-progress-bar" id="collProgressBar"></div>
+        </div>
+        <div class="slider-quick-nav">
+          <span class="slider-hint"><i class="ri-hand-coin-line"></i> Click any card to filter designs below &bull; Hover to pause flow</span>
+          <button type="button" class="btn-reset-collections link-view-all" onclick="selectUniverseFromSlider('all')">
+            <i class="ri-refresh-line"></i> View All 15 Collections &rarr;
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -1784,8 +2199,8 @@
     <span class="whatsapp-tooltip">Chat with Concierge</span>
   </a>
 
-  <script src="store-engine.js?v=8.3"></script>
-  <script src="app.js?v=8.3"></script>
+  <script src="store-engine.js?v=8.4"></script>
+  <script src="app.js?v=8.4"></script>
 
   <!-- DYNAMIC LUXURY CHECKOUT & ORDER MODALS BACKDROP -->
   <div class="luxury-modal-backdrop" id="checkoutModalBackdrop">

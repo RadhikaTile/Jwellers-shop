@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8.6">
+  <link rel="stylesheet" href="styles.css?v=8.7">
   <style id="critical-tablet-nav">
     @media (max-width: 1400px) {
       .site-header {
@@ -610,15 +610,242 @@
     </div>
   </header>
 
-  <!-- CATALOG HERO BANNER WITH MODEL PHOTOGRAPHY -->
-  <section class="catalog-hero-banner"
-    style="background-image: linear-gradient(to right, rgba(15,21,19,0.92), rgba(15,21,19,0.4)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=85');">
-    <div class="container">
-      <div class="catalog-hero-text">
-        <span class="hero-subhead"><i class="ri-vip-diamond-line"></i> Complete Curated Portfolio</span>
-        <h1 class="hero-title">Timeless Heirlooms & Modern Essentials</h1>
-        <p class="hero-desc">Explore hand-enamelled Jaipuri Meenakari bangles, uncut Pachi Kundan bridal sets, and
-          sweatproof 18K gold daily jewellery.</p>
+  <!-- =====================================================================
+       COLLECTIONS HERO SLIDER (Luxury Top Header Slider)
+       ===================================================================== -->
+  <section class="hero-section collections-hero-section">
+    <div class="hero-slides-wrapper" id="heroSlider">
+      
+      <!-- BANNER SLIDE 1: Royal Heritage Kundan & Polki Bridal Edit -->
+      <div class="hero-slide active">
+        <div class="container hero-split-grid">
+          <div class="hero-text-box">
+            <span class="hero-subhead"><i class="ri-crown-line"></i> Sawwaisa & Jewellery Khazana Inspired</span>
+            <h1 class="hero-title">Timeless Kundan, Handcrafted Heritage</h1>
+            <p class="hero-desc">Pachi Kundan, uncut Polki, and authentic Meenakari enameled bangles forged by master karigars of Jaipur. Designed for the modern Indian bride who honors tradition.</p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-gold" onclick="filterCategory('kundan')"><i class="ri-sparkling-fill"></i> Explore Bridal Edit</button>
+              <a href="bangles-guide.html" class="btn btn-outline-light">Shop Meenakari Bangles &rarr;</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-num">500+</span>
+                <span class="stat-lbl">Jaipur Artisans</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-lbl">Hallmarked Craft</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">4.9 / 5</span>
+                <span class="stat-lbl">Customer Rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-model-showcase">
+            <div class="hero-model-card">
+              <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=85" alt="Bridal Kundan Jewellery Model" class="hero-featured-model-img">
+              <div class="hero-float-badge">
+                <i class="ri-crown-fill"></i>
+                <div>
+                  <strong>The Empress Rajputana Edit</strong>
+                  <span>Hand-Set Pachi Kundan & Hydro Emeralds</span>
+                </div>
+              </div>
+              <div class="hero-price-tag">
+                <span>Sets from ₹2,499</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER SLIDE 2: The Meera Meenakari Bangles & Kadas -->
+      <div class="hero-slide">
+        <div class="container hero-split-grid">
+          <div class="hero-text-box">
+            <span class="hero-subhead"><i class="ri-sparkling-fill"></i> Vijay Bangles Specialist Craft</span>
+            <h1 class="hero-title">The Meera Royal Meenakari Bangles</h1>
+            <p class="hero-desc">Hand-enameled in high-fire kilns at 800°C with vivid peacock feather and lotus motifs. Features precision screw-locking kadas tailored to every wrist size.</p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-gold" onclick="filterCategory('bangles')"><i class="ri-compasses-2-line"></i> Open Sizing Studio</button>
+              <button type="button" class="btn btn-outline-light" onclick="filterCategory('all')">View All Kadas &rarr;</button>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-num">800°C</span>
+                <span class="stat-lbl">Kiln Fired Enamel</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">5 Sizes</span>
+                <span class="stat-lbl">2.2 to 2.10 Fit</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">Screw-Lock</span>
+                <span class="stat-lbl">Zero-Drag Fit</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-model-showcase">
+            <div class="hero-model-card">
+              <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1000&q=85" alt="Meera Meenakari Bangles Model Wrist" class="hero-featured-model-img">
+              <div class="hero-float-badge">
+                <i class="ri-fire-fill"></i>
+                <div>
+                  <strong>Vijay Bangles &bull; Meera Kadas</strong>
+                  <span>Authentic Jaipuri Peacock Meenakari</span>
+                </div>
+              </div>
+              <div class="hero-price-tag">
+                <span>Pairs from ₹1,850</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER SLIDE 3: 18K Anti-Tarnish & Waterproof Daily -->
+      <div class="hero-slide">
+        <div class="container hero-split-grid">
+          <div class="hero-text-box">
+            <span class="hero-subhead"><i class="ri-drop-line"></i> Raviva & Chahana Minimalist Luxe</span>
+            <h1 class="hero-title">18K PVD Gold for Your Everyday Story</h1>
+            <p class="hero-desc">Wear in the shower, the gym, and on the go. High-grade 316L surgical steel dipped in 18-karat gold with aerospace PVD bonding that never tarnishes or turns skin green.</p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-gold" onclick="filterCategory('anti-tarnish')"><i class="ri-drop-fill"></i> Shop Anti-Tarnish Daily</button>
+              <a href="anti-tarnish.html" class="btn btn-outline-light">Layering Chains &rarr;</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-num">Lifetime</span>
+                <span class="stat-lbl">Color Guarantee</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">Zero</span>
+                <span class="stat-lbl">Skin Discoloration</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-lbl">Sweatproof Core</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-model-showcase">
+            <div class="hero-model-card">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1000&q=85" alt="Model wearing 18K Anti-Tarnish Gold Chains" class="hero-featured-model-img">
+              <div class="hero-float-badge">
+                <i class="ri-drop-line"></i>
+                <div>
+                  <strong>18K Waterproof Gold</strong>
+                  <span>Shower, Gym & Ocean-Safe Guarantee</span>
+                </div>
+              </div>
+              <div class="hero-price-tag">
+                <span>From ₹799</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER SLIDE 4: Feeling Chhail & Basra Pearls Heirloom -->
+      <div class="hero-slide">
+        <div class="container hero-split-grid">
+          <div class="hero-text-box">
+            <span class="hero-subhead"><i class="ri-vip-diamond-line"></i> Nizam Court Archival Edit</span>
+            <h1 class="hero-title">The Nazaakat Basra Pearl & Polki Suite</h1>
+            <p class="hero-desc">Hand-strung natural baroque Basra pearls layered with uncut polki separators, emerald drops, and multi-strand grand rani haars. Certified archival heirlooms.</p>
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-gold" onclick="filterCategory('pearls')"><i class="ri-sparkling-line"></i> Shop Basra Pearls</button>
+              <button type="button" class="btn btn-outline-light" onclick="filterCategory('oxidized')">Oxidized Silver &rarr;</button>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-num">Baroque</span>
+                <span class="stat-lbl">Natural Pearls</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">Multi-Strand</span>
+                <span class="stat-lbl">Grand Rani Haars</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-num">Certified</span>
+                <span class="stat-lbl">Archival Origin</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-model-showcase">
+            <div class="hero-model-card">
+              <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1000&q=85" alt="Basra Pearls & Polki Model" class="hero-featured-model-img">
+              <div class="hero-float-badge">
+                <i class="ri-sparkling-fill"></i>
+                <div>
+                  <strong>Nazaakat Basra Pearls</strong>
+                  <span>Nizami Court Hand-Knotted Silk</span>
+                </div>
+              </div>
+              <div class="hero-price-tag">
+                <span>From ₹1,499</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Navigation Controls -->
+    <div class="hero-slider-nav">
+      <button class="slider-arrow prev" id="heroPrevBtn" aria-label="Previous Slide"><i class="ri-arrow-left-s-line"></i></button>
+      <div class="slider-dots" id="heroDots">
+        <button class="dot active" data-index="0" title="Bridal Kundan"></button>
+        <button class="dot" data-index="1" title="Meenakari Bangles"></button>
+        <button class="dot" data-index="2" title="18K Waterproof"></button>
+        <button class="dot" data-index="3" title="Basra Pearls"></button>
+      </div>
+      <button class="slider-arrow next" id="heroNextBtn" aria-label="Next Slide"><i class="ri-arrow-right-s-line"></i></button>
+    </div>
+
+    <!-- INTERACTIVE BANNER THUMBNAIL CARDS -->
+    <div class="hero-banner-strip">
+      <div class="container">
+        <div class="banner-thumbs-grid">
+          <button class="banner-thumb active" onclick="jumpToHeroSlide(0)">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=150&q=80" alt="Bridal Kundan Thumb">
+            <div class="b-thumb-text">
+              <strong>Sawwaisa Bridal</strong>
+              <span>Pachi Kundan</span>
+            </div>
+          </button>
+          <button class="banner-thumb" onclick="jumpToHeroSlide(1)">
+            <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=150&q=80" alt="Vijay Bangles Thumb">
+            <div class="b-thumb-text">
+              <strong>Vijay Bangles</strong>
+              <span>Meera Meenakari</span>
+            </div>
+          </button>
+          <button class="banner-thumb" onclick="jumpToHeroSlide(2)">
+            <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=150&q=80" alt="Raviva Anti-Tarnish Thumb">
+            <div class="b-thumb-text">
+              <strong>Raviva / Chahana</strong>
+              <span>18K Waterproof</span>
+            </div>
+          </button>
+          <button class="banner-thumb" onclick="jumpToHeroSlide(3)">
+            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=150&q=80" alt="Basra Pearls Thumb">
+            <div class="b-thumb-text">
+              <strong>Nazaakat Pearls</strong>
+              <span>Basra &amp; Polki</span>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -1816,8 +2043,8 @@
     <span class="whatsapp-tooltip">Chat with Concierge</span>
   </a>
 
-  <script src="store-engine.js?v=8.6"></script>
-  <script src="app.js?v=8.6"></script>
+  <script src="store-engine.js?v=8.7"></script>
+  <script src="app.js?v=8.7"></script>
 
   <!-- DYNAMIC LUXURY CHECKOUT & ORDER MODALS BACKDROP -->
   <div class="luxury-modal-backdrop" id="checkoutModalBackdrop">

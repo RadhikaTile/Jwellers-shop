@@ -497,6 +497,7 @@ function initHeroSlider() {
   const thumbs = document.querySelectorAll('.banner-thumb');
   const prevBtn = document.getElementById('heroPrevBtn');
   const nextBtn = document.getElementById('heroNextBtn');
+  const heroSection = document.querySelector('.hero-section');
 
   if (!slides.length) return;
 
@@ -530,6 +531,22 @@ function initHeroSlider() {
       resetHeroAutoTimer();
     });
   });
+
+  // Pause auto-sliding when user interacts or hovers over the hero slider
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', () => {
+      clearInterval(heroInterval);
+    });
+    heroSection.addEventListener('mouseleave', () => {
+      resetHeroAutoTimer();
+    });
+    heroSection.addEventListener('touchstart', () => {
+      clearInterval(heroInterval);
+    }, { passive: true });
+    heroSection.addEventListener('touchend', () => {
+      resetHeroAutoTimer();
+    }, { passive: true });
+  }
 
   heroInterval = setInterval(() => {
     const idx = (currentHeroSlide + 1) % slides.length;
@@ -1281,6 +1298,21 @@ function filterCategory(cat) {
   });
 
   
+  // Sync hero slider if on collections page
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  if (heroSlides.length > 0 && typeof jumpToHeroSlide === 'function') {
+    const cSlug = typeof normalizeCategorySlug === 'function' ? normalizeCategorySlug(cat) : (cat || '').toLowerCase();
+    if (cSlug === 'kundan' || cSlug === 'bridal') {
+      jumpToHeroSlide(0);
+    } else if (cSlug === 'bangles' || cSlug === 'meenakari') {
+      jumpToHeroSlide(1);
+    } else if (cSlug === 'anti-tarnish' || cSlug === 'waterproof' || cSlug === 'chains') {
+      jumpToHeroSlide(2);
+    } else if (cSlug === 'pearls' || cSlug === 'oxidized' || cSlug === 'silver') {
+      jumpToHeroSlide(3);
+    }
+  }
+
   // Sync marquee collection tiles
   const marqueeTiles = document.querySelectorAll('.collections-marquee-track .collection-tile');
   marqueeTiles.forEach(tile => {

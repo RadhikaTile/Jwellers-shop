@@ -34,6 +34,15 @@
       }
     });
 
+    // Sync mobile bottom nav items
+    document.querySelectorAll('.admin-mob-item').forEach(item => {
+      if (item.dataset.tab === tabId) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+
     sections.forEach(sec => {
       if (sec.id === `section-${tabId}`) {
         sec.classList.add('active');
@@ -41,6 +50,11 @@
         sec.classList.remove('active');
       }
     });
+
+    // Auto-close sidebar drawer on tablet & mobile
+    if (window.innerWidth <= 992) {
+      closeSidebar();
+    }
 
     // Update Titles
     const titles = {
@@ -743,6 +757,35 @@
   // ---------------------------------------------------------------------------
   // 12. INITIALIZATION
   // ---------------------------------------------------------------------------
+  
+  // ---------------------------------------------------------------------------
+  // SIDEBAR DRAWER CONTROLLER (MOBILE & TABLET)
+  // ---------------------------------------------------------------------------
+  function openSidebar() {
+    const sidebar = document.getElementById('adminSidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    if (sidebar) sidebar.classList.add('open');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    const sidebar = document.getElementById('adminSidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    if (sidebar) sidebar.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById('adminSidebar');
+    if (sidebar && sidebar.classList.contains('open')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     // Nav Click Listeners
     navLinks.forEach(link => {
@@ -760,6 +803,16 @@
     const couponForm = document.getElementById('couponForm');
     if (couponForm) couponForm.addEventListener('submit', handleCouponSubmit);
 
+    // Mobile Sidebar Drawer Triggers
+    const toggleBtn = document.getElementById('adminSidebarToggle');
+    if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+
+    const closeBtn = document.getElementById('sidebarCloseBtn');
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+
+    const backdrop = document.getElementById('sidebarBackdrop');
+    if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
     // Initial Render
     switchTab('overview');
   });
@@ -767,6 +820,9 @@
   // Global Export
   window.AdminApp = {
     switchTab: switchTab,
+    openSidebar: openSidebar,
+    closeSidebar: closeSidebar,
+    toggleSidebar: toggleSidebar,
     editProduct: openProductModal,
     openNewProductModal: () => openProductModal(null),
     closeProductModal: closeProductModal,

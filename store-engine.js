@@ -434,6 +434,33 @@
       "Adornment": "Dual Royal Passa (Side Hair) + Maang Tikka (Forehead Center)",
       "Pearls": "Hand-strung cultured micro pearl tassels"
     }
+  },
+  {
+    "id": 16,
+    "title": "24K Pure Gold Minimalist Daily Chain",
+    "sku": "AA-PRD-016",
+    "brand": "Jaipur Artisanal • Meera Collection",
+    "category": "Meera Meenakari Bangles",
+    "price": 500,
+    "origPrice": 750,
+    "discount": "33% OFF",
+    "rating": 5.0,
+    "reviewsCount": 18,
+    "badge": "24K Pure Gold",
+    "stock": 15,
+    "metalType": "gold-24k",
+    "metalWeight": 1.2,
+    "makingCharges": 10,
+    "gemstoneCost": 0,
+    "isDynamicPricing": false,
+    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+    "secondaryImage": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80",
+    "description": "Exquisite 24K pure gold minimalist sleek link chain crafted for daily elegance, effortless layering, and refined grace.",
+    "specs": {
+      "Metal Purity": "24 Karat Solid Gold (99.9% Hallmark)",
+      "Type": "Sleek Link Everyday Chain",
+      "Stock Status": "15 Units Available in Jaipur Vault"
+    }
   }
 ];
 
@@ -576,8 +603,20 @@
 
   // Ensure initial store is populated on first load
   function initStore() {
-    if (!localStorage.getItem(STORAGE_KEYS.PRODUCTS) || (safeJsonParse(localStorage.getItem(STORAGE_KEYS.PRODUCTS), []).length < 15)) {
+    const existingProducts = safeJsonParse(localStorage.getItem(STORAGE_KEYS.PRODUCTS), null);
+    if (!existingProducts || !Array.isArray(existingProducts) || existingProducts.length === 0) {
       saveToStorage(STORAGE_KEYS.PRODUCTS, BASELINE_PRODUCTS);
+    } else {
+      let storeUpdated = false;
+      BASELINE_PRODUCTS.forEach(bp => {
+        if (!existingProducts.some(p => Number(p.id) === Number(bp.id))) {
+          existingProducts.push(bp);
+          storeUpdated = true;
+        }
+      });
+      if (storeUpdated) {
+        saveToStorage(STORAGE_KEYS.PRODUCTS, existingProducts);
+      }
     }
     if (!localStorage.getItem(STORAGE_KEYS.METAL_RATES)) {
       saveToStorage(STORAGE_KEYS.METAL_RATES, DEFAULT_METAL_RATES);

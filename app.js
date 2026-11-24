@@ -1266,7 +1266,9 @@ function filterCategory(cat) {
   let visibleCount = 0;
 
   cards.forEach(card => {
-    const matchesCat = (cat === 'all' || card.dataset.category === cat);
+    const cardCat = typeof normalizeCategorySlug === 'function' ? normalizeCategorySlug(card.dataset.category) : card.dataset.category;
+    const filterCat = typeof normalizeCategorySlug === 'function' ? normalizeCategorySlug(cat) : cat;
+    const matchesCat = (filterCat === 'all' || cardCat === filterCat || card.dataset.category === cat);
     const cardText = card.textContent.toLowerCase();
     const matchesSearch = !currentSearchQuery || cardText.includes(currentSearchQuery);
 
@@ -2122,6 +2124,107 @@ function initScrollHeader() {
 let selectedPaymentMethod = 'upi';
 let verifiedShippingPincode = null;
 
+
+// =============================================================================
+// DYNAMIC CATALOG PRODUCTS SYNCHRONIZATION ENGINE
+// =============================================================================
+function normalizeCategorySlug(rawCat) {
+  if (!rawCat) return 'all';
+  const c = String(rawCat).toLowerCase().trim();
+  if (c.includes('meenakari')) return 'meenakari';
+  if (c.includes('waterproof') || c.includes('anti-tarnish')) return 'waterproof';
+  if (c.includes('kundan') || c.includes('polki')) return 'kundan';
+  if (c.includes('silver') || c.includes('oxidized') || c.includes('chhail')) return 'silver';
+  if (c.includes('men') || c.includes('unisex') || c.includes('swashaa')) return 'men';
+  if (c.includes('pearl') || c.includes('basra')) return 'pearls';
+  if (c.includes('temple') || c.includes('nakshi')) return 'temple';
+  if (c.includes('diamond') || c.includes('solitaire')) return 'diamonds';
+  if (c.includes('talisman') || c.includes('evil eye')) return 'talismans';
+  if (c.includes('chuda') || c.includes('bangle')) return 'bangles';
+  if (c.includes('navratna') || c.includes('astral')) return 'navratna';
+  if (c.includes('rose') || c.includes('tourmaline')) return 'rosegold';
+  if (c.includes('hathphool') || c.includes('harness')) return 'hathphool';
+  if (c.includes('moissanite')) return 'moissanite';
+  if (c.includes('passa') || c.includes('hair') || c.includes('matha')) return 'hair-jewels';
+  return c;
+}
+
+function renderDynamicCatalogProducts() {
+  const grid = document.getElementById('catalogGrid');
+  if (!grid) return;
+
+  const emptyState = document.getElementById('catalogEmptyState');
+  if (typeof StoreEngine === 'undefined' || !StoreEngine.Products) return;
+
+  const products = StoreEngine.Products.getAll();
+  if (!products || !products.length) return;
+
+  // Build card elements dynamically
+  const cardsHtml = products.map(p => {
+    const pId = p.id;
+    const pTitle = p.title || p.name || 'Artisanal Jewellery';
+    const rawCat = p.category || 'all';
+    const catSlug = normalizeCategorySlug(rawCat);
+    const pBadge = p.badge || (p.isDynamicPricing ? 'Live Metal' : (p.metalType === 'gold-24k' ? '24K Pure Gold' : 'New Creation'));
+    const pPrice = Number(p.price) || 0;
+    const pOrigPrice = Number(p.origPrice) || Math.round(pPrice * 1.3);
+    const pDiscount = p.discount || (pOrigPrice > pPrice ? Math.round(((pOrigPrice - pPrice) / pOrigPrice) * 100) + '% OFF' : '');
+    const pImg = p.image || 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80';
+    const pSecImg = p.secondaryImage || 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80';
+    const pBrand = p.brand || 'Jaipur Artisanal • Aura & Artisan';
+    const stockText = (p.stock !== undefined) ? p.stock + ' in Stock' : 'BIS Certified';
+
+    return `
+          <div class="product-card" data-category="${catSlug}" data-id="${pId}">
+            <div class="product-badge badge-bestseller">${pBadge}</div>
+            <div class="product-img-wrap">
+              <img class="img-primary"
+                src="${pImg}"
+                alt="${pTitle}"
+                loading="lazy">
+              <img class="img-secondary"
+                src="${pSecImg}"
+                alt="${pTitle} Detail"
+                loading="lazy">
+              <button class="card-wishlist" onclick="toggleWishlist(this, ${pId})" aria-label="Add to Wishlist"><i class="ri-heart-line"></i></button>
+            </div>
+            <div class="product-details">
+              <div class="product-brand-tag">${pBrand}</div>
+              <h3 class="product-name"><a href="product-detail.html">${pTitle}</a></h3>
+              <div class="product-price-row">
+                <span class="price-current">₹${pPrice.toLocaleString('en-IN')}</span>
+                ${pOrigPrice > pPrice ? `<span class="price-original">₹${pOrigPrice.toLocaleString('en-IN')}</span>` : ''}
+                ${pDiscount ? `<span class="discount-pill">${pDiscount}</span>` : ''}
+              </div>
+              <div class="card-action-group">
+                <button type="button" class="btn btn-add-cart" onclick="addToCart(${pId}, '${pTitle.replace(/'/g, "\\'")}', ${pPrice}, '${pImg}', 'Standard Selection')">
+                  <i class="ri-shopping-bag-line"></i> Add to Bag
+                </button>
+                <a href="https://wa.me/919829012345?text=Hello%20Aura%20%26%20Artisan%2C%20I%20am%20inquiring%20about%20${encodeURIComponent(pTitle)}" class="btn-card-wa" target="_blank" rel="noopener" title="Quick WhatsApp Inquiry"><i class="ri-whatsapp-line"></i></a>
+              </div>
+              <div class="card-trust-tags">
+                <span><i class="ri-shield-check-line"></i> BIS Certified</span>
+                <span><i class="ri-truck-line"></i> ${stockText}</span>
+              </div>
+            </div>
+          </div>`;
+  }).join('\n');
+
+  const emptyStateHtml = emptyState ? emptyState.outerHTML : '';
+  grid.innerHTML = emptyStateHtml + '\n' + cardsHtml;
+
+  // Re-apply active filters
+  if (typeof currentActiveCategory !== 'undefined') {
+    filterCategory(currentActiveCategory);
+  }
+
+  // Update design count
+  const countStrong = document.querySelector('.item-count-text strong');
+  if (countStrong) {
+    countStrong.textContent = products.length + ' Designs';
+  }
+}
+
 function syncCatalogFromStoreEngine() {
   if (typeof StoreEngine !== 'undefined' && StoreEngine.Products) {
     const products = StoreEngine.Products.getAll();
@@ -2129,12 +2232,16 @@ function syncCatalogFromStoreEngine() {
       productDatabase[p.id] = p;
     });
 
+    // Render dynamic catalog on collections page
+    renderDynamicCatalogProducts();
+
     // Listen for storage changes from Admin
     window.addEventListener('aa_store_updated', (e) => {
       if (e.detail && e.detail.key === StoreEngine.STORAGE_KEYS.PRODUCTS) {
         const updated = e.detail.data;
         if (Array.isArray(updated)) {
           updated.forEach(p => { productDatabase[p.id] = p; });
+          renderDynamicCatalogProducts();
           renderCart();
           renderWishlist();
         }

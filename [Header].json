@@ -1,0 +1,279 @@
+{
+  "content": [
+    {
+      "id": "ee4d4d27",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "background_background": "classic",
+        "background_color": "#0f1513",
+        "padding": {
+          "unit": "px",
+          "top": "8",
+          "right": "20",
+          "bottom": "8",
+          "left": "20",
+          "isLinked": false
+        },
+        "css_classes": "cl-announcement-bar"
+      },
+      "elements": [
+        {
+          "id": "a5e4bdb1",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "row",
+            "flex_direction_mobile": "column",
+            "justify_content": "space-between",
+            "align_items": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 16
+            }
+          },
+          "elements": [
+            {
+              "id": "791f3157",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div class=\"cl-ticker-wrap\"><span class=\"cl-ticker-item\">✦ Lifetime Anti-Tarnish Guarantee on 18K PVD Gold &bull; Complimentary Insured Shipping Across India on Orders Above ₹1,499 &bull; Use Code: <strong>ROYAL10</strong> for 10% Off &bull; Authentic Hand-Fired Jaipur Meenakari & Kundan Karigari &bull; ✦ Lifetime Anti-Tarnish Guarantee on 18K PVD Gold &bull; Complimentary Insured Shipping Across India on Orders Above ₹1,499 &bull; Use Code: <strong>ROYAL10</strong> for 10% Off</span></div>",
+                "text_color": "#e6ca9c",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "css_classes": "cl-ticker-widget"
+              }
+            },
+            {
+              "id": "e76feded",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div class=\"cl-top-right-links\"><span class=\"cl-currency-label\">INR (₹)</span><a href=\"collections.html\" class=\"cl-track-link\">✦ Track Insured Order</a></div>",
+                "text_color": "#e6ca9c",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7f86c24d",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "1",
+          "left": "0",
+          "isLinked": false
+        },
+        "border_color": "rgba(197, 168, 128, 0.25)",
+        "padding": {
+          "unit": "px",
+          "top": "14",
+          "right": "24",
+          "bottom": "14",
+          "left": "24",
+          "isLinked": false
+        },
+        "css_classes": "cl-site-header sticky-header"
+      },
+      "elements": [
+        {
+          "id": "37a7d2c0",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "row",
+            "flex_direction_tablet": "row",
+            "flex_direction_mobile": "row",
+            "flex_wrap": "nowrap",
+            "justify_content": "space-between",
+            "align_items": "center",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "51fac041",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "column",
+                "width": {
+                  "unit": "%",
+                  "size": 25
+                },
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 40
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 65
+                },
+                "flex_shrink": 1
+              },
+              "elements": [
+                {
+                  "id": "ea4a404f",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "AURA & ARTISAN<span class='cl-logo-sub'>HAUTE JOAILLERIE &bull; JAIPUR &bull; MUMBAI</span>",
+                    "header_size": "h1",
+                    "title_color": "#141210",
+                    "typography_font_family": "Cormorant Garamond",
+                    "typography_font_weight": "700",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 26
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 3.5
+                    },
+                    "link": {
+                      "url": "index.html"
+                    },
+                    "css_classes": "cl-brand-logo"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "7c66a677",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "column",
+                "width": {
+                  "unit": "%",
+                  "size": 55
+                },
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 0
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 0
+                },
+                "flex_shrink": 1,
+                "css_classes": "cl-desktop-nav-wrap"
+              },
+              "elements": [
+                {
+                  "id": "ceacc7cb",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "nav-menu",
+                  "settings": {
+                    "layout": "horizontal",
+                    "align_items": "center",
+                    "pointer": "underline",
+                    "animation_line": "fade",
+                    "color_menu_item": "#1a1614",
+                    "color_menu_item_hover": "#c5a880",
+                    "color_menu_item_active": "#9a7647",
+                    "typography_menu_font_family": "Montserrat",
+                    "typography_menu_font_size": {
+                      "unit": "px",
+                      "size": 13
+                    },
+                    "typography_menu_font_weight": "500",
+                    "typography_menu_letter_spacing": {
+                      "unit": "px",
+                      "size": 1.2
+                    },
+                    "typography_menu_text_transform": "uppercase"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "c52e204a",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "column",
+                "width": {
+                  "unit": "%",
+                  "size": 20
+                },
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 60
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 35
+                },
+                "flex_shrink": 1
+              },
+              "elements": [
+                {
+                  "id": "3108b233",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<div class=\"cl-header-actions\"><a href=\"collections.html\" class=\"cl-action-icon\" aria-label=\"Search\"><i class=\"ri-search-line\"></i></a><a href=\"collections.html\" class=\"cl-action-icon\" aria-label=\"Wishlist\"><i class=\"ri-heart-line\"></i><span class=\"cl-badge\">3</span></a><a href=\"admin.html\" class=\"cl-action-icon\" aria-label=\"Admin Portal\"><i class=\"ri-shield-keyhole-line\"></i></a><a href=\"collections.html\" class=\"cl-action-icon cl-cart-icon\" aria-label=\"Cart\"><i class=\"ri-shopping-bag-2-line\"></i><span class=\"cl-badge\">2</span></a></div>",
+                    "css_classes": "cl-action-buttons-widget"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Aura & Artisan Jewellery - Header",
+  "type": "header"
+}

@@ -1,0 +1,1059 @@
+{
+  "content": [
+    {
+      "id": "d60f0415",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "35",
+          "right": "20",
+          "bottom": "35",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#171717",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "1",
+          "left": "0",
+          "isLinked": false
+        },
+        "border_color": "rgba(255,255,255,0.08)"
+      },
+      "elements": [
+        {
+          "id": "8d960146",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "694476de",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "dd3b79a4",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "ffe2eef5",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-medal-line",
+                          "library": "remix"
+                        },
+                        "title_text": "100% Certified Karigari",
+                        "description_text": "BIS Hallmarked & 18K Aerospace PVD Gold",
+                        "position": "left",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "ab64a985",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "c11d1b38",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-fire-line",
+                          "library": "remix"
+                        },
+                        "title_text": "Jaipur Enameling Legacy",
+                        "description_text": "800°C Kiln-fired Meenakari & uncut Polki",
+                        "position": "left",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "038738bd",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "2b111900",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-shield-check-line",
+                          "library": "remix"
+                        },
+                        "title_text": "Lifetime Color Warranty",
+                        "description_text": "Waterproof & zero skin green discoloration",
+                        "position": "left",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "dc56043f",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "d356cf5a",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-truck-line",
+                          "library": "remix"
+                        },
+                        "title_text": "White-Glove Insured Delivery",
+                        "description_text": "Tamper-evident luxury unboxing across India",
+                        "position": "left",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8c3e4571",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#0f1513"
+      },
+      "elements": [
+        {
+          "id": "266e88c0",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "0f43fbaf",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Privilege Membership",
+                "header_size": "span",
+                "title_color": "#c5a880",
+                "typography_font_family": "Montserrat",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2
+                },
+                "align": "center"
+              }
+            },
+            {
+              "id": "34c99188",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Enter The Maison Circle",
+                "header_size": "h3",
+                "title_color": "#ffffff",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 36
+                },
+                "align": "center",
+                "margin": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "0",
+                  "bottom": "12",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "6f1e2436",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Receive private invitations to limited Jaipur bridal drops, secret salon viewings, and a complimentary ₹500 voucher on your first acquisition.",
+                "text_color": "rgba(255,255,255,0.7)",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.6
+                },
+                "align": "center",
+                "margin": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "24",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "71f5f73f",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<form class=\"cl-newsletter-form\"><input type=\"email\" placeholder=\"Enter your email address for private access...\" required><button type=\"submit\" class=\"cl-btn-gold\">Join The Circle</button></form>",
+                "css_classes": "cl-newsletter-widget"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6a670eae",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "70",
+          "right": "20",
+          "bottom": "70",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#0a0e0d"
+      },
+      "elements": [
+        {
+          "id": "e7d21111",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "7496b09a",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 25
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "4e870505",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 30
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "f189e4c5",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "AURA & ARTISAN",
+                        "header_size": "h4",
+                        "title_color": "#e6ca9c",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 22
+                        }
+                      }
+                    },
+                    {
+                      "id": "328e0744",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Haute Joaillerie & modern demi-fine atelier rooted in the royal jeweler traditions of Johari Bazaar, Jaipur and the contemporary minimalism of Mumbai.",
+                        "text_color": "rgba(255,255,255,0.65)",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "8c8d1302",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "social-icons",
+                      "settings": {
+                        "social_icon_list": [
+                          {
+                            "social_icon": {
+                              "value": "ri-instagram-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "https://instagram.com"
+                            }
+                          },
+                          {
+                            "social_icon": {
+                              "value": "ri-pinterest-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "https://pinterest.com"
+                            }
+                          },
+                          {
+                            "social_icon": {
+                              "value": "ri-youtube-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "https://youtube.com"
+                            }
+                          },
+                          {
+                            "social_icon": {
+                              "value": "ri-whatsapp-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "https://wa.me/919829012345"
+                            }
+                          }
+                        ],
+                        "icon_color": "custom",
+                        "icon_primary_color": "rgba(255,255,255,0.1)",
+                        "icon_secondary_color": "#c5a880"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "840f7f40",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 22
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "6042936c",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "High Jewellery & Bridal",
+                        "header_size": "h4",
+                        "title_color": "#ffffff",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        }
+                      }
+                    },
+                    {
+                      "id": "9d6b34a7",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-list",
+                      "settings": {
+                        "icon_list": [
+                          {
+                            "text": "Pachi Kundan Chokers",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "collections.html?cat=kundan"
+                            }
+                          },
+                          {
+                            "text": "Jadau & Polki Bridal Sets",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "collections.html?cat=kundan"
+                            }
+                          },
+                          {
+                            "text": "Meera Meenakari Bangles",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "bangles-guide.html"
+                            }
+                          },
+                          {
+                            "text": "Feeling Chhail Tribal Silver",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "collections.html?cat=oxidized"
+                            }
+                          },
+                          {
+                            "text": "Temple Antique Curations",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "collections.html"
+                            }
+                          },
+                          {
+                            "text": "Bespoke Bridal Salon Booking",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "contact.html"
+                            }
+                          }
+                        ],
+                        "icon_color": "#c5a880",
+                        "text_color": "rgba(255,255,255,0.7)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "66d64c3d",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 22
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "52351a62",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Everyday Demi-Fine",
+                        "header_size": "h4",
+                        "title_color": "#ffffff",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        }
+                      }
+                    },
+                    {
+                      "id": "769e7c86",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-list",
+                      "settings": {
+                        "icon_list": [
+                          {
+                            "text": "Waterproof Clover Series",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "anti-tarnish.html"
+                            }
+                          },
+                          {
+                            "text": "18K PVD Layering Chains",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "anti-tarnish.html"
+                            }
+                          },
+                          {
+                            "text": "Hypoallergenic Chunky Hoops",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "anti-tarnish.html"
+                            }
+                          },
+                          {
+                            "text": "Stackable Signet Rings",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "anti-tarnish.html"
+                            }
+                          },
+                          {
+                            "text": "Swashaa Men's Luxe Edit",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "collections.html?cat=men"
+                            }
+                          },
+                          {
+                            "text": "PVD Science & Metallurgy",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "about.html"
+                            }
+                          }
+                        ],
+                        "icon_color": "#c5a880",
+                        "text_color": "rgba(255,255,255,0.7)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "e706e516",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 22
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "a1e35293",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Maison & Client Care",
+                        "header_size": "h4",
+                        "title_color": "#ffffff",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        }
+                      }
+                    },
+                    {
+                      "id": "b85456b3",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-list",
+                      "settings": {
+                        "icon_list": [
+                          {
+                            "text": "About Us & Heritage",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "about.html"
+                            }
+                          },
+                          {
+                            "text": "Privacy Policy",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "privacy-policy.html"
+                            }
+                          },
+                          {
+                            "text": "Terms & Conditions",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "terms-conditions.html"
+                            }
+                          },
+                          {
+                            "text": "Track Insured Shipment",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "collections.html"
+                            }
+                          },
+                          {
+                            "text": "Interactive Sizing Studio",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "bangles-guide.html"
+                            }
+                          },
+                          {
+                            "text": "Concierge & Flagship Salons",
+                            "icon": {
+                              "value": "ri-arrow-right-s-line",
+                              "library": "remix"
+                            },
+                            "link": {
+                              "url": "contact.html"
+                            }
+                          }
+                        ],
+                        "icon_color": "#c5a880",
+                        "text_color": "rgba(255,255,255,0.7)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3bedd238",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "20",
+          "right": "20",
+          "bottom": "20",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#050807",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "1",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": false
+        },
+        "border_color": "rgba(255,255,255,0.08)"
+      },
+      "elements": [
+        {
+          "id": "f900ebe5",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "945fb719",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "nowrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "2d456fa5",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 60
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "a89ba156",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "&copy; 2026 AURA & ARTISAN JEWELLERS PVT. LTD. ALL RIGHTS RESERVED &bull; HALLMARKED UNDER BIS REGULATIONS.<br><small><a href=\"about.html\" style=\"color:#aaa;\">About Us</a> &bull; <a href=\"privacy-policy.html\" style=\"color:#aaa;\">Privacy Policy</a> &bull; <a href=\"terms-conditions.html\" style=\"color:#aaa;\">Terms & Conditions</a></small>",
+                        "text_color": "rgba(255,255,255,0.6)",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 12
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "c87ef6b6",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 40
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "62299cc6",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-payment-badges\"><span>UPI &amp; Netbanking</span><span>Visa</span><span>MasterCard</span><span>American Express</span><span>Cash on Delivery</span></div>",
+                        "text_color": "#ffffff",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Aura & Artisan Jewellery - Footer",
+  "type": "footer"
+}

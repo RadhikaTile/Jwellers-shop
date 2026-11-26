@@ -1,0 +1,2633 @@
+{
+  "content": [
+    {
+      "id": "6ea37b6b",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#0f1513",
+        "css_classes": "cl-hero-section"
+      },
+      "elements": [
+        {
+          "id": "4ed66a8a",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "91c43ab4",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "nowrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 40
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "7ec7fbcc",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 52
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "cf6aec6b",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "<i class=\"ri-crown-line\"></i> Sawwaisa & Jewellery Khazana Inspired",
+                        "header_size": "span",
+                        "title_color": "#e6ca9c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 12
+                        },
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 2.2
+                        },
+                        "css_classes": "cl-hero-subhead"
+                      }
+                    },
+                    {
+                      "id": "3383bd0c",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Timeless Kundan, Handcrafted Heritage",
+                        "header_size": "h1",
+                        "title_color": "#ffffff",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "400",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 56
+                        },
+                        "typography_font_size_tablet": {
+                          "unit": "px",
+                          "size": 42
+                        },
+                        "typography_font_size_mobile": {
+                          "unit": "px",
+                          "size": 34
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.12
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "0",
+                          "bottom": "18",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      }
+                    },
+                    {
+                      "id": "a9f00c6c",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Pachi Kundan, uncut Polki, and authentic Meenakari enameled bangles forged by master karigars of Jaipur. Designed for the modern Indian bride who honors tradition.",
+                        "text_color": "rgba(255,255,255,0.85)",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 16
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "28",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      }
+                    },
+                    {
+                      "id": "1d7593c9",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "container_type": "flex",
+                        "flex_direction": "row",
+                        "flex_direction_tablet": "column",
+                        "flex_direction_mobile": "column",
+                        "flex_wrap": "nowrap",
+                        "flex_gap": {
+                          "unit": "px",
+                          "size": 16
+                        },
+                        "width": {
+                          "unit": "%",
+                          "size": 100
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "36",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      },
+                      "elements": [
+                        {
+                          "id": "fea70707",
+                          "elType": "container",
+                          "isInner": true,
+                          "settings": {
+                            "container_type": "flex",
+                            "flex_direction": "column",
+                            "width": {
+                              "unit": "%",
+                              "size": 48
+                            },
+                            "width_tablet": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "width_mobile": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "flex_shrink": 1
+                          },
+                          "elements": [
+                            {
+                              "id": "1c014ca7",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "button",
+                              "settings": {
+                                "text": "Explore Bridal Edit",
+                                "link": {
+                                  "url": "collections.html?cat=kundan",
+                                  "is_external": false,
+                                  "nofollow": false
+                                },
+                                "button_text_color": "#0f1513",
+                                "background_color": "#c5a880",
+                                "typography_font_family": "Montserrat",
+                                "typography_font_weight": "600",
+                                "typography_letter_spacing": {
+                                  "unit": "px",
+                                  "size": 1.5
+                                },
+                                "border_radius": {
+                                  "unit": "px",
+                                  "top": "4",
+                                  "right": "4",
+                                  "bottom": "4",
+                                  "left": "4",
+                                  "isLinked": true
+                                },
+                                "padding": {
+                                  "unit": "px",
+                                  "top": "14",
+                                  "right": "28",
+                                  "bottom": "14",
+                                  "left": "28",
+                                  "isLinked": false
+                                },
+                                "icon": {
+                                  "value": "ri-sparkling-fill",
+                                  "library": "remix"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "dffdc217",
+                          "elType": "container",
+                          "isInner": true,
+                          "settings": {
+                            "container_type": "flex",
+                            "flex_direction": "column",
+                            "width": {
+                              "unit": "%",
+                              "size": 48
+                            },
+                            "width_tablet": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "width_mobile": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "flex_shrink": 1
+                          },
+                          "elements": [
+                            {
+                              "id": "44c14947",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "button",
+                              "settings": {
+                                "text": "Shop Meenakari Bangles →",
+                                "link": {
+                                  "url": "bangles-guide.html",
+                                  "is_external": false,
+                                  "nofollow": false
+                                },
+                                "button_text_color": "#ffffff",
+                                "background_color": "transparent",
+                                "typography_font_family": "Montserrat",
+                                "typography_font_weight": "600",
+                                "typography_letter_spacing": {
+                                  "unit": "px",
+                                  "size": 1.5
+                                },
+                                "border_radius": {
+                                  "unit": "px",
+                                  "top": "4",
+                                  "right": "4",
+                                  "bottom": "4",
+                                  "left": "4",
+                                  "isLinked": true
+                                },
+                                "padding": {
+                                  "unit": "px",
+                                  "top": "14",
+                                  "right": "28",
+                                  "bottom": "14",
+                                  "left": "28",
+                                  "isLinked": false
+                                },
+                                "border_border": "solid",
+                                "border_width": {
+                                  "unit": "px",
+                                  "top": "1",
+                                  "right": "1",
+                                  "bottom": "1",
+                                  "left": "1",
+                                  "isLinked": true
+                                },
+                                "border_color": "rgba(255,255,255,0.3)"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "56edbf92",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "container_type": "flex",
+                        "flex_direction": "row",
+                        "flex_direction_tablet": "column",
+                        "flex_direction_mobile": "column",
+                        "flex_wrap": "nowrap",
+                        "flex_gap": {
+                          "unit": "px",
+                          "size": 20
+                        },
+                        "width": {
+                          "unit": "%",
+                          "size": 100
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "20",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": false
+                        },
+                        "border_border": "solid",
+                        "border_width": {
+                          "unit": "px",
+                          "top": "1",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": false
+                        },
+                        "border_color": "rgba(255,255,255,0.12)"
+                      },
+                      "elements": [
+                        {
+                          "id": "ded55067",
+                          "elType": "container",
+                          "isInner": true,
+                          "settings": {
+                            "container_type": "flex",
+                            "flex_direction": "column",
+                            "width": {
+                              "unit": "%",
+                              "size": 30
+                            },
+                            "width_tablet": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "width_mobile": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "flex_shrink": 1
+                          },
+                          "elements": [
+                            {
+                              "id": "9cf08e91",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "heading",
+                              "settings": {
+                                "title": "500+",
+                                "header_size": "h3",
+                                "title_color": "#c5a880",
+                                "typography_font_family": "Cormorant Garamond",
+                                "typography_font_weight": "600",
+                                "typography_font_size": {
+                                  "unit": "px",
+                                  "size": 32
+                                }
+                              }
+                            },
+                            {
+                              "id": "9401010e",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "text-editor",
+                              "settings": {
+                                "editor": "Jaipur Artisans",
+                                "text_color": "rgba(255,255,255,0.7)",
+                                "typography_font_family": "Montserrat",
+                                "typography_font_size": {
+                                  "unit": "px",
+                                  "size": 12
+                                },
+                                "typography_line_height": {
+                                  "unit": "em",
+                                  "size": 1.6
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "68b2ede4",
+                          "elType": "container",
+                          "isInner": true,
+                          "settings": {
+                            "container_type": "flex",
+                            "flex_direction": "column",
+                            "width": {
+                              "unit": "%",
+                              "size": 30
+                            },
+                            "width_tablet": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "width_mobile": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "flex_shrink": 1
+                          },
+                          "elements": [
+                            {
+                              "id": "180f2d0f",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "heading",
+                              "settings": {
+                                "title": "100%",
+                                "header_size": "h3",
+                                "title_color": "#c5a880",
+                                "typography_font_family": "Cormorant Garamond",
+                                "typography_font_weight": "600",
+                                "typography_font_size": {
+                                  "unit": "px",
+                                  "size": 32
+                                }
+                              }
+                            },
+                            {
+                              "id": "7792530b",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "text-editor",
+                              "settings": {
+                                "editor": "Hallmarked Craft",
+                                "text_color": "rgba(255,255,255,0.7)",
+                                "typography_font_family": "Montserrat",
+                                "typography_font_size": {
+                                  "unit": "px",
+                                  "size": 12
+                                },
+                                "typography_line_height": {
+                                  "unit": "em",
+                                  "size": 1.6
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "fe18086a",
+                          "elType": "container",
+                          "isInner": true,
+                          "settings": {
+                            "container_type": "flex",
+                            "flex_direction": "column",
+                            "width": {
+                              "unit": "%",
+                              "size": 30
+                            },
+                            "width_tablet": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "width_mobile": {
+                              "unit": "%",
+                              "size": 100
+                            },
+                            "flex_shrink": 1
+                          },
+                          "elements": [
+                            {
+                              "id": "fe413ed3",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "heading",
+                              "settings": {
+                                "title": "4.9 / 5",
+                                "header_size": "h3",
+                                "title_color": "#c5a880",
+                                "typography_font_family": "Cormorant Garamond",
+                                "typography_font_weight": "600",
+                                "typography_font_size": {
+                                  "unit": "px",
+                                  "size": 32
+                                }
+                              }
+                            },
+                            {
+                              "id": "baa2930a",
+                              "elType": "widget",
+                              "isInner": false,
+                              "widgetType": "text-editor",
+                              "settings": {
+                                "editor": "Customer Rating",
+                                "text_color": "rgba(255,255,255,0.7)",
+                                "typography_font_family": "Montserrat",
+                                "typography_font_size": {
+                                  "unit": "px",
+                                  "size": 12
+                                },
+                                "typography_line_height": {
+                                  "unit": "em",
+                                  "size": 1.6
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "872f71d2",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 45
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "02dc11b9",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=85"
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "14",
+                          "bottom": "14",
+                          "left": "14",
+                          "isLinked": true
+                        },
+                        "css_classes": "cl-hero-model-card"
+                      }
+                    },
+                    {
+                      "id": "91e90005",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-hero-float-badge\"><strong>The Empress Rajputana Edit</strong><span>Hand-Set Pachi Kundan & Hydro Emeralds &bull; Sets from ₹2,499</span></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "css_classes": "cl-hero-badge-wrap"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7cb2ebc0",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "45",
+          "right": "20",
+          "bottom": "45",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#fdfbf7",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "1",
+          "left": "0",
+          "isLinked": false
+        },
+        "border_color": "rgba(197, 168, 128, 0.2)"
+      },
+      "elements": [
+        {
+          "id": "f872ee2c",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "66f03e38",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "d1defb7a",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "bded82db",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-shield-check-line",
+                          "library": "remix"
+                        },
+                        "title_text": "Anti-Tarnish Guarantee",
+                        "description_text": "Advanced PVD vacuum gold plating resistant to water & sweat.",
+                        "position": "top",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "9d62012c",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "28e42181",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-fire-line",
+                          "library": "remix"
+                        },
+                        "title_text": "800°C Hand Enameling",
+                        "description_text": "Artisanal kiln-fired peacock meenakari from historic Jaipur.",
+                        "position": "top",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "d814a14a",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "242d493b",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-truck-line",
+                          "library": "remix"
+                        },
+                        "title_text": "Free Insured Transit",
+                        "description_text": "Tamper-proof white-glove courier dispatch nationwide.",
+                        "position": "top",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "338d4ae5",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "86e0f5c9",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-box",
+                      "settings": {
+                        "selected_icon": {
+                          "value": "ri-compasses-2-line",
+                          "library": "remix"
+                        },
+                        "title_text": "Custom Wrist Sizing",
+                        "description_text": "7-day seamless resizing assistance across all kadas.",
+                        "position": "top",
+                        "primary_color": "#c5a880",
+                        "title_color": "#23201e",
+                        "description_color": "#6b645c"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cd13c885",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff"
+      },
+      "elements": [
+        {
+          "id": "89484859",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "0c726f91",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Archival & Modern Universes",
+                "header_size": "span",
+                "title_color": "#9a7647",
+                "typography_font_family": "Montserrat",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.2
+                },
+                "align": "center"
+              }
+            },
+            {
+              "id": "6e85d211",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Explore Haute Joaillerie Ateliers",
+                "header_size": "h2",
+                "title_color": "#1a1614",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "align": "center",
+                "margin": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "0",
+                  "bottom": "40",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "cd1019cd",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "b942c5b1",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-collection-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "9ed9f537",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Sawwaisa Pachi Kundan"
+                      }
+                    },
+                    {
+                      "id": "1f3faa73",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Sawwaisa Kundan",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 20
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "66b4ac89",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Hand-Set uncut polki & hydro emerald bridal suites.",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 13
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "8222da95",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "View Atelier →",
+                        "link": {
+                          "url": "collections.html?cat=kundan",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "align": "center"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "a20b2974",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-collection-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "643390d1",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Meera Meenakari"
+                      }
+                    },
+                    {
+                      "id": "811b3260",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Meera Meenakari",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 20
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "160ed575",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "800°C kiln-fired peacock & lotus screw-locking kadas.",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 13
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "1b9386b1",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "View Atelier →",
+                        "link": {
+                          "url": "collections.html?cat=bangles",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "align": "center"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "2c9c3893",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-collection-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "d52b7447",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "18K Waterproof Daily"
+                      }
+                    },
+                    {
+                      "id": "b7643e97",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "18K Waterproof",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 20
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "2473a6a8",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Sweatproof paperclip chains & clover bracelets.",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 13
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "f804e228",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "View Atelier →",
+                        "link": {
+                          "url": "anti-tarnish.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "align": "center"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "491c6c4a",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-collection-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "58794359",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Nazaakat Basra Pearls"
+                      }
+                    },
+                    {
+                      "id": "4806d38c",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Basra Pearls",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 20
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "8859e0e9",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Hand-strung baroque Basra pearls & multi-strand rani haars.",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 13
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "id": "0d5aa34f",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "View Atelier →",
+                        "link": {
+                          "url": "collections.html?cat=pearls",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "align": "center"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "76015a38",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f7f3ee"
+      },
+      "elements": [
+        {
+          "id": "70a57236",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "0e860b4b",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Curated Signatures",
+                "header_size": "span",
+                "title_color": "#9a7647",
+                "typography_font_family": "Montserrat",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.2
+                },
+                "align": "center"
+              }
+            },
+            {
+              "id": "b5274b48",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Bestsellers & Timeless Acquisitions",
+                "header_size": "h2",
+                "title_color": "#1a1614",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "align": "center",
+                "margin": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "0",
+                  "bottom": "40",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "c9c5951f",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 25
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "0255eaac",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 31.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "fee98ef3",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Empress Rajputana Choker"
+                      }
+                    },
+                    {
+                      "id": "c8c2db56",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Pachi Kundan & Pearl Choker",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        }
+                      }
+                    },
+                    {
+                      "id": "cacb5aa1",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹4,950</strong> <span class=\"cl-price-old\">₹6,800</span></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "228a7824",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Piece",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#c5a880",
+                        "background_color": "#0f1513",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "32b67763",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 31.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "7309233a",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Meera Peacock Bangles"
+                      }
+                    },
+                    {
+                      "id": "79d23f22",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Meera Peacock Meenakari Kadas",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        }
+                      }
+                    },
+                    {
+                      "id": "37c2cd3c",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹1,850</strong> <span class=\"cl-price-old\">₹2,400</span></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "6380a1e5",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Piece",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#c5a880",
+                        "background_color": "#0f1513",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "f06214cd",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 31.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "3bb70692",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "18K Clover Necklace"
+                      }
+                    },
+                    {
+                      "id": "1cd1ebac",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "18K PVD Four-Leaf Clover Necklace",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        }
+                      }
+                    },
+                    {
+                      "id": "7c79470f",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹1,150</strong> <span class=\"cl-price-old\">₹1,699</span></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "2d6b3dcb",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Piece",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#c5a880",
+                        "background_color": "#0f1513",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57924afb",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "90",
+          "right": "20",
+          "bottom": "90",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#0f1513",
+        "css_classes": "cl-science-section"
+      },
+      "elements": [
+        {
+          "id": "c8dc1a88",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "7d1a576e",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "nowrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 40
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "a2dc7f42",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "e2b92eb1",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "PVD VACUUM METALLURGY",
+                        "header_size": "span",
+                        "title_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 12
+                        },
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 2.2
+                        }
+                      }
+                    },
+                    {
+                      "id": "b410abc5",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Science of 18K Anti-Tarnish Daily Gold",
+                        "header_size": "h2",
+                        "title_color": "#ffffff",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "400",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 44
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "12",
+                          "right": "0",
+                          "bottom": "20",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      }
+                    },
+                    {
+                      "id": "1e037eac",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Unlike flash electroplating that flakes in 2 months, our Demi-Fine series uses Physical Vapor Deposition (PVD). Titanium-grade 316L stainless steel cores are placed inside a high-temperature vacuum chamber, vaporizing 18-karat real gold onto the molecular surface.",
+                        "text_color": "rgba(255,255,255,0.8)",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "24",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      }
+                    },
+                    {
+                      "id": "40ecaf27",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-list",
+                      "settings": {
+                        "icon_list": [
+                          {
+                            "text": "10x thicker atomic bonding than conventional gold plating",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          },
+                          {
+                            "text": "100% Showerproof, Sweatproof, Ocean-Safe Guarantee",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          },
+                          {
+                            "text": "Zero skin greening discoloration & nickel-free hypoallergenic",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          },
+                          {
+                            "text": "Lifetime color replacement warranty with white-glove support",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          }
+                        ],
+                        "icon_color": "#c5a880",
+                        "text_color": "#ffffff"
+                      }
+                    },
+                    {
+                      "id": "7af0a03b",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Explore Anti-Tarnish Daily →",
+                        "link": {
+                          "url": "anti-tarnish.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "28",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "488b17a8",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "43b1a806",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Anti-Tarnish Chain Metallurgy"
+                      }
+                    },
+                    {
+                      "id": "675d09cc",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-spec-box\"><div class=\"cl-spec-row\"><span>Core Metal:</span><strong>Medical-Grade 316L Stainless Steel</strong></div><div class=\"cl-spec-row\"><span>Bonding Method:</span><strong>Aerospace Vacuum PVD @ 450°C</strong></div><div class=\"cl-spec-row\"><span>Gold Coating:</span><strong>18 Karat Real Gold (Hallmarked)</strong></div><div class=\"cl-spec-row\"><span>Warranty:</span><strong>Lifetime Replacement Certificate</strong></div></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "407641f0",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f7f3ee"
+      },
+      "elements": [
+        {
+          "id": "0fe6fb66",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "85a64ba8",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Words of Connoisseurs",
+                "header_size": "span",
+                "title_color": "#9a7647",
+                "typography_font_family": "Montserrat",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.2
+                },
+                "align": "center"
+              }
+            },
+            {
+              "id": "bf4ff896",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Patron Testimonials & Bridal Stories",
+                "header_size": "h2",
+                "title_color": "#1a1614",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "align": "center",
+                "margin": {
+                  "unit": "px",
+                  "top": "8",
+                  "right": "0",
+                  "bottom": "40",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "90a87887",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 25
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "b6ca36bd",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 31.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "padding": {
+                      "unit": "px",
+                      "top": "30",
+                      "right": "24",
+                      "bottom": "30",
+                      "left": "24",
+                      "isLinked": true
+                    },
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "8",
+                      "right": "8",
+                      "bottom": "8",
+                      "left": "8",
+                      "isLinked": true
+                    },
+                    "css_classes": "cl-review-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "808a272b",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "“The Empress Rajputana choker made my wedding look breathtaking. The uncut polki setting and hydro emeralds rivaled bespoke pieces five times the price. Truly royal craftsmanship.”",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "133af180",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Gayatri Varma",
+                        "header_size": "h4",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 16
+                        }
+                      }
+                    },
+                    {
+                      "id": "221654fa",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<small>Jaipur Wedding Bride &bull; Verified Patron</small>",
+                        "text_color": "#9a7647",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "36f1e140",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 31.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "padding": {
+                      "unit": "px",
+                      "top": "30",
+                      "right": "24",
+                      "bottom": "30",
+                      "left": "24",
+                      "isLinked": true
+                    },
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "8",
+                      "right": "8",
+                      "bottom": "8",
+                      "left": "8",
+                      "isLinked": true
+                    },
+                    "css_classes": "cl-review-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "1849e3f9",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "“I have worn the 18K paperclip necklace in the shower and gym daily for 8 months. Not a single trace of tarnish or skin discoloration. Astonishing quality.”",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "32bc2778",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Rhea Sen",
+                        "header_size": "h4",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 16
+                        }
+                      }
+                    },
+                    {
+                      "id": "0ce1b766",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<small>Mumbai &bull; Verified Everyday Patron</small>",
+                        "text_color": "#9a7647",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "d024609f",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 31.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "padding": {
+                      "unit": "px",
+                      "top": "30",
+                      "right": "24",
+                      "bottom": "30",
+                      "left": "24",
+                      "isLinked": true
+                    },
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "8",
+                      "right": "8",
+                      "bottom": "8",
+                      "left": "8",
+                      "isLinked": true
+                    },
+                    "css_classes": "cl-review-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "a430893b",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "“The Meera Meenakari kadas are absolute poetry. The screw-locking mechanism is precision-engineered, and the 800°C kiln colors glow under natural sunlight.”",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "d930b39d",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Tanvi Parekh",
+                        "header_size": "h4",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 16
+                        }
+                      }
+                    },
+                    {
+                      "id": "1cbca988",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<small>Ahmedabad &bull; Jewellery Collector</small>",
+                        "text_color": "#9a7647",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Aura & Artisan Jewellery - Home",
+  "type": "page"
+}

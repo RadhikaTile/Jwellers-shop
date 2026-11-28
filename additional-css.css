@@ -321,3 +321,89 @@ CUSTOM CLASSES REFERENCE:
   font-size: 11px;
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* 10. UNIVERSE SELECTOR PILLS */
+.cl-pills-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+.cl-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.cl-pill.active {
+  background: #c5a880;
+  color: #0f1513;
+  font-weight: 600;
+}
+.cl-pill img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 11. SIZING MATRIX TABLE */
+.cl-sizing-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  border-radius: 8px;
+}
+.cl-sizing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+.cl-sizing-table th {
+  background: #0f1513;
+  color: #e6ca9c;
+  padding: 14px 18px;
+  text-align: left;
+}
+.cl-sizing-table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+/* 12. CONTACT APPOINTMENT FORM */
+.cl-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.cl-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cl-form-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #23201e;
+}
+.cl-form-group input,
+.cl-form-group select,
+.cl-form-group textarea {
+  padding: 10px 14px;
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+.cl-form-group input:focus,
+.cl-form-group select:focus,
+.cl-form-group textarea:focus {
+  border-color: #c5a880;
+}

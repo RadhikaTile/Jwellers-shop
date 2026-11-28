@@ -1,0 +1,902 @@
+{
+  "content": [
+    {
+      "id": "def3a592",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "20",
+          "bottom": "100",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#0f1513",
+        "background_image": {
+          "url": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1920&q=85"
+        },
+        "background_position": "center center",
+        "background_repeat": "no-repeat",
+        "background_size": "cover",
+        "css_classes": "cl-catalog-hero-banner"
+      },
+      "elements": [
+        {
+          "id": "bc85d284",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "c96e75ef",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "<i class=\"ri-vip-diamond-line\"></i> EVERYDAY DEMI-FINE COLLECTION",
+                "header_size": "span",
+                "title_color": "#e6ca9c",
+                "typography_font_family": "Montserrat",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2
+                },
+                "css_classes": "cl-hero-subhead"
+              }
+            },
+            {
+              "id": "f526bb7d",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "18K PVD Anti-Tarnish & Waterproof Daily",
+                "header_size": "h1",
+                "title_color": "#ffffff",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 52
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 38
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 30
+                },
+                "margin": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "0",
+                  "bottom": "16",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "51abf2e4",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Showerproof, sweatproof, and perfume-safe 18-karat real gold bonded onto surgical 316L stainless steel cores. Zero green skin discoloration.",
+                "text_color": "rgba(255,255,255,0.85)",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.6
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28dbff34",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff"
+      },
+      "elements": [
+        {
+          "id": "e3b9723e",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "0bcef4d8",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "nowrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 40
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "b5f43240",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 50
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "8bf58692",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "The Metallurgy of Lifetime Luxe",
+                        "header_size": "h2",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 40
+                        }
+                      }
+                    },
+                    {
+                      "id": "e83747f4",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "Traditional gold-plated jewellery rubs off within months. Our proprietary Physical Vapor Deposition (PVD) process vaporizes 18K solid gold inside a vacuum chamber at 450°C, fusing atoms directly to surgical-grade steel cores.",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        },
+                        "margin": {
+                          "unit": "px",
+                          "top": "12",
+                          "right": "0",
+                          "bottom": "24",
+                          "left": "0",
+                          "isLinked": false
+                        }
+                      }
+                    },
+                    {
+                      "id": "27af7f19",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "icon-list",
+                      "settings": {
+                        "icon_list": [
+                          {
+                            "text": "10x more wear-resistant than conventional immersion plating",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          },
+                          {
+                            "text": "Safe for swimming, gym workouts, beaches, and daily hot showers",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          },
+                          {
+                            "text": "100% hypoallergenic, nickel-free, and lead-free certification",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          },
+                          {
+                            "text": "Backed by Aura & Artisan's Lifetime Color Warranty",
+                            "icon": {
+                              "value": "ri-checkbox-circle-line",
+                              "library": "remix"
+                            },
+                            "link": null
+                          }
+                        ],
+                        "icon_color": "#c5a880",
+                        "text_color": "#23201e"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "ee64fe97",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 45
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1
+                  },
+                  "elements": [
+                    {
+                      "id": "99e27adf",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1000&q=85",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Anti-Tarnish Chain Craft",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "10",
+                          "right": "10",
+                          "bottom": "10",
+                          "left": "10",
+                          "isLinked": true
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f69bd303",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "flex_direction": "row",
+        "justify_content": "center",
+        "align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "70",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f7f3ee"
+      },
+      "elements": [
+        {
+          "id": "046d7037",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "flex_direction": "column",
+            "boxed_width": {
+              "unit": "px",
+              "size": 1360
+            }
+          },
+          "elements": [
+            {
+              "id": "ebf0fd6c",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Waterproof Best Sellers",
+                "header_size": "h2",
+                "title_color": "#1a1614",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 36
+                },
+                "align": "center",
+                "margin": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "40",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "6ed2eab0",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 100
+                }
+              },
+              "elements": [
+                {
+                  "id": "34e04d0e",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "cc003a3d",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "18K Clover Necklace"
+                      }
+                    },
+                    {
+                      "id": "ebbf1806",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Four-Leaf Clover Bracelet",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 17
+                        }
+                      }
+                    },
+                    {
+                      "id": "c34667ef",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹1,150</strong></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "9b454189",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Now",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "2bd8f8d5",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "89a87c8c",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Paperclip Chain"
+                      }
+                    },
+                    {
+                      "id": "a3208184",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Waterproof Paperclip Chain",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 17
+                        }
+                      }
+                    },
+                    {
+                      "id": "671b170d",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹850</strong></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "764776b6",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Now",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "a7a6f5b4",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "cb135100",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Chunky Hoops"
+                      }
+                    },
+                    {
+                      "id": "c4014fab",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Hypoallergenic Chunky Hoops",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 17
+                        }
+                      }
+                    },
+                    {
+                      "id": "8126ecbf",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹799</strong></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "74d60e3a",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Now",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "bf65877e",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "flex_direction": "column",
+                    "width": {
+                      "unit": "%",
+                      "size": 23.5
+                    },
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 48
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "flex_shrink": 1,
+                    "css_classes": "cl-product-card"
+                  },
+                  "elements": [
+                    {
+                      "id": "0b3c7e42",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80",
+                          "id": ""
+                        },
+                        "caption": "",
+                        "alt_text": "Stackable Rings"
+                      }
+                    },
+                    {
+                      "id": "b27271d8",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "18K PVD Dome Rings (Trio)",
+                        "header_size": "h3",
+                        "title_color": "#1a1614",
+                        "typography_font_family": "Cormorant Garamond",
+                        "typography_font_weight": "600",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 17
+                        }
+                      }
+                    },
+                    {
+                      "id": "65e1df94",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<div class=\"cl-product-price\"><strong>₹1,299</strong></div>",
+                        "text_color": "#6b645c",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15
+                        },
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.6
+                        }
+                      }
+                    },
+                    {
+                      "id": "8a0a0403",
+                      "elType": "widget",
+                      "isInner": false,
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Acquire Now",
+                        "link": {
+                          "url": "product-detail.html",
+                          "is_external": false,
+                          "nofollow": false
+                        },
+                        "button_text_color": "#0f1513",
+                        "background_color": "#c5a880",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 1.5
+                        },
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "padding": {
+                          "unit": "px",
+                          "top": "14",
+                          "right": "28",
+                          "bottom": "14",
+                          "left": "28",
+                          "isLinked": false
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Aura & Artisan Jewellery - Anti-Tarnish Daily",
+  "type": "page"
+}
